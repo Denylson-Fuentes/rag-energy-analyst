@@ -1,0 +1,16 @@
+streamlit
+langchain
+langchain-aws
+langchain-community
+langchain-core
+langchain-huggingface
+chromadb
+sentence-transformers
+pandas
+numpy
+matplotlib
+scikit-learn
+joblib
+boto3
+python-dotenv
+pytest

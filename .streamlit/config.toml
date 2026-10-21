@@ -1,0 +1,14 @@
+[theme]
+base = "dark"
+primaryColor = "#F4A261"
+backgroundColor = "#0a0e0d"
+secondaryBackgroundColor = "#111614"
+textColor = "#e8f0ed"
+font = "monospace"
+
+[server]
+maxUploadSize = 5
+enableStaticServing = false
+
+[client]
+showErrorDetails = false

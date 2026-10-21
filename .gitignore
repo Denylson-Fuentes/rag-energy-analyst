@@ -1,0 +1,31 @@
+cd "/mnt/d/Projects/End-to-End Practice/Data Science/Energy/RAG_energy_analyst"
+cat > .gitignore << 'EOF'
+# Secrets
+.env
+.streamlit/secrets.toml
+
+# Vector store (rebuilt at startup)
+data/chroma_db/
+
+# Downloaded AWS installer (not needed in repo)
+aws/
+awscliv2.zip
+bedrock_verifier.py
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+venv_*/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+EOF
