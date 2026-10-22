@@ -92,6 +92,3 @@ python scripts/ingest_all.py
 
 # Run the app
 streamlit run app.py
-
-Testing
-pytest tests/ -v
