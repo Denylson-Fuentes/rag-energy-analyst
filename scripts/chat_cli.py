@@ -1,8 +1,9 @@
 """
-CLI test for the agent — LangChain v1.
+Interactive CLI for the agent (manual testing). Usage: python scripts/chat_cli.py [operator|analyst|trader]
 """
-import sys
 import os
+import sys
+
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 os.chdir(PROJECT_ROOT)
 sys.path.insert(0, PROJECT_ROOT)

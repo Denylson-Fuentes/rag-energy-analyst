@@ -14,13 +14,14 @@ Outputs:
   - models/solar_p50_v2.pkl
   - models/solar_scaler_v2.pkl
 """
-import pandas as pd
-import numpy as np
-from sklearn.ensemble import RandomForestRegressor
-from sklearn.preprocessing import StandardScaler
-from sklearn.metrics import mean_absolute_error
-import joblib
 import os
+
+import joblib
+import numpy as np
+import pandas as pd
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.metrics import mean_absolute_error
+from sklearn.preprocessing import StandardScaler
 
 # --- Configuration ---
 DATA_PATH = 'data/raw/palm_springs_features.csv'
@@ -80,7 +81,7 @@ pred_test = model.predict(X_test)
 train_mae = mean_absolute_error(y_train, pred_train)
 test_mae = mean_absolute_error(y_test, pred_test)
 
-print(f"\nResults (6-hour-ahead):")
+print("\nResults (6-hour-ahead):")
 print(f"  Train MAE: {train_mae:.2f} W/m²")
 print(f"  Test MAE:  {test_mae:.2f} W/m²")
 
@@ -99,6 +100,6 @@ for i in sample_idx:
 os.makedirs('models', exist_ok=True)
 joblib.dump(model, MODEL_OUT)
 joblib.dump(scaler, SCALER_OUT)
-print(f"\n✅ Saved:")
+print("\n✅ Saved:")
 print(f"   {MODEL_OUT}")
 print(f"   {SCALER_OUT}")

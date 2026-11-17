@@ -1,11 +1,14 @@
 """
 Solar forecast tool: runs the trained Random Forest model.
 """
-import sys
 import os
+import sys
+import threading
+
 import joblib
 import numpy as np
 import pandas as pd
+
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 sys.path.insert(0, PROJECT_ROOT)
 
@@ -26,9 +29,14 @@ FEATURES = [
 HORIZON_ROWS = 12  # 6 hours ahead in 30-min data
 
 
+_lock = threading.Lock()
+
+
 def load_assets():
     global _model, _scaler, _solar_data
-    if _model is None:
+    with _lock:
+        if _model is not None:
+            return
         _model = joblib.load(os.path.join(PROJECT_ROOT, "models", "solar_p50_v2.pkl"))
         _scaler = joblib.load(os.path.join(PROJECT_ROOT, "models", "solar_scaler_v2.pkl"))
         _solar_data = pd.read_csv(
@@ -63,7 +71,7 @@ def forecast_solar(date: str) -> str:
         )
 
     # Make predictions for each row in the day
-    X = _scaler.transform(day_df[FEATURES].values)
+    X = _scaler.transform(day_df[FEATURES])
     day_df["predicted"] = _model.predict(X)
 
     # The model predicts GHI 6 hours ahead (12 rows = 6h in 30-min data).

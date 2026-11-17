@@ -1,36 +1,47 @@
+"""
+LLM factory. Production runs Claude Haiku 4.5 on Amazon Bedrock; the eval
+harness can also run against the Claude API (LLM_PROVIDER=anthropic).
+"""
 import os
-from langchain_aws import ChatBedrock
+
+from src import config
+
+_llm = {}
 
 
-_llm = None
+def _load_streamlit_aws_secrets():
+    """On Streamlit Cloud, AWS credentials live in st.secrets; copy them to env."""
+    try:
+        import streamlit as st
+
+        for key in ("AWS_ACCESS_KEY_ID", "AWS_SECRET_ACCESS_KEY", "AWS_DEFAULT_REGION"):
+            if key in st.secrets and not os.getenv(key):
+                os.environ[key] = st.secrets[key]
+    except Exception:
+        pass
 
 
-def get_llm():
-    global _llm
-    if _llm is None:
-        # Try Streamlit secrets first (deployed), then env vars (local)
-        try:
-            import streamlit as st
-            aws_key = st.secrets.get("AWS_ACCESS_KEY_ID", os.getenv("AWS_ACCESS_KEY_ID"))
-            aws_secret = st.secrets.get("AWS_SECRET_ACCESS_KEY", os.getenv("AWS_SECRET_ACCESS_KEY"))
-            aws_region = st.secrets.get("AWS_DEFAULT_REGION", os.getenv("AWS_DEFAULT_REGION", "us-east-1"))
-        except Exception:
-            aws_key = os.getenv("AWS_ACCESS_KEY_ID")
-            aws_secret = os.getenv("AWS_SECRET_ACCESS_KEY")
-            aws_region = os.getenv("AWS_DEFAULT_REGION", "us-east-1")
+def get_llm(provider: str | None = None):
+    provider = provider or config.LLM_PROVIDER
+    if provider in _llm:
+        return _llm[provider]
 
-        # ChatBedrock reads AWS creds from boto3 session or env vars
-        # So we set them into the environment if not already there
-        if aws_key:
-            os.environ["AWS_ACCESS_KEY_ID"] = aws_key
-        if aws_secret:
-            os.environ["AWS_SECRET_ACCESS_KEY"] = aws_secret
-        if aws_region:
-            os.environ["AWS_DEFAULT_REGION"] = aws_region
+    if provider == "bedrock":
+        from langchain_aws import ChatBedrock
 
-        _llm = ChatBedrock(
-            model_id="us.anthropic.claude-haiku-4-5-20251001-v1:0",
-            region_name=aws_region or "us-east-1",
+        _load_streamlit_aws_secrets()
+        region = os.getenv("AWS_DEFAULT_REGION", "us-east-1")
+        llm = ChatBedrock(
+            model_id=config.BEDROCK_MODEL_ID,
+            region_name=region,
             model_kwargs={"temperature": 0, "max_tokens": 1024},
         )
-    return _llm
+    elif provider == "anthropic":
+        from langchain_anthropic import ChatAnthropic
+
+        llm = ChatAnthropic(model=config.ANTHROPIC_MODEL_ID, max_tokens=1024, max_retries=4)
+    else:
+        raise ValueError(f"Unknown LLM_PROVIDER {provider!r} (use 'bedrock' or 'anthropic')")
+
+    _llm[provider] = llm
+    return llm

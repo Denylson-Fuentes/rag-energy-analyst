@@ -1,16 +1,18 @@
 """
 Smoke test for the sidebar — run with:
-  streamlit run scripts/test_sidebar.py
+  streamlit run scripts/sidebar_smoke.py
 """
-import sys
 import os
+import sys
+
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 os.chdir(PROJECT_ROOT)
 sys.path.insert(0, PROJECT_ROOT)
 
 import streamlit as st
+
+from src.ui.rate_limit import increment_query_count, init_rate_limit
 from src.ui.sidebar import render_sidebar
-from src.ui.rate_limit import init_rate_limit, increment_query_count
 
 st.set_page_config(page_title="Sidebar Test", page_icon="⚡")
 init_rate_limit()

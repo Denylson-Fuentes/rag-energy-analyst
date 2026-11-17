@@ -1,15 +1,17 @@
 """
 EV charging prediction tool: runs the trained Random Forest model.
 """
-import sys
 import os
+import sys
+import threading
+
 import joblib
 import pandas as pd
+
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 sys.path.insert(0, PROJECT_ROOT)
 
 from langchain_core.tools import tool
-
 
 _model = None
 _ev_data = None
@@ -21,9 +23,14 @@ FEATURES = [
 ]
 
 
+_lock = threading.Lock()
+
+
 def load_assets():
     global _model, _ev_data
-    if _model is None:
+    with _lock:
+        if _model is not None:
+            return
         _model = joblib.load(os.path.join(PROJECT_ROOT, "models", "ev_grid_rf.pkl"))
         _ev_data = pd.read_csv(
             os.path.join(PROJECT_ROOT, "data", "raw", "ev_grid_features.csv"),
@@ -106,4 +113,4 @@ def list_available_grid_nodes() -> str:
             f"total energy {total_energy:.1f} kWh"
         )
 
-    return "Available grid nodes:\n" + "\n".join(lines)
+    return f"Available grid nodes ({len(lines)} total):\n" + "\n".join(lines)

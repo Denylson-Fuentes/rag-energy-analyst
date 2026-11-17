@@ -5,11 +5,6 @@ These verify that tools load their assets, accept valid inputs, and
 return non-empty strings. They do NOT test model accuracy — that's
 covered in the retraining scripts.
 """
-import sys
-import os
-
-PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-sys.path.insert(0, PROJECT_ROOT)
 
 
 def test_solar_forecast_returns_string():
@@ -50,7 +45,12 @@ def test_list_nodes_returns_all():
     assert "GRID_08A" in result
 
 
-def test_retrieval_returns_sources():
+def test_list_nodes_reports_count():
+    from src.tools.ev_prediction_tool import list_available_grid_nodes
+    assert "(10 total)" in list_available_grid_nodes.invoke({})
+
+
+def test_retrieval_returns_sources(vectorstore):
     from src.tools.retrieval_tool import search_energy_data
     result = search_energy_data.invoke({"query": "GRID_LV22 on 2020-08-11"})
     assert isinstance(result, str)

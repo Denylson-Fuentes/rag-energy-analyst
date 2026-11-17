@@ -39,9 +39,11 @@ def load_ev_grid_documents(csv_path: str) -> list[Document]:
 
         content = "\n".join(lines)
         metadata = {
+            "doc_id": f"ev_grid|{node}|{date}",
             "source": "ev_grid",
             "grid_node": node,
             "date": str(date),
+            "month": str(date)[:7],
             "total_energy_kwh": float(group['total_energy_kwh'].sum()),
             "n_hours": int(len(group)),
         }
@@ -84,9 +86,11 @@ def load_solar_documents(csv_path: str) -> list[Document]:
 
         content = "\n".join(lines)
         metadata = {
+            "doc_id": f"solar|{date}",
             "source": "solar",
             "location": "Palm Springs",
             "date": str(date),
+            "month": str(date)[:7],
             "peak_ghi": float(peak_ghi),
             "mean_cloud_cover": float(mean_cloud),
         }
