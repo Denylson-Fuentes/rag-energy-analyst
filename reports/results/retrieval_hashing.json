@@ -3,13 +3,13 @@
     "embeddings_backend": "hashing",
     "overall": {
       "semantic": {
-        "recall@1": 0.7136,
-        "recall@3": 0.8364,
-        "recall@5": 0.8773,
-        "recall@10": 0.8909,
-        "mrr": 0.8215,
+        "recall@1": 0.7,
+        "recall@3": 0.8182,
+        "recall@5": 0.8591,
+        "recall@10": 0.8727,
+        "mrr": 0.8033,
         "n": 110,
-        "p50_ms": 5.1
+        "p50_ms": 3.9
       },
       "hybrid_v1": {
         "recall@1": 0.8045,
@@ -18,7 +18,7 @@
         "recall@10": 0.8227,
         "mrr": 0.8768,
         "n": 110,
-        "p50_ms": 11.9
+        "p50_ms": 10.3
       },
       "hybrid_v2": {
         "recall@1": 0.9318,
@@ -27,7 +27,7 @@
         "recall@10": 1.0,
         "mrr": 1.0,
         "n": 110,
-        "p50_ms": 10.1
+        "p50_ms": 9.1
       }
     },
     "by_category": {
@@ -39,7 +39,7 @@
           "recall@10": 1.0,
           "mrr": 0.9667,
           "n": 30,
-          "p50_ms": 5.3
+          "p50_ms": 4.4
         },
         "ev_peak_hour": {
           "recall@1": 1.0,
@@ -48,16 +48,16 @@
           "recall@10": 1.0,
           "mrr": 1.0,
           "n": 15,
-          "p50_ms": 5.0
+          "p50_ms": 3.7
         },
         "solar_lookup": {
-          "recall@1": 0.8,
-          "recall@3": 0.96,
-          "recall@5": 1.0,
-          "recall@10": 1.0,
-          "mrr": 0.8833,
+          "recall@1": 0.76,
+          "recall@3": 0.92,
+          "recall@5": 0.96,
+          "recall@10": 0.96,
+          "mrr": 0.8433,
           "n": 25,
-          "p50_ms": 4.6
+          "p50_ms": 4.0
         },
         "solar_cloud": {
           "recall@1": 0.8,
@@ -66,7 +66,7 @@
           "recall@10": 1.0,
           "mrr": 0.8833,
           "n": 10,
-          "p50_ms": 4.3
+          "p50_ms": 3.7
         },
         "nl_date": {
           "recall@1": 0.0667,
@@ -75,16 +75,16 @@
           "recall@10": 0.2,
           "mrr": 0.0967,
           "n": 15,
-          "p50_ms": 5.2
+          "p50_ms": 3.8
         },
         "comparison": {
-          "recall@1": 0.4333,
-          "recall@3": 0.8,
-          "recall@5": 0.9,
-          "recall@10": 1.0,
-          "mrr": 0.9333,
+          "recall@1": 0.4,
+          "recall@3": 0.7333,
+          "recall@5": 0.8333,
+          "recall@10": 0.9333,
+          "mrr": 0.8667,
           "n": 15,
-          "p50_ms": 5.3
+          "p50_ms": 4.1
         }
       },
       "hybrid_v1": {
@@ -95,7 +95,7 @@
           "recall@10": 1.0,
           "mrr": 1.0,
           "n": 30,
-          "p50_ms": 14.6
+          "p50_ms": 11.8
         },
         "ev_peak_hour": {
           "recall@1": 1.0,
@@ -104,7 +104,7 @@
           "recall@10": 1.0,
           "mrr": 1.0,
           "n": 15,
-          "p50_ms": 11.8
+          "p50_ms": 12.1
         },
         "solar_lookup": {
           "recall@1": 1.0,
@@ -113,7 +113,7 @@
           "recall@10": 1.0,
           "mrr": 1.0,
           "n": 25,
-          "p50_ms": 10.6
+          "p50_ms": 9.3
         },
         "solar_cloud": {
           "recall@1": 1.0,
@@ -122,7 +122,7 @@
           "recall@10": 1.0,
           "mrr": 1.0,
           "n": 10,
-          "p50_ms": 11.2
+          "p50_ms": 8.8
         },
         "nl_date": {
           "recall@1": 0.0667,
@@ -131,7 +131,7 @@
           "recall@10": 0.2,
           "mrr": 0.0967,
           "n": 15,
-          "p50_ms": 8.4
+          "p50_ms": 9.3
         },
         "comparison": {
           "recall@1": 0.5,
@@ -140,7 +140,7 @@
           "recall@10": 0.5,
           "mrr": 1.0,
           "n": 15,
-          "p50_ms": 13.1
+          "p50_ms": 10.3
         }
       },
       "hybrid_v2": {
@@ -151,7 +151,7 @@
           "recall@10": 1.0,
           "mrr": 1.0,
           "n": 30,
-          "p50_ms": 11.1
+          "p50_ms": 10.2
         },
         "ev_peak_hour": {
           "recall@1": 1.0,
@@ -160,7 +160,7 @@
           "recall@10": 1.0,
           "mrr": 1.0,
           "n": 15,
-          "p50_ms": 11.0
+          "p50_ms": 9.0
         },
         "solar_lookup": {
           "recall@1": 1.0,
@@ -169,7 +169,7 @@
           "recall@10": 1.0,
           "mrr": 1.0,
           "n": 25,
-          "p50_ms": 8.1
+          "p50_ms": 7.2
         },
         "solar_cloud": {
           "recall@1": 1.0,
@@ -178,7 +178,7 @@
           "recall@10": 1.0,
           "mrr": 1.0,
           "n": 10,
-          "p50_ms": 8.0
+          "p50_ms": 7.8
         },
         "nl_date": {
           "recall@1": 1.0,
@@ -187,7 +187,7 @@
           "recall@10": 1.0,
           "mrr": 1.0,
           "n": 15,
-          "p50_ms": 9.0
+          "p50_ms": 9.5
         },
         "comparison": {
           "recall@1": 0.5,
@@ -196,7 +196,7 @@
           "recall@10": 1.0,
           "mrr": 1.0,
           "n": 15,
-          "p50_ms": 10.5
+          "p50_ms": 9.1
         }
       }
     }
@@ -206,7 +206,7 @@
       "retriever": "semantic",
       "id": "q001",
       "category": "ev_lookup",
-      "ms": 51.434889999882216,
+      "ms": 68.66525700002057,
       "ranked": [
         "ev_grid|GRID_04A|2019-05-06",
         "ev_grid|GRID_04A|2019-05-08",
@@ -229,7 +229,7 @@
       "retriever": "semantic",
       "id": "q002",
       "category": "ev_lookup",
-      "ms": 6.918533000089155,
+      "ms": 5.229037999924913,
       "ranked": [
         "ev_grid|GRID_05A|2020-01-30",
         "ev_grid|GRID_05A|2020-01-31",
@@ -252,7 +252,7 @@
       "retriever": "semantic",
       "id": "q003",
       "category": "ev_lookup",
-      "ms": 4.93970000002264,
+      "ms": 4.601481000008789,
       "ranked": [
         "ev_grid|GRID_07A|2020-02-24",
         "ev_grid|GRID_07A|2020-02-21",
@@ -275,7 +275,7 @@
       "retriever": "semantic",
       "id": "q004",
       "category": "ev_lookup",
-      "ms": 5.5474759999469825,
+      "ms": 5.026225999927192,
       "ranked": [
         "ev_grid|GRID_08A|2021-05-06",
         "ev_grid|GRID_08A|2021-05-03",
@@ -298,7 +298,7 @@
       "retriever": "semantic",
       "id": "q005",
       "category": "ev_lookup",
-      "ms": 6.428088999882675,
+      "ms": 4.474915999935547,
       "ranked": [
         "ev_grid|GRID_LV11|2021-07-21",
         "ev_grid|GRID_LV11|2021-07-20",
@@ -321,7 +321,7 @@
       "retriever": "semantic",
       "id": "q006",
       "category": "ev_lookup",
-      "ms": 5.052357000067786,
+      "ms": 4.413872999975865,
       "ranked": [
         "ev_grid|GRID_LV21|2021-08-23",
         "ev_grid|GRID_LV21|2021-08-24",
@@ -344,7 +344,7 @@
       "retriever": "semantic",
       "id": "q007",
       "category": "ev_lookup",
-      "ms": 5.283606999910262,
+      "ms": 3.9994179999212065,
       "ranked": [
         "ev_grid|GRID_LV22|2020-12-11",
         "ev_grid|GRID_LV22|2020-12-10",
@@ -367,7 +367,7 @@
       "retriever": "semantic",
       "id": "q008",
       "category": "ev_lookup",
-      "ms": 5.091746000061903,
+      "ms": 3.448696000077689,
       "ranked": [
         "ev_grid|GRID_LV23|2019-09-26",
         "ev_grid|GRID_LV23|2019-09-27",
@@ -390,7 +390,7 @@
       "retriever": "semantic",
       "id": "q009",
       "category": "ev_lookup",
-      "ms": 5.757343999903242,
+      "ms": 3.710640000008425,
       "ranked": [
         "ev_grid|GRID_LV31|2021-10-08",
         "ev_grid|GRID_LV31|2021-10-07",
@@ -413,7 +413,7 @@
       "retriever": "semantic",
       "id": "q010",
       "category": "ev_lookup",
-      "ms": 5.069263999985196,
+      "ms": 3.263380999896981,
       "ranked": [
         "ev_grid|GRID_OTHER|2020-01-21",
         "ev_grid|GRID_OTHER|2020-01-29",
@@ -436,7 +436,7 @@
       "retriever": "semantic",
       "id": "q011",
       "category": "ev_lookup",
-      "ms": 4.719565999948827,
+      "ms": 3.660758000023634,
       "ranked": [
         "ev_grid|GRID_04A|2020-02-17",
         "ev_grid|GRID_04A|2020-02-10",
@@ -459,7 +459,7 @@
       "retriever": "semantic",
       "id": "q012",
       "category": "ev_lookup",
-      "ms": 5.4553120000946365,
+      "ms": 3.895280000051571,
       "ranked": [
         "ev_grid|GRID_05A|2019-12-02",
         "ev_grid|GRID_05A|2019-12-06",
@@ -482,7 +482,7 @@
       "retriever": "semantic",
       "id": "q013",
       "category": "ev_lookup",
-      "ms": 4.694839000194406,
+      "ms": 3.7477179998859356,
       "ranked": [
         "ev_grid|GRID_07A|2020-01-29",
         "ev_grid|GRID_07A|2020-01-22",
@@ -505,7 +505,7 @@
       "retriever": "semantic",
       "id": "q014",
       "category": "ev_lookup",
-      "ms": 5.631698000115648,
+      "ms": 4.066024999929141,
       "ranked": [
         "ev_grid|GRID_08A|2021-09-22",
         "ev_grid|GRID_08A|2021-09-27",
@@ -528,7 +528,7 @@
       "retriever": "semantic",
       "id": "q015",
       "category": "ev_lookup",
-      "ms": 5.421719999958441,
+      "ms": 4.110343000093053,
       "ranked": [
         "ev_grid|GRID_LV11|2021-07-30",
         "ev_grid|GRID_LV11|2021-07-31",
@@ -551,7 +551,7 @@
       "retriever": "semantic",
       "id": "q016",
       "category": "ev_lookup",
-      "ms": 4.92936900013774,
+      "ms": 4.371202000129415,
       "ranked": [
         "ev_grid|GRID_LV21|2019-11-19",
         "ev_grid|GRID_LV21|2019-11-12",
@@ -574,7 +574,7 @@
       "retriever": "semantic",
       "id": "q017",
       "category": "ev_lookup",
-      "ms": 5.290237999815872,
+      "ms": 3.9701799998965726,
       "ranked": [
         "ev_grid|GRID_LV22|2020-03-16",
         "ev_grid|GRID_LV22|2020-03-14",
@@ -597,7 +597,7 @@
       "retriever": "semantic",
       "id": "q018",
       "category": "ev_lookup",
-      "ms": 6.064723999998023,
+      "ms": 4.034646000036446,
       "ranked": [
         "ev_grid|GRID_LV23|2019-08-12",
         "ev_grid|GRID_LV23|2019-08-15",
@@ -620,7 +620,7 @@
       "retriever": "semantic",
       "id": "q019",
       "category": "ev_lookup",
-      "ms": 5.263688000013644,
+      "ms": 4.434894000041822,
       "ranked": [
         "ev_grid|GRID_LV31|2021-04-23",
         "ev_grid|GRID_LV31|2021-04-21",
@@ -643,7 +643,7 @@
       "retriever": "semantic",
       "id": "q020",
       "category": "ev_lookup",
-      "ms": 4.980609999847729,
+      "ms": 5.155215000058888,
       "ranked": [
         "ev_grid|GRID_OTHER|2019-10-30",
         "ev_grid|GRID_OTHER|2019-10-31",
@@ -666,7 +666,7 @@
       "retriever": "semantic",
       "id": "q021",
       "category": "ev_lookup",
-      "ms": 5.858032000105595,
+      "ms": 5.1291390000187675,
       "ranked": [
         "ev_grid|GRID_04A|2019-04-02",
         "ev_grid|GRID_04A|2019-04-05",
@@ -689,7 +689,7 @@
       "retriever": "semantic",
       "id": "q022",
       "category": "ev_lookup",
-      "ms": 5.54114200008371,
+      "ms": 4.615402999888829,
       "ranked": [
         "ev_grid|GRID_05A|2019-09-24",
         "ev_grid|GRID_05A|2019-09-23",
@@ -712,7 +712,7 @@
       "retriever": "semantic",
       "id": "q023",
       "category": "ev_lookup",
-      "ms": 5.999739999879239,
+      "ms": 4.455112999949051,
       "ranked": [
         "ev_grid|GRID_07A|2019-12-10",
         "ev_grid|GRID_07A|2019-12-17",
@@ -735,7 +735,7 @@
       "retriever": "semantic",
       "id": "q024",
       "category": "ev_lookup",
-      "ms": 4.6745029999328835,
+      "ms": 4.475599999977931,
       "ranked": [
         "ev_grid|GRID_08A|2019-06-20",
         "ev_grid|GRID_08A|2019-06-28",
@@ -758,7 +758,7 @@
       "retriever": "semantic",
       "id": "q025",
       "category": "ev_lookup",
-      "ms": 4.584741999906328,
+      "ms": 4.385481000099389,
       "ranked": [
         "ev_grid|GRID_LV11|2019-10-18",
         "ev_grid|GRID_LV11|2019-10-17",
@@ -781,7 +781,7 @@
       "retriever": "semantic",
       "id": "q026",
       "category": "ev_lookup",
-      "ms": 4.338553000025058,
+      "ms": 4.262939999989612,
       "ranked": [
         "ev_grid|GRID_LV21|2019-11-15",
         "ev_grid|GRID_LV21|2019-11-16",
@@ -804,7 +804,7 @@
       "retriever": "semantic",
       "id": "q027",
       "category": "ev_lookup",
-      "ms": 5.129003999854831,
+      "ms": 4.607563000035952,
       "ranked": [
         "ev_grid|GRID_LV22|2021-07-17",
         "ev_grid|GRID_LV22|2021-07-12",
@@ -827,7 +827,7 @@
       "retriever": "semantic",
       "id": "q028",
       "category": "ev_lookup",
-      "ms": 4.761715999848093,
+      "ms": 3.5453299999517185,
       "ranked": [
         "ev_grid|GRID_LV23|2019-08-14",
         "ev_grid|GRID_LV23|2019-08-16",
@@ -850,7 +850,7 @@
       "retriever": "semantic",
       "id": "q029",
       "category": "ev_lookup",
-      "ms": 5.36002500007271,
+      "ms": 3.440898000008019,
       "ranked": [
         "ev_grid|GRID_LV31|2020-09-02",
         "ev_grid|GRID_LV31|2020-09-09",
@@ -873,7 +873,7 @@
       "retriever": "semantic",
       "id": "q030",
       "category": "ev_lookup",
-      "ms": 5.333065000058923,
+      "ms": 4.045031000032395,
       "ranked": [
         "ev_grid|GRID_OTHER|2020-02-11",
         "ev_grid|GRID_OTHER|2020-02-12",
@@ -896,7 +896,7 @@
       "retriever": "semantic",
       "id": "q031",
       "category": "ev_peak_hour",
-      "ms": 5.106544999989637,
+      "ms": 3.8420589999077492,
       "ranked": [
         "ev_grid|GRID_LV31|2019-09-30",
         "ev_grid|GRID_LV31|2019-09-23",
@@ -919,7 +919,7 @@
       "retriever": "semantic",
       "id": "q032",
       "category": "ev_peak_hour",
-      "ms": 4.836900000100286,
+      "ms": 4.2462399999294576,
       "ranked": [
         "ev_grid|GRID_LV22|2020-10-20",
         "ev_grid|GRID_LV22|2020-10-22",
@@ -942,7 +942,7 @@
       "retriever": "semantic",
       "id": "q033",
       "category": "ev_peak_hour",
-      "ms": 4.6081450000201585,
+      "ms": 3.8870070000029955,
       "ranked": [
         "ev_grid|GRID_OTHER|2019-07-18",
         "ev_grid|GRID_OTHER|2019-07-23",
@@ -965,7 +965,7 @@
       "retriever": "semantic",
       "id": "q034",
       "category": "ev_peak_hour",
-      "ms": 4.484623000053034,
+      "ms": 3.726052000047275,
       "ranked": [
         "ev_grid|GRID_OTHER|2019-07-25",
         "ev_grid|GRID_OTHER|2019-07-23",
@@ -988,7 +988,7 @@
       "retriever": "semantic",
       "id": "q035",
       "category": "ev_peak_hour",
-      "ms": 4.7964339998998184,
+      "ms": 3.1434859999990294,
       "ranked": [
         "ev_grid|GRID_LV21|2019-06-07",
         "ev_grid|GRID_LV21|2019-06-03",
@@ -1011,7 +1011,7 @@
       "retriever": "semantic",
       "id": "q036",
       "category": "ev_peak_hour",
-      "ms": 4.6209289998842,
+      "ms": 3.5065060001215898,
       "ranked": [
         "ev_grid|GRID_LV23|2019-08-30",
         "ev_grid|GRID_LV23|2019-08-12",
@@ -1034,7 +1034,7 @@
       "retriever": "semantic",
       "id": "q037",
       "category": "ev_peak_hour",
-      "ms": 4.792748999989271,
+      "ms": 3.7694009999995615,
       "ranked": [
         "ev_grid|GRID_LV22|2020-12-10",
         "ev_grid|GRID_LV22|2020-12-11",
@@ -1057,7 +1057,7 @@
       "retriever": "semantic",
       "id": "q038",
       "category": "ev_peak_hour",
-      "ms": 5.090142000199194,
+      "ms": 3.6661209999238054,
       "ranked": [
         "ev_grid|GRID_LV11|2020-10-15",
         "ev_grid|GRID_LV11|2020-10-10",
@@ -1080,7 +1080,7 @@
       "retriever": "semantic",
       "id": "q039",
       "category": "ev_peak_hour",
-      "ms": 5.347076999896672,
+      "ms": 3.692709000006289,
       "ranked": [
         "ev_grid|GRID_08A|2020-02-20",
         "ev_grid|GRID_08A|2020-02-25",
@@ -1103,7 +1103,7 @@
       "retriever": "semantic",
       "id": "q040",
       "category": "ev_peak_hour",
-      "ms": 5.267924999998286,
+      "ms": 3.668082000103823,
       "ranked": [
         "ev_grid|GRID_LV11|2020-06-03",
         "ev_grid|GRID_LV11|2020-06-08",
@@ -1126,7 +1126,7 @@
       "retriever": "semantic",
       "id": "q041",
       "category": "ev_peak_hour",
-      "ms": 5.032002000007196,
+      "ms": 3.450529999781793,
       "ranked": [
         "ev_grid|GRID_LV21|2019-11-05",
         "ev_grid|GRID_LV21|2019-11-08",
@@ -1149,7 +1149,7 @@
       "retriever": "semantic",
       "id": "q042",
       "category": "ev_peak_hour",
-      "ms": 5.137372000035612,
+      "ms": 3.309495999928913,
       "ranked": [
         "ev_grid|GRID_LV21|2019-10-08",
         "ev_grid|GRID_LV21|2019-10-05",
@@ -1172,7 +1172,7 @@
       "retriever": "semantic",
       "id": "q043",
       "category": "ev_peak_hour",
-      "ms": 5.204347000017151,
+      "ms": 3.3663320000414387,
       "ranked": [
         "ev_grid|GRID_LV22|2020-05-27",
         "ev_grid|GRID_LV22|2020-05-22",
@@ -1195,7 +1195,7 @@
       "retriever": "semantic",
       "id": "q044",
       "category": "ev_peak_hour",
-      "ms": 5.239790999894467,
+      "ms": 3.39677700003449,
       "ranked": [
         "ev_grid|GRID_LV11|2021-04-14",
         "ev_grid|GRID_LV11|2021-04-16",
@@ -1218,7 +1218,7 @@
       "retriever": "semantic",
       "id": "q045",
       "category": "ev_peak_hour",
-      "ms": 4.575355000042691,
+      "ms": 3.219756000135021,
       "ranked": [
         "ev_grid|GRID_LV21|2019-08-30",
         "ev_grid|GRID_LV23|2019-08-30",
@@ -1229,7 +1229,7 @@
         "ev_grid|GRID_LV21|2019-08-07",
         "ev_grid|GRID_LV21|2019-08-19",
         "ev_grid|GRID_LV21|2019-08-06",
-        "ev_grid|GRID_LV21|2019-08-09"
+        "ev_grid|GRID_LV21|2019-08-21"
       ],
       "recall@1": 1.0,
       "recall@3": 1.0,
@@ -1241,7 +1241,7 @@
       "retriever": "semantic",
       "id": "q046",
       "category": "solar_lookup",
-      "ms": 4.6372589999919,
+      "ms": 4.307908999862775,
       "ranked": [
         "solar|2023-02-01",
         "solar|2023-02-02",
@@ -1264,7 +1264,7 @@
       "retriever": "semantic",
       "id": "q047",
       "category": "solar_lookup",
-      "ms": 6.116567999924882,
+      "ms": 4.2348420001872,
       "ranked": [
         "solar|2023-09-12",
         "solar|2023-09-11",
@@ -1287,7 +1287,7 @@
       "retriever": "semantic",
       "id": "q048",
       "category": "solar_lookup",
-      "ms": 5.947832000174458,
+      "ms": 4.329381999923498,
       "ranked": [
         "solar|2023-10-30",
         "solar|2023-10-31",
@@ -1310,7 +1310,7 @@
       "retriever": "semantic",
       "id": "q049",
       "category": "solar_lookup",
-      "ms": 5.3682019999996555,
+      "ms": 4.451113999948575,
       "ranked": [
         "solar|2023-12-05",
         "solar|2023-12-06",
@@ -1333,7 +1333,7 @@
       "retriever": "semantic",
       "id": "q050",
       "category": "solar_lookup",
-      "ms": 4.981305000001157,
+      "ms": 4.058492000012848,
       "ranked": [
         "solar|2023-05-04",
         "solar|2023-05-07",
@@ -1356,7 +1356,7 @@
       "retriever": "semantic",
       "id": "q051",
       "category": "solar_lookup",
-      "ms": 5.548274000148012,
+      "ms": 3.635396999925433,
       "ranked": [
         "solar|2023-12-02",
         "solar|2023-12-04",
@@ -1379,7 +1379,7 @@
       "retriever": "semantic",
       "id": "q052",
       "category": "solar_lookup",
-      "ms": 4.6544409999569325,
+      "ms": 4.389085999946474,
       "ranked": [
         "solar|2023-06-22",
         "solar|2023-06-06",
@@ -1402,7 +1402,7 @@
       "retriever": "semantic",
       "id": "q053",
       "category": "solar_lookup",
-      "ms": 4.578612999921461,
+      "ms": 3.438931000118828,
       "ranked": [
         "solar|2023-09-17",
         "solar|2023-09-19",
@@ -1425,30 +1425,30 @@
       "retriever": "semantic",
       "id": "q054",
       "category": "solar_lookup",
-      "ms": 4.698026999903959,
+      "ms": 4.391165000015462,
       "ranked": [
-        "solar|2023-02-06",
-        "solar|2023-02-02",
-        "solar|2023-02-01",
-        "solar|2023-02-04",
-        "solar|2023-02-07",
-        "solar|2023-02-09",
-        "solar|2023-02-08",
-        "solar|2023-02-27",
-        "solar|2023-02-26",
-        "solar|2023-02-05"
+        "ev_grid|GRID_LV11|2020-02-06",
+        "ev_grid|GRID_OTHER|2020-02-06",
+        "ev_grid|GRID_08A|2020-02-06",
+        "ev_grid|GRID_07A|2020-02-06",
+        "ev_grid|GRID_05A|2020-02-06",
+        "ev_grid|GRID_LV22|2020-02-06",
+        "ev_grid|GRID_LV11|2021-02-06",
+        "ev_grid|GRID_LV31|2020-02-06",
+        "ev_grid|GRID_LV21|2020-02-06",
+        "ev_grid|GRID_LV22|2020-02-04"
       ],
-      "recall@1": 1.0,
-      "recall@3": 1.0,
-      "recall@5": 1.0,
-      "recall@10": 1.0,
-      "mrr": 1.0
+      "recall@1": 0.0,
+      "recall@3": 0.0,
+      "recall@5": 0.0,
+      "recall@10": 0.0,
+      "mrr": 0.0
     },
     {
       "retriever": "semantic",
       "id": "q055",
       "category": "solar_lookup",
-      "ms": 4.069699000183391,
+      "ms": 4.161889999977575,
       "ranked": [
         "solar|2023-04-03",
         "solar|2023-04-07",
@@ -1471,7 +1471,7 @@
       "retriever": "semantic",
       "id": "q056",
       "category": "solar_lookup",
-      "ms": 4.488564999974187,
+      "ms": 3.789365999864458,
       "ranked": [
         "solar|2023-08-07",
         "solar|2023-08-02",
@@ -1494,7 +1494,7 @@
       "retriever": "semantic",
       "id": "q057",
       "category": "solar_lookup",
-      "ms": 4.356300000154079,
+      "ms": 5.342122000001837,
       "ranked": [
         "solar|2023-10-24",
         "solar|2023-10-26",
@@ -1517,7 +1517,7 @@
       "retriever": "semantic",
       "id": "q058",
       "category": "solar_lookup",
-      "ms": 3.612540999938574,
+      "ms": 5.066290000058871,
       "ranked": [
         "solar|2023-12-23",
         "solar|2023-12-28",
@@ -1540,7 +1540,7 @@
       "retriever": "semantic",
       "id": "q059",
       "category": "solar_lookup",
-      "ms": 4.314260999990438,
+      "ms": 3.5015280000152416,
       "ranked": [
         "solar|2023-08-24",
         "solar|2023-08-21",
@@ -1563,7 +1563,7 @@
       "retriever": "semantic",
       "id": "q060",
       "category": "solar_lookup",
-      "ms": 4.298750999851109,
+      "ms": 3.9825449998716067,
       "ranked": [
         "solar|2023-03-30",
         "solar|2023-03-31",
@@ -1586,7 +1586,7 @@
       "retriever": "semantic",
       "id": "q061",
       "category": "solar_lookup",
-      "ms": 4.969778000031511,
+      "ms": 3.2476050000695977,
       "ranked": [
         "solar|2023-01-18",
         "solar|2023-01-19",
@@ -1609,7 +1609,7 @@
       "retriever": "semantic",
       "id": "q062",
       "category": "solar_lookup",
-      "ms": 4.343374000200129,
+      "ms": 7.033674000012979,
       "ranked": [
         "solar|2023-08-05",
         "solar|2023-08-07",
@@ -1632,7 +1632,7 @@
       "retriever": "semantic",
       "id": "q063",
       "category": "solar_lookup",
-      "ms": 4.13656700015963,
+      "ms": 3.9139220000379282,
       "ranked": [
         "solar|2023-09-14",
         "solar|2023-09-12",
@@ -1655,7 +1655,7 @@
       "retriever": "semantic",
       "id": "q064",
       "category": "solar_lookup",
-      "ms": 4.561168000009275,
+      "ms": 3.5167700000329205,
       "ranked": [
         "solar|2023-09-09",
         "solar|2023-09-27",
@@ -1678,7 +1678,7 @@
       "retriever": "semantic",
       "id": "q065",
       "category": "solar_lookup",
-      "ms": 4.4628400000874535,
+      "ms": 3.258172999949238,
       "ranked": [
         "solar|2023-12-27",
         "solar|2023-12-20",
@@ -1701,7 +1701,7 @@
       "retriever": "semantic",
       "id": "q066",
       "category": "solar_lookup",
-      "ms": 4.096656999990955,
+      "ms": 2.963674000056926,
       "ranked": [
         "solar|2023-09-08",
         "solar|2023-09-04",
@@ -1724,7 +1724,7 @@
       "retriever": "semantic",
       "id": "q067",
       "category": "solar_lookup",
-      "ms": 5.075175999991188,
+      "ms": 3.1669420000071113,
       "ranked": [
         "solar|2023-09-07",
         "solar|2023-09-09",
@@ -1747,7 +1747,7 @@
       "retriever": "semantic",
       "id": "q068",
       "category": "solar_lookup",
-      "ms": 5.894209999951272,
+      "ms": 3.4533440000359406,
       "ranked": [
         "solar|2023-09-09",
         "solar|2023-09-01",
@@ -1770,7 +1770,7 @@
       "retriever": "semantic",
       "id": "q069",
       "category": "solar_lookup",
-      "ms": 4.2478290001781716,
+      "ms": 3.997725000090213,
       "ranked": [
         "solar|2023-05-09",
         "solar|2023-05-07",
@@ -1793,7 +1793,7 @@
       "retriever": "semantic",
       "id": "q070",
       "category": "solar_lookup",
-      "ms": 4.739938000057009,
+      "ms": 3.3528920000662765,
       "ranked": [
         "solar|2023-06-15",
         "solar|2023-06-18",
@@ -1816,7 +1816,7 @@
       "retriever": "semantic",
       "id": "q071",
       "category": "solar_cloud",
-      "ms": 4.9394910001865355,
+      "ms": 4.1978080000717455,
       "ranked": [
         "solar|2023-02-04",
         "solar|2023-02-05",
@@ -1839,7 +1839,7 @@
       "retriever": "semantic",
       "id": "q072",
       "category": "solar_cloud",
-      "ms": 4.264772999931665,
+      "ms": 3.807022000046345,
       "ranked": [
         "solar|2023-05-19",
         "solar|2023-05-13",
@@ -1862,7 +1862,7 @@
       "retriever": "semantic",
       "id": "q073",
       "category": "solar_cloud",
-      "ms": 4.163229999903706,
+      "ms": 3.0800530000760773,
       "ranked": [
         "solar|2023-08-30",
         "solar|2023-08-31",
@@ -1885,7 +1885,7 @@
       "retriever": "semantic",
       "id": "q074",
       "category": "solar_cloud",
-      "ms": 4.171400999894104,
+      "ms": 3.9273419999972248,
       "ranked": [
         "solar|2023-11-25",
         "solar|2023-11-22",
@@ -1908,7 +1908,7 @@
       "retriever": "semantic",
       "id": "q075",
       "category": "solar_cloud",
-      "ms": 4.173508999883779,
+      "ms": 3.4180039999682776,
       "ranked": [
         "solar|2023-02-10",
         "solar|2023-02-11",
@@ -1931,7 +1931,7 @@
       "retriever": "semantic",
       "id": "q076",
       "category": "solar_cloud",
-      "ms": 4.240849999860075,
+      "ms": 4.19124599989118,
       "ranked": [
         "solar|2023-02-02",
         "solar|2023-02-27",
@@ -1954,7 +1954,7 @@
       "retriever": "semantic",
       "id": "q077",
       "category": "solar_cloud",
-      "ms": 5.005235999988145,
+      "ms": 3.1141709998792066,
       "ranked": [
         "solar|2023-08-29",
         "solar|2023-08-26",
@@ -1977,7 +1977,7 @@
       "retriever": "semantic",
       "id": "q078",
       "category": "solar_cloud",
-      "ms": 3.828529999964303,
+      "ms": 2.941269999837459,
       "ranked": [
         "solar|2023-04-18",
         "solar|2023-04-17",
@@ -2000,7 +2000,7 @@
       "retriever": "semantic",
       "id": "q079",
       "category": "solar_cloud",
-      "ms": 4.762424999853465,
+      "ms": 3.7457359999280015,
       "ranked": [
         "solar|2023-04-20",
         "solar|2023-04-27",
@@ -2023,7 +2023,7 @@
       "retriever": "semantic",
       "id": "q080",
       "category": "solar_cloud",
-      "ms": 5.22261600008278,
+      "ms": 3.5750869999446877,
       "ranked": [
         "solar|2023-07-31",
         "solar|2023-07-30",
@@ -2046,7 +2046,7 @@
       "retriever": "semantic",
       "id": "q081",
       "category": "nl_date",
-      "ms": 5.895443999861527,
+      "ms": 4.280762999997023,
       "ranked": [
         "ev_grid|GRID_04A|2020-02-17",
         "ev_grid|GRID_04A|2020-03-12",
@@ -2069,7 +2069,7 @@
       "retriever": "semantic",
       "id": "q082",
       "category": "nl_date",
-      "ms": 5.8396530000663915,
+      "ms": 4.115535999972053,
       "ranked": [
         "ev_grid|GRID_05A|2020-03-01",
         "ev_grid|GRID_05A|2020-01-17",
@@ -2092,7 +2092,7 @@
       "retriever": "semantic",
       "id": "q083",
       "category": "nl_date",
-      "ms": 5.291983000006439,
+      "ms": 4.168259999914881,
       "ranked": [
         "ev_grid|GRID_07A|2020-12-10",
         "ev_grid|GRID_07A|2021-08-31",
@@ -2115,7 +2115,7 @@
       "retriever": "semantic",
       "id": "q084",
       "category": "nl_date",
-      "ms": 5.111059999990175,
+      "ms": 3.757034000045678,
       "ranked": [
         "ev_grid|GRID_08A|2020-07-27",
         "ev_grid|GRID_08A|2020-11-10",
@@ -2138,7 +2138,7 @@
       "retriever": "semantic",
       "id": "q085",
       "category": "nl_date",
-      "ms": 4.834677999951964,
+      "ms": 3.883226999960243,
       "ranked": [
         "ev_grid|GRID_LV11|2020-09-08",
         "ev_grid|GRID_LV11|2020-02-28",
@@ -2161,7 +2161,7 @@
       "retriever": "semantic",
       "id": "q086",
       "category": "nl_date",
-      "ms": 5.204967000054239,
+      "ms": 3.746619999901668,
       "ranked": [
         "ev_grid|GRID_LV21|2020-07-27",
         "ev_grid|GRID_LV21|2020-07-20",
@@ -2184,7 +2184,7 @@
       "retriever": "semantic",
       "id": "q087",
       "category": "nl_date",
-      "ms": 5.438550000008036,
+      "ms": 3.6314000001311797,
       "ranked": [
         "ev_grid|GRID_LV22|2020-09-27",
         "ev_grid|GRID_LV22|2020-09-02",
@@ -2207,7 +2207,7 @@
       "retriever": "semantic",
       "id": "q088",
       "category": "nl_date",
-      "ms": 5.345922000060455,
+      "ms": 3.798435999897265,
       "ranked": [
         "ev_grid|GRID_LV23|2019-10-25",
         "ev_grid|GRID_LV23|2019-10-28",
@@ -2230,7 +2230,7 @@
       "retriever": "semantic",
       "id": "q089",
       "category": "nl_date",
-      "ms": 5.674172999988514,
+      "ms": 3.449345000035464,
       "ranked": [
         "solar|2023-12-19",
         "solar|2023-01-19",
@@ -2253,7 +2253,7 @@
       "retriever": "semantic",
       "id": "q090",
       "category": "nl_date",
-      "ms": 4.816583999854629,
+      "ms": 3.8770689998273156,
       "ranked": [
         "solar|2023-07-02",
         "solar|2023-02-11",
@@ -2276,7 +2276,7 @@
       "retriever": "semantic",
       "id": "q091",
       "category": "nl_date",
-      "ms": 4.800169999953141,
+      "ms": 4.2729479998797615,
       "ranked": [
         "solar|2023-12-27",
         "solar|2023-11-13",
@@ -2299,18 +2299,18 @@
       "retriever": "semantic",
       "id": "q092",
       "category": "nl_date",
-      "ms": 4.765653999811548,
+      "ms": 3.556550999974206,
       "ranked": [
         "solar|2023-07-02",
         "solar|2023-02-11",
         "solar|2023-07-25",
         "solar|2023-08-14",
+        "solar|2023-05-25",
         "solar|2023-02-26",
         "solar|2023-03-25",
         "solar|2023-09-27",
         "solar|2023-01-26",
-        "solar|2023-01-19",
-        "solar|2023-12-27"
+        "solar|2023-01-19"
       ],
       "recall@1": 0.0,
       "recall@3": 0.0,
@@ -2322,7 +2322,7 @@
       "retriever": "semantic",
       "id": "q093",
       "category": "nl_date",
-      "ms": 5.103985000005196,
+      "ms": 3.6203789998126013,
       "ranked": [
         "solar|2023-07-02",
         "solar|2023-01-26",
@@ -2345,7 +2345,7 @@
       "retriever": "semantic",
       "id": "q094",
       "category": "nl_date",
-      "ms": 4.843125000206783,
+      "ms": 3.8329320000229927,
       "ranked": [
         "solar|2023-07-02",
         "solar|2023-02-11",
@@ -2368,7 +2368,7 @@
       "retriever": "semantic",
       "id": "q095",
       "category": "nl_date",
-      "ms": 5.247764999921856,
+      "ms": 3.066286999910517,
       "ranked": [
         "solar|2023-01-30",
         "solar|2023-11-13",
@@ -2391,7 +2391,7 @@
       "retriever": "semantic",
       "id": "q096",
       "category": "comparison",
-      "ms": 7.025043000112419,
+      "ms": 3.666414999997869,
       "ranked": [
         "ev_grid|GRID_05A|2019-09-09",
         "ev_grid|GRID_05A|2019-09-17",
@@ -2414,7 +2414,7 @@
       "retriever": "semantic",
       "id": "q097",
       "category": "comparison",
-      "ms": 5.329344999836394,
+      "ms": 4.031854999993811,
       "ranked": [
         "ev_grid|GRID_07A|2019-04-15",
         "ev_grid|GRID_07A|2020-12-10",
@@ -2437,7 +2437,7 @@
       "retriever": "semantic",
       "id": "q098",
       "category": "comparison",
-      "ms": 5.438679000008051,
+      "ms": 3.9023160002216173,
       "ranked": [
         "ev_grid|GRID_08A|2021-08-23",
         "ev_grid|GRID_08A|2019-08-23",
@@ -2460,7 +2460,7 @@
       "retriever": "semantic",
       "id": "q099",
       "category": "comparison",
-      "ms": 6.002110000054017,
+      "ms": 4.130496000016137,
       "ranked": [
         "ev_grid|GRID_LV11|2021-01-11",
         "ev_grid|GRID_LV11|2020-01-11",
@@ -2483,7 +2483,7 @@
       "retriever": "semantic",
       "id": "q100",
       "category": "comparison",
-      "ms": 11.263385999882303,
+      "ms": 4.549418000124206,
       "ranked": [
         "ev_grid|GRID_LV21|2020-01-17",
         "ev_grid|GRID_LV21|2019-08-07",
@@ -2506,7 +2506,7 @@
       "retriever": "semantic",
       "id": "q101",
       "category": "comparison",
-      "ms": 6.168215999878157,
+      "ms": 3.6279159999139665,
       "ranked": [
         "ev_grid|GRID_LV22|2020-01-26",
         "ev_grid|GRID_LV22|2021-03-24",
@@ -2529,7 +2529,7 @@
       "retriever": "semantic",
       "id": "q102",
       "category": "comparison",
-      "ms": 5.527156999960425,
+      "ms": 5.2880860000641405,
       "ranked": [
         "ev_grid|GRID_LV31|2021-09-29",
         "ev_grid|GRID_LV31|2020-11-18",
@@ -2552,7 +2552,7 @@
       "retriever": "semantic",
       "id": "q103",
       "category": "comparison",
-      "ms": 5.222785000114527,
+      "ms": 6.212755999968067,
       "ranked": [
         "ev_grid|GRID_OTHER|2021-01-04",
         "ev_grid|GRID_OTHER|2019-04-26",
@@ -2575,7 +2575,7 @@
       "retriever": "semantic",
       "id": "q104",
       "category": "comparison",
-      "ms": 5.055382000136888,
+      "ms": 4.772345999981553,
       "ranked": [
         "solar|2023-05-03",
         "solar|2023-03-03",
@@ -2598,7 +2598,7 @@
       "retriever": "semantic",
       "id": "q105",
       "category": "comparison",
-      "ms": 4.8077040000862326,
+      "ms": 4.073904000051698,
       "ranked": [
         "solar|2023-07-27",
         "solar|2023-07-23",
@@ -2621,30 +2621,30 @@
       "retriever": "semantic",
       "id": "q106",
       "category": "comparison",
-      "ms": 4.743158999872321,
+      "ms": 4.40995799999655,
       "ranked": [
-        "solar|2023-05-05",
-        "solar|2023-06-21",
-        "solar|2023-05-03",
-        "solar|2023-06-23",
-        "solar|2023-05-06",
-        "solar|2023-05-30",
-        "solar|2023-05-07",
-        "solar|2023-06-06",
-        "solar|2023-05-01",
-        "solar|2023-05-31"
+        "ev_grid|GRID_OTHER|2019-06-21",
+        "ev_grid|GRID_LV22|2021-06-21",
+        "ev_grid|GRID_LV22|2021-05-06",
+        "ev_grid|GRID_LV22|2021-05-05",
+        "ev_grid|GRID_LV31|2021-06-21",
+        "ev_grid|GRID_LV22|2020-05-05",
+        "ev_grid|GRID_LV21|2020-06-05",
+        "ev_grid|GRID_LV22|2020-05-07",
+        "ev_grid|GRID_OTHER|2019-05-09",
+        "ev_grid|GRID_LV21|2020-05-08"
       ],
-      "recall@1": 0.5,
-      "recall@3": 1.0,
-      "recall@5": 1.0,
-      "recall@10": 1.0,
-      "mrr": 1.0
+      "recall@1": 0.0,
+      "recall@3": 0.0,
+      "recall@5": 0.0,
+      "recall@10": 0.0,
+      "mrr": 0.0
     },
     {
       "retriever": "semantic",
       "id": "q107",
       "category": "comparison",
-      "ms": 5.534233000162203,
+      "ms": 4.7390449999511475,
       "ranked": [
         "solar|2023-03-28",
         "solar|2023-07-28",
@@ -2667,7 +2667,7 @@
       "retriever": "semantic",
       "id": "q108",
       "category": "comparison",
-      "ms": 4.78012899998248,
+      "ms": 4.1420410000228,
       "ranked": [
         "solar|2023-12-14",
         "solar|2023-05-27",
@@ -2690,7 +2690,7 @@
       "retriever": "semantic",
       "id": "q109",
       "category": "comparison",
-      "ms": 4.46783500001402,
+      "ms": 4.37332299998161,
       "ranked": [
         "solar|2023-07-04",
         "solar|2023-12-26",
@@ -2713,7 +2713,7 @@
       "retriever": "semantic",
       "id": "q110",
       "category": "comparison",
-      "ms": 5.2548290000231646,
+      "ms": 3.4464479999769537,
       "ranked": [
         "solar|2023-11-01",
         "solar|2023-05-27",
@@ -2736,7 +2736,7 @@
       "retriever": "hybrid_v1",
       "id": "q001",
       "category": "ev_lookup",
-      "ms": 16.98222999993959,
+      "ms": 13.051554000185206,
       "ranked": [
         "ev_grid|GRID_04A|2019-05-06"
       ],
@@ -2750,7 +2750,7 @@
       "retriever": "hybrid_v1",
       "id": "q002",
       "category": "ev_lookup",
-      "ms": 19.402857999921252,
+      "ms": 13.415664000149263,
       "ranked": [
         "ev_grid|GRID_05A|2020-01-30"
       ],
@@ -2764,7 +2764,7 @@
       "retriever": "hybrid_v1",
       "id": "q003",
       "category": "ev_lookup",
-      "ms": 17.73356400008197,
+      "ms": 12.01062100017225,
       "ranked": [
         "ev_grid|GRID_07A|2020-02-24"
       ],
@@ -2778,7 +2778,7 @@
       "retriever": "hybrid_v1",
       "id": "q004",
       "category": "ev_lookup",
-      "ms": 15.539429999989807,
+      "ms": 11.949074000085602,
       "ranked": [
         "ev_grid|GRID_08A|2021-05-06"
       ],
@@ -2792,7 +2792,7 @@
       "retriever": "hybrid_v1",
       "id": "q005",
       "category": "ev_lookup",
-      "ms": 13.640933000033328,
+      "ms": 9.946639999952822,
       "ranked": [
         "ev_grid|GRID_LV11|2021-07-21"
       ],
@@ -2806,7 +2806,7 @@
       "retriever": "hybrid_v1",
       "id": "q006",
       "category": "ev_lookup",
-      "ms": 14.236058000051344,
+      "ms": 10.44776699995964,
       "ranked": [
         "ev_grid|GRID_LV21|2021-08-23"
       ],
@@ -2820,7 +2820,7 @@
       "retriever": "hybrid_v1",
       "id": "q007",
       "category": "ev_lookup",
-      "ms": 12.428687000010541,
+      "ms": 11.545813999873644,
       "ranked": [
         "ev_grid|GRID_LV22|2020-12-11"
       ],
@@ -2834,7 +2834,7 @@
       "retriever": "hybrid_v1",
       "id": "q008",
       "category": "ev_lookup",
-      "ms": 13.730260000102135,
+      "ms": 10.677874000066367,
       "ranked": [
         "ev_grid|GRID_LV23|2019-09-26"
       ],
@@ -2848,7 +2848,7 @@
       "retriever": "hybrid_v1",
       "id": "q009",
       "category": "ev_lookup",
-      "ms": 17.0212040000024,
+      "ms": 10.343530999989525,
       "ranked": [
         "ev_grid|GRID_LV31|2021-10-08"
       ],
@@ -2862,7 +2862,7 @@
       "retriever": "hybrid_v1",
       "id": "q010",
       "category": "ev_lookup",
-      "ms": 17.541828000048554,
+      "ms": 10.331943999972282,
       "ranked": [
         "ev_grid|GRID_OTHER|2020-01-21"
       ],
@@ -2876,7 +2876,7 @@
       "retriever": "hybrid_v1",
       "id": "q011",
       "category": "ev_lookup",
-      "ms": 16.58924699995623,
+      "ms": 12.096056000018507,
       "ranked": [
         "ev_grid|GRID_04A|2020-02-17"
       ],
@@ -2890,7 +2890,7 @@
       "retriever": "hybrid_v1",
       "id": "q012",
       "category": "ev_lookup",
-      "ms": 14.170687999921938,
+      "ms": 11.04087199996684,
       "ranked": [
         "ev_grid|GRID_05A|2019-12-06"
       ],
@@ -2904,7 +2904,7 @@
       "retriever": "hybrid_v1",
       "id": "q013",
       "category": "ev_lookup",
-      "ms": 13.251760999992257,
+      "ms": 12.654725999937,
       "ranked": [
         "ev_grid|GRID_07A|2020-01-29"
       ],
@@ -2918,7 +2918,7 @@
       "retriever": "hybrid_v1",
       "id": "q014",
       "category": "ev_lookup",
-      "ms": 13.228522999952474,
+      "ms": 13.864318000059939,
       "ranked": [
         "ev_grid|GRID_08A|2021-09-22"
       ],
@@ -2932,7 +2932,7 @@
       "retriever": "hybrid_v1",
       "id": "q015",
       "category": "ev_lookup",
-      "ms": 14.795434000006935,
+      "ms": 10.830510000005233,
       "ranked": [
         "ev_grid|GRID_LV11|2021-07-30"
       ],
@@ -2946,7 +2946,7 @@
       "retriever": "hybrid_v1",
       "id": "q016",
       "category": "ev_lookup",
-      "ms": 15.349212000046464,
+      "ms": 12.057053000035012,
       "ranked": [
         "ev_grid|GRID_LV21|2019-11-19"
       ],
@@ -2960,7 +2960,7 @@
       "retriever": "hybrid_v1",
       "id": "q017",
       "category": "ev_lookup",
-      "ms": 14.457664000019577,
+      "ms": 12.10363099994538,
       "ranked": [
         "ev_grid|GRID_LV22|2020-03-16"
       ],
@@ -2974,7 +2974,7 @@
       "retriever": "hybrid_v1",
       "id": "q018",
       "category": "ev_lookup",
-      "ms": 15.716232000158925,
+      "ms": 15.472401000124592,
       "ranked": [
         "ev_grid|GRID_LV23|2019-08-12"
       ],
@@ -2988,7 +2988,7 @@
       "retriever": "hybrid_v1",
       "id": "q019",
       "category": "ev_lookup",
-      "ms": 15.687541000033889,
+      "ms": 12.329090000093856,
       "ranked": [
         "ev_grid|GRID_LV31|2021-04-23"
       ],
@@ -3002,7 +3002,7 @@
       "retriever": "hybrid_v1",
       "id": "q020",
       "category": "ev_lookup",
-      "ms": 13.950085000033141,
+      "ms": 11.74649200015665,
       "ranked": [
         "ev_grid|GRID_OTHER|2019-10-30"
       ],
@@ -3016,7 +3016,7 @@
       "retriever": "hybrid_v1",
       "id": "q021",
       "category": "ev_lookup",
-      "ms": 13.613671000030081,
+      "ms": 12.574062000112463,
       "ranked": [
         "ev_grid|GRID_04A|2019-04-02"
       ],
@@ -3030,7 +3030,7 @@
       "retriever": "hybrid_v1",
       "id": "q022",
       "category": "ev_lookup",
-      "ms": 14.61880600004406,
+      "ms": 11.560314000007565,
       "ranked": [
         "ev_grid|GRID_05A|2019-09-24"
       ],
@@ -3044,7 +3044,7 @@
       "retriever": "hybrid_v1",
       "id": "q023",
       "category": "ev_lookup",
-      "ms": 13.805879000074128,
+      "ms": 15.397787999972934,
       "ranked": [
         "ev_grid|GRID_07A|2019-12-17"
       ],
@@ -3058,7 +3058,7 @@
       "retriever": "hybrid_v1",
       "id": "q024",
       "category": "ev_lookup",
-      "ms": 13.585208999984388,
+      "ms": 11.899064999852271,
       "ranked": [
         "ev_grid|GRID_08A|2019-06-20"
       ],
@@ -3072,7 +3072,7 @@
       "retriever": "hybrid_v1",
       "id": "q025",
       "category": "ev_lookup",
-      "ms": 14.476160999947751,
+      "ms": 10.185661000150503,
       "ranked": [
         "ev_grid|GRID_LV11|2019-10-18"
       ],
@@ -3086,7 +3086,7 @@
       "retriever": "hybrid_v1",
       "id": "q026",
       "category": "ev_lookup",
-      "ms": 16.35288399984347,
+      "ms": 11.79288399998768,
       "ranked": [
         "ev_grid|GRID_LV21|2019-11-15"
       ],
@@ -3100,7 +3100,7 @@
       "retriever": "hybrid_v1",
       "id": "q027",
       "category": "ev_lookup",
-      "ms": 14.643147000015233,
+      "ms": 10.069887000099698,
       "ranked": [
         "ev_grid|GRID_LV22|2021-07-17"
       ],
@@ -3114,7 +3114,7 @@
       "retriever": "hybrid_v1",
       "id": "q028",
       "category": "ev_lookup",
-      "ms": 26.310825999871668,
+      "ms": 11.295856000060667,
       "ranked": [
         "ev_grid|GRID_LV23|2019-08-14"
       ],
@@ -3128,7 +3128,7 @@
       "retriever": "hybrid_v1",
       "id": "q029",
       "category": "ev_lookup",
-      "ms": 14.09735099991849,
+      "ms": 9.589510000068913,
       "ranked": [
         "ev_grid|GRID_LV31|2020-09-02"
       ],
@@ -3142,7 +3142,7 @@
       "retriever": "hybrid_v1",
       "id": "q030",
       "category": "ev_lookup",
-      "ms": 11.980806999872584,
+      "ms": 11.105600000064442,
       "ranked": [
         "ev_grid|GRID_OTHER|2020-02-11"
       ],
@@ -3156,7 +3156,7 @@
       "retriever": "hybrid_v1",
       "id": "q031",
       "category": "ev_peak_hour",
-      "ms": 12.393150999969293,
+      "ms": 9.699829000055615,
       "ranked": [
         "ev_grid|GRID_LV31|2019-09-30"
       ],
@@ -3170,7 +3170,7 @@
       "retriever": "hybrid_v1",
       "id": "q032",
       "category": "ev_peak_hour",
-      "ms": 11.513929000102507,
+      "ms": 9.984668000015517,
       "ranked": [
         "ev_grid|GRID_LV22|2020-10-20"
       ],
@@ -3184,7 +3184,7 @@
       "retriever": "hybrid_v1",
       "id": "q033",
       "category": "ev_peak_hour",
-      "ms": 12.352751999969769,
+      "ms": 11.311967999972694,
       "ranked": [
         "ev_grid|GRID_OTHER|2019-07-18"
       ],
@@ -3198,7 +3198,7 @@
       "retriever": "hybrid_v1",
       "id": "q034",
       "category": "ev_peak_hour",
-      "ms": 12.060976000157098,
+      "ms": 11.07274400010283,
       "ranked": [
         "ev_grid|GRID_OTHER|2019-07-25"
       ],
@@ -3212,7 +3212,7 @@
       "retriever": "hybrid_v1",
       "id": "q035",
       "category": "ev_peak_hour",
-      "ms": 11.855980000063937,
+      "ms": 11.077048999823091,
       "ranked": [
         "ev_grid|GRID_LV21|2019-06-07"
       ],
@@ -3226,7 +3226,7 @@
       "retriever": "hybrid_v1",
       "id": "q036",
       "category": "ev_peak_hour",
-      "ms": 10.990087999971365,
+      "ms": 15.648228999907587,
       "ranked": [
         "ev_grid|GRID_LV23|2019-08-30"
       ],
@@ -3240,7 +3240,7 @@
       "retriever": "hybrid_v1",
       "id": "q037",
       "category": "ev_peak_hour",
-      "ms": 11.777748999975302,
+      "ms": 12.496390000023894,
       "ranked": [
         "ev_grid|GRID_LV22|2020-12-10"
       ],
@@ -3254,7 +3254,7 @@
       "retriever": "hybrid_v1",
       "id": "q038",
       "category": "ev_peak_hour",
-      "ms": 12.413472999924124,
+      "ms": 11.653920000071594,
       "ranked": [
         "ev_grid|GRID_LV11|2020-10-15"
       ],
@@ -3268,7 +3268,7 @@
       "retriever": "hybrid_v1",
       "id": "q039",
       "category": "ev_peak_hour",
-      "ms": 11.185466999904747,
+      "ms": 11.251811999954953,
       "ranked": [
         "ev_grid|GRID_08A|2020-02-20"
       ],
@@ -3282,7 +3282,7 @@
       "retriever": "hybrid_v1",
       "id": "q040",
       "category": "ev_peak_hour",
-      "ms": 11.613224000029732,
+      "ms": 12.986494999950082,
       "ranked": [
         "ev_grid|GRID_LV11|2020-06-03"
       ],
@@ -3296,7 +3296,7 @@
       "retriever": "hybrid_v1",
       "id": "q041",
       "category": "ev_peak_hour",
-      "ms": 12.396454000054291,
+      "ms": 12.432941000042774,
       "ranked": [
         "ev_grid|GRID_LV21|2019-11-05"
       ],
@@ -3310,7 +3310,7 @@
       "retriever": "hybrid_v1",
       "id": "q042",
       "category": "ev_peak_hour",
-      "ms": 11.77648600014436,
+      "ms": 12.226437999970585,
       "ranked": [
         "ev_grid|GRID_LV21|2019-10-08"
       ],
@@ -3324,7 +3324,7 @@
       "retriever": "hybrid_v1",
       "id": "q043",
       "category": "ev_peak_hour",
-      "ms": 11.599543999864181,
+      "ms": 14.217389000123148,
       "ranked": [
         "ev_grid|GRID_LV22|2020-05-27"
       ],
@@ -3338,7 +3338,7 @@
       "retriever": "hybrid_v1",
       "id": "q044",
       "category": "ev_peak_hour",
-      "ms": 11.772763999942981,
+      "ms": 12.829386000021259,
       "ranked": [
         "ev_grid|GRID_LV11|2021-04-14"
       ],
@@ -3352,7 +3352,7 @@
       "retriever": "hybrid_v1",
       "id": "q045",
       "category": "ev_peak_hour",
-      "ms": 10.666914000012184,
+      "ms": 12.069781000036528,
       "ranked": [
         "ev_grid|GRID_LV21|2019-08-30"
       ],
@@ -3366,7 +3366,7 @@
       "retriever": "hybrid_v1",
       "id": "q046",
       "category": "solar_lookup",
-      "ms": 9.680672000058621,
+      "ms": 9.315902000025744,
       "ranked": [
         "solar|2023-02-01"
       ],
@@ -3380,7 +3380,7 @@
       "retriever": "hybrid_v1",
       "id": "q047",
       "category": "solar_lookup",
-      "ms": 9.81594099994254,
+      "ms": 9.720441999888862,
       "ranked": [
         "solar|2023-09-12"
       ],
@@ -3394,7 +3394,7 @@
       "retriever": "hybrid_v1",
       "id": "q048",
       "category": "solar_lookup",
-      "ms": 11.822585999880175,
+      "ms": 11.75511699989329,
       "ranked": [
         "solar|2023-10-30"
       ],
@@ -3408,7 +3408,7 @@
       "retriever": "hybrid_v1",
       "id": "q049",
       "category": "solar_lookup",
-      "ms": 10.830768000005264,
+      "ms": 9.932889000083378,
       "ranked": [
         "solar|2023-12-05"
       ],
@@ -3422,7 +3422,7 @@
       "retriever": "hybrid_v1",
       "id": "q050",
       "category": "solar_lookup",
-      "ms": 10.797461999800362,
+      "ms": 9.538532999840754,
       "ranked": [
         "solar|2023-05-04"
       ],
@@ -3436,7 +3436,7 @@
       "retriever": "hybrid_v1",
       "id": "q051",
       "category": "solar_lookup",
-      "ms": 10.291359999882843,
+      "ms": 9.081617999981972,
       "ranked": [
         "solar|2023-12-02"
       ],
@@ -3450,7 +3450,7 @@
       "retriever": "hybrid_v1",
       "id": "q052",
       "category": "solar_lookup",
-      "ms": 10.334418999946138,
+      "ms": 9.053192000010313,
       "ranked": [
         "solar|2023-06-22"
       ],
@@ -3464,7 +3464,7 @@
       "retriever": "hybrid_v1",
       "id": "q053",
       "category": "solar_lookup",
-      "ms": 9.761214000036489,
+      "ms": 9.007152999856771,
       "ranked": [
         "solar|2023-09-17"
       ],
@@ -3478,7 +3478,7 @@
       "retriever": "hybrid_v1",
       "id": "q054",
       "category": "solar_lookup",
-      "ms": 14.218262999975195,
+      "ms": 12.698101000069073,
       "ranked": [
         "solar|2023-02-06"
       ],
@@ -3492,7 +3492,7 @@
       "retriever": "hybrid_v1",
       "id": "q055",
       "category": "solar_lookup",
-      "ms": 10.0730740000472,
+      "ms": 9.549376999984815,
       "ranked": [
         "solar|2023-04-08"
       ],
@@ -3506,7 +3506,7 @@
       "retriever": "hybrid_v1",
       "id": "q056",
       "category": "solar_lookup",
-      "ms": 10.619376999784436,
+      "ms": 9.289466000154789,
       "ranked": [
         "solar|2023-08-07"
       ],
@@ -3520,7 +3520,7 @@
       "retriever": "hybrid_v1",
       "id": "q057",
       "category": "solar_lookup",
-      "ms": 14.914013999941744,
+      "ms": 9.506581000096048,
       "ranked": [
         "solar|2023-10-24"
       ],
@@ -3534,7 +3534,7 @@
       "retriever": "hybrid_v1",
       "id": "q058",
       "category": "solar_lookup",
-      "ms": 11.935662000041702,
+      "ms": 9.105239000064103,
       "ranked": [
         "solar|2023-12-23"
       ],
@@ -3548,7 +3548,7 @@
       "retriever": "hybrid_v1",
       "id": "q059",
       "category": "solar_lookup",
-      "ms": 10.661684000069727,
+      "ms": 9.299547000182429,
       "ranked": [
         "solar|2023-08-24"
       ],
@@ -3562,7 +3562,7 @@
       "retriever": "hybrid_v1",
       "id": "q060",
       "category": "solar_lookup",
-      "ms": 10.65050599981987,
+      "ms": 9.153144000038083,
       "ranked": [
         "solar|2023-03-30"
       ],
@@ -3576,7 +3576,7 @@
       "retriever": "hybrid_v1",
       "id": "q061",
       "category": "solar_lookup",
-      "ms": 9.08235700012483,
+      "ms": 9.166013999902134,
       "ranked": [
         "solar|2023-01-18"
       ],
@@ -3590,7 +3590,7 @@
       "retriever": "hybrid_v1",
       "id": "q062",
       "category": "solar_lookup",
-      "ms": 9.449899999935951,
+      "ms": 8.84297599986894,
       "ranked": [
         "solar|2023-08-05"
       ],
@@ -3604,7 +3604,7 @@
       "retriever": "hybrid_v1",
       "id": "q063",
       "category": "solar_lookup",
-      "ms": 8.712797000043793,
+      "ms": 9.135322000020096,
       "ranked": [
         "solar|2023-09-14"
       ],
@@ -3618,7 +3618,7 @@
       "retriever": "hybrid_v1",
       "id": "q064",
       "category": "solar_lookup",
-      "ms": 12.348171999974511,
+      "ms": 9.425694000128715,
       "ranked": [
         "solar|2023-09-02"
       ],
@@ -3632,7 +3632,7 @@
       "retriever": "hybrid_v1",
       "id": "q065",
       "category": "solar_lookup",
-      "ms": 11.463947000038388,
+      "ms": 9.283904000085386,
       "ranked": [
         "solar|2023-12-27"
       ],
@@ -3646,7 +3646,7 @@
       "retriever": "hybrid_v1",
       "id": "q066",
       "category": "solar_lookup",
-      "ms": 14.401808999991772,
+      "ms": 9.09573600006297,
       "ranked": [
         "solar|2023-09-04"
       ],
@@ -3660,7 +3660,7 @@
       "retriever": "hybrid_v1",
       "id": "q067",
       "category": "solar_lookup",
-      "ms": 9.756888999845614,
+      "ms": 9.288531000038347,
       "ranked": [
         "solar|2023-09-07"
       ],
@@ -3674,7 +3674,7 @@
       "retriever": "hybrid_v1",
       "id": "q068",
       "category": "solar_lookup",
-      "ms": 10.570511999958399,
+      "ms": 9.784394000007524,
       "ranked": [
         "solar|2023-09-01"
       ],
@@ -3688,7 +3688,7 @@
       "retriever": "hybrid_v1",
       "id": "q069",
       "category": "solar_lookup",
-      "ms": 11.301752000008491,
+      "ms": 9.98211900014212,
       "ranked": [
         "solar|2023-05-09"
       ],
@@ -3702,7 +3702,7 @@
       "retriever": "hybrid_v1",
       "id": "q070",
       "category": "solar_lookup",
-      "ms": 10.22533100012879,
+      "ms": 9.152830999937578,
       "ranked": [
         "solar|2023-06-18"
       ],
@@ -3716,7 +3716,7 @@
       "retriever": "hybrid_v1",
       "id": "q071",
       "category": "solar_cloud",
-      "ms": 11.151629999858415,
+      "ms": 11.195535999831918,
       "ranked": [
         "solar|2023-02-05"
       ],
@@ -3730,7 +3730,7 @@
       "retriever": "hybrid_v1",
       "id": "q072",
       "category": "solar_cloud",
-      "ms": 12.25510399990526,
+      "ms": 9.260836000066774,
       "ranked": [
         "solar|2023-05-19"
       ],
@@ -3744,7 +3744,7 @@
       "retriever": "hybrid_v1",
       "id": "q073",
       "category": "solar_cloud",
-      "ms": 15.004047000047649,
+      "ms": 8.67635200006589,
       "ranked": [
         "solar|2023-08-30"
       ],
@@ -3758,7 +3758,7 @@
       "retriever": "hybrid_v1",
       "id": "q074",
       "category": "solar_cloud",
-      "ms": 9.976945999824238,
+      "ms": 9.186136999915107,
       "ranked": [
         "solar|2023-11-25"
       ],
@@ -3772,7 +3772,7 @@
       "retriever": "hybrid_v1",
       "id": "q075",
       "category": "solar_cloud",
-      "ms": 9.062154000048395,
+      "ms": 9.355335999998715,
       "ranked": [
         "solar|2023-02-19"
       ],
@@ -3786,7 +3786,7 @@
       "retriever": "hybrid_v1",
       "id": "q076",
       "category": "solar_cloud",
-      "ms": 9.062147999884473,
+      "ms": 8.578981000027852,
       "ranked": [
         "solar|2023-02-02"
       ],
@@ -3800,7 +3800,7 @@
       "retriever": "hybrid_v1",
       "id": "q077",
       "category": "solar_cloud",
-      "ms": 17.510343999902034,
+      "ms": 8.79262400007974,
       "ranked": [
         "solar|2023-08-29"
       ],
@@ -3814,7 +3814,7 @@
       "retriever": "hybrid_v1",
       "id": "q078",
       "category": "solar_cloud",
-      "ms": 21.891196000069613,
+      "ms": 8.613433999926201,
       "ranked": [
         "solar|2023-04-18"
       ],
@@ -3828,7 +3828,7 @@
       "retriever": "hybrid_v1",
       "id": "q079",
       "category": "solar_cloud",
-      "ms": 10.18775900001856,
+      "ms": 8.37129299998196,
       "ranked": [
         "solar|2023-04-20"
       ],
@@ -3842,7 +3842,7 @@
       "retriever": "hybrid_v1",
       "id": "q080",
       "category": "solar_cloud",
-      "ms": 9.945139999899766,
+      "ms": 8.095578999927966,
       "ranked": [
         "solar|2023-07-31"
       ],
@@ -3856,7 +3856,7 @@
       "retriever": "hybrid_v1",
       "id": "q081",
       "category": "nl_date",
-      "ms": 15.477904999897873,
+      "ms": 12.177950000022975,
       "ranked": [
         "ev_grid|GRID_04A|2020-02-17",
         "ev_grid|GRID_04A|2020-03-12",
@@ -3879,7 +3879,7 @@
       "retriever": "hybrid_v1",
       "id": "q082",
       "category": "nl_date",
-      "ms": 8.076019999862183,
+      "ms": 9.737755000060133,
       "ranked": [
         "ev_grid|GRID_05A|2020-03-01",
         "ev_grid|GRID_05A|2020-01-17",
@@ -3902,7 +3902,7 @@
       "retriever": "hybrid_v1",
       "id": "q083",
       "category": "nl_date",
-      "ms": 8.431881999968027,
+      "ms": 9.294595000028494,
       "ranked": [
         "ev_grid|GRID_07A|2020-12-10",
         "ev_grid|GRID_07A|2021-08-31",
@@ -3925,7 +3925,7 @@
       "retriever": "hybrid_v1",
       "id": "q084",
       "category": "nl_date",
-      "ms": 9.131730000035532,
+      "ms": 11.09696299999996,
       "ranked": [
         "ev_grid|GRID_08A|2020-07-27",
         "ev_grid|GRID_08A|2020-11-10",
@@ -3936,7 +3936,7 @@
         "ev_grid|GRID_08A|2020-08-17",
         "ev_grid|GRID_08A|2020-06-25",
         "ev_grid|GRID_08A|2020-02-05",
-        "ev_grid|GRID_08A|2020-09-02"
+        "ev_grid|GRID_08A|2020-07-09"
       ],
       "recall@1": 0.0,
       "recall@3": 0.0,
@@ -3948,7 +3948,7 @@
       "retriever": "hybrid_v1",
       "id": "q085",
       "category": "nl_date",
-      "ms": 9.954805000006672,
+      "ms": 11.773581000170452,
       "ranked": [
         "ev_grid|GRID_LV11|2020-09-08",
         "ev_grid|GRID_LV11|2020-02-28",
@@ -3971,7 +3971,7 @@
       "retriever": "hybrid_v1",
       "id": "q086",
       "category": "nl_date",
-      "ms": 7.139800999993895,
+      "ms": 8.9207239998359,
       "ranked": [
         "ev_grid|GRID_LV21|2020-07-27",
         "ev_grid|GRID_LV21|2020-07-20",
@@ -3994,7 +3994,7 @@
       "retriever": "hybrid_v1",
       "id": "q087",
       "category": "nl_date",
-      "ms": 10.024052999824562,
+      "ms": 26.531301999966672,
       "ranked": [
         "ev_grid|GRID_LV22|2020-09-27",
         "ev_grid|GRID_LV22|2020-09-02",
@@ -4017,7 +4017,7 @@
       "retriever": "hybrid_v1",
       "id": "q088",
       "category": "nl_date",
-      "ms": 14.536424000198167,
+      "ms": 15.153382999869791,
       "ranked": [
         "ev_grid|GRID_LV23|2019-10-25",
         "ev_grid|GRID_LV23|2019-10-28",
@@ -4028,7 +4028,7 @@
         "ev_grid|GRID_LV23|2019-09-27",
         "ev_grid|GRID_LV23|2019-09-25",
         "ev_grid|GRID_LV23|2019-08-16",
-        "ev_grid|GRID_LV23|2019-08-15"
+        "ev_grid|GRID_LV23|2019-08-09"
       ],
       "recall@1": 0.0,
       "recall@3": 0.0,
@@ -4040,7 +4040,7 @@
       "retriever": "hybrid_v1",
       "id": "q089",
       "category": "nl_date",
-      "ms": 7.932711999956155,
+      "ms": 8.021594999945592,
       "ranked": [
         "solar|2023-12-19",
         "solar|2023-01-19",
@@ -4063,7 +4063,7 @@
       "retriever": "hybrid_v1",
       "id": "q090",
       "category": "nl_date",
-      "ms": 10.706685000059224,
+      "ms": 8.182169000065187,
       "ranked": [
         "solar|2023-07-02",
         "solar|2023-02-11",
@@ -4086,7 +4086,7 @@
       "retriever": "hybrid_v1",
       "id": "q091",
       "category": "nl_date",
-      "ms": 7.059648999984347,
+      "ms": 10.50753499998791,
       "ranked": [
         "solar|2023-12-27",
         "solar|2023-11-13",
@@ -4097,7 +4097,7 @@
         "solar|2023-09-25",
         "solar|2023-10-25",
         "solar|2023-12-30",
-        "solar|2023-03-25"
+        "solar|2023-09-27"
       ],
       "recall@1": 0.0,
       "recall@3": 0.0,
@@ -4109,18 +4109,18 @@
       "retriever": "hybrid_v1",
       "id": "q092",
       "category": "nl_date",
-      "ms": 7.958054000027914,
+      "ms": 8.291688999861435,
       "ranked": [
         "solar|2023-07-02",
         "solar|2023-02-11",
         "solar|2023-07-25",
         "solar|2023-08-14",
+        "solar|2023-05-25",
         "solar|2023-02-26",
         "solar|2023-03-25",
         "solar|2023-09-27",
         "solar|2023-01-26",
-        "solar|2023-01-19",
-        "solar|2023-12-27"
+        "solar|2023-01-19"
       ],
       "recall@1": 0.0,
       "recall@3": 0.0,
@@ -4132,7 +4132,7 @@
       "retriever": "hybrid_v1",
       "id": "q093",
       "category": "nl_date",
-      "ms": 8.438069000021642,
+      "ms": 7.390060000034282,
       "ranked": [
         "solar|2023-07-02",
         "solar|2023-01-26",
@@ -4155,7 +4155,7 @@
       "retriever": "hybrid_v1",
       "id": "q094",
       "category": "nl_date",
-      "ms": 7.122111999933622,
+      "ms": 8.296138999867253,
       "ranked": [
         "solar|2023-07-02",
         "solar|2023-02-11",
@@ -4178,7 +4178,7 @@
       "retriever": "hybrid_v1",
       "id": "q095",
       "category": "nl_date",
-      "ms": 7.747890000018742,
+      "ms": 6.725077000055535,
       "ranked": [
         "solar|2023-01-30",
         "solar|2023-11-13",
@@ -4201,7 +4201,7 @@
       "retriever": "hybrid_v1",
       "id": "q096",
       "category": "comparison",
-      "ms": 14.883629999985715,
+      "ms": 11.79759000001468,
       "ranked": [
         "ev_grid|GRID_05A|2019-09-09"
       ],
@@ -4215,7 +4215,7 @@
       "retriever": "hybrid_v1",
       "id": "q097",
       "category": "comparison",
-      "ms": 18.399207999891587,
+      "ms": 13.079968000056397,
       "ranked": [
         "ev_grid|GRID_07A|2019-04-15"
       ],
@@ -4229,7 +4229,7 @@
       "retriever": "hybrid_v1",
       "id": "q098",
       "category": "comparison",
-      "ms": 15.991956999869217,
+      "ms": 14.265510000086579,
       "ranked": [
         "ev_grid|GRID_08A|2021-08-23"
       ],
@@ -4243,7 +4243,7 @@
       "retriever": "hybrid_v1",
       "id": "q099",
       "category": "comparison",
-      "ms": 13.633082000069408,
+      "ms": 11.417200999858323,
       "ranked": [
         "ev_grid|GRID_LV11|2020-01-11"
       ],
@@ -4257,7 +4257,7 @@
       "retriever": "hybrid_v1",
       "id": "q100",
       "category": "comparison",
-      "ms": 14.976524000076097,
+      "ms": 11.881040999924153,
       "ranked": [
         "ev_grid|GRID_LV21|2020-01-17"
       ],
@@ -4271,7 +4271,7 @@
       "retriever": "hybrid_v1",
       "id": "q101",
       "category": "comparison",
-      "ms": 13.447616000121343,
+      "ms": 12.494843000013134,
       "ranked": [
         "ev_grid|GRID_LV22|2021-03-24"
       ],
@@ -4285,7 +4285,7 @@
       "retriever": "hybrid_v1",
       "id": "q102",
       "category": "comparison",
-      "ms": 19.022516000177347,
+      "ms": 10.282381000024543,
       "ranked": [
         "ev_grid|GRID_LV31|2021-09-29"
       ],
@@ -4299,7 +4299,7 @@
       "retriever": "hybrid_v1",
       "id": "q103",
       "category": "comparison",
-      "ms": 13.069188000145004,
+      "ms": 10.736336000036317,
       "ranked": [
         "ev_grid|GRID_OTHER|2021-01-04"
       ],
@@ -4313,7 +4313,7 @@
       "retriever": "hybrid_v1",
       "id": "q104",
       "category": "comparison",
-      "ms": 12.00174399991738,
+      "ms": 8.793544999889491,
       "ranked": [
         "solar|2023-05-03"
       ],
@@ -4327,7 +4327,7 @@
       "retriever": "hybrid_v1",
       "id": "q105",
       "category": "comparison",
-      "ms": 9.685769000043365,
+      "ms": 9.97772999994595,
       "ranked": [
         "solar|2023-07-23"
       ],
@@ -4341,7 +4341,7 @@
       "retriever": "hybrid_v1",
       "id": "q106",
       "category": "comparison",
-      "ms": 9.969823000119504,
+      "ms": 9.190286000148262,
       "ranked": [
         "solar|2023-06-21"
       ],
@@ -4355,7 +4355,7 @@
       "retriever": "hybrid_v1",
       "id": "q107",
       "category": "comparison",
-      "ms": 9.962440999970568,
+      "ms": 8.219547000180683,
       "ranked": [
         "solar|2023-03-28"
       ],
@@ -4369,7 +4369,7 @@
       "retriever": "hybrid_v1",
       "id": "q108",
       "category": "comparison",
-      "ms": 9.119764999923063,
+      "ms": 7.602809999980309,
       "ranked": [
         "solar|2023-12-14"
       ],
@@ -4383,7 +4383,7 @@
       "retriever": "hybrid_v1",
       "id": "q109",
       "category": "comparison",
-      "ms": 9.548365999989983,
+      "ms": 7.598591000032684,
       "ranked": [
         "solar|2023-07-04"
       ],
@@ -4397,7 +4397,7 @@
       "retriever": "hybrid_v1",
       "id": "q110",
       "category": "comparison",
-      "ms": 11.216902999876766,
+      "ms": 7.292213999789965,
       "ranked": [
         "solar|2023-11-01"
       ],
@@ -4411,7 +4411,7 @@
       "retriever": "hybrid_v2",
       "id": "q001",
       "category": "ev_lookup",
-      "ms": 11.167582000098264,
+      "ms": 12.165078000180074,
       "ranked": [
         "ev_grid|GRID_04A|2019-05-06"
       ],
@@ -4425,7 +4425,7 @@
       "retriever": "hybrid_v2",
       "id": "q002",
       "category": "ev_lookup",
-      "ms": 10.819158999993306,
+      "ms": 11.07736699987072,
       "ranked": [
         "ev_grid|GRID_05A|2020-01-30"
       ],
@@ -4439,7 +4439,7 @@
       "retriever": "hybrid_v2",
       "id": "q003",
       "category": "ev_lookup",
-      "ms": 11.076602999992247,
+      "ms": 12.180075999822293,
       "ranked": [
         "ev_grid|GRID_07A|2020-02-24"
       ],
@@ -4453,7 +4453,7 @@
       "retriever": "hybrid_v2",
       "id": "q004",
       "category": "ev_lookup",
-      "ms": 10.824226999829989,
+      "ms": 10.252244999946925,
       "ranked": [
         "ev_grid|GRID_08A|2021-05-06"
       ],
@@ -4467,7 +4467,7 @@
       "retriever": "hybrid_v2",
       "id": "q005",
       "category": "ev_lookup",
-      "ms": 10.493305000181863,
+      "ms": 9.431002000155786,
       "ranked": [
         "ev_grid|GRID_LV11|2021-07-21"
       ],
@@ -4481,7 +4481,7 @@
       "retriever": "hybrid_v2",
       "id": "q006",
       "category": "ev_lookup",
-      "ms": 9.640466999826458,
+      "ms": 10.154863000025216,
       "ranked": [
         "ev_grid|GRID_LV21|2021-08-23"
       ],
@@ -4495,7 +4495,7 @@
       "retriever": "hybrid_v2",
       "id": "q007",
       "category": "ev_lookup",
-      "ms": 12.458171999924161,
+      "ms": 10.010986999986926,
       "ranked": [
         "ev_grid|GRID_LV22|2020-12-11"
       ],
@@ -4509,7 +4509,7 @@
       "retriever": "hybrid_v2",
       "id": "q008",
       "category": "ev_lookup",
-      "ms": 14.097001999971326,
+      "ms": 9.320556000147917,
       "ranked": [
         "ev_grid|GRID_LV23|2019-09-26"
       ],
@@ -4523,7 +4523,7 @@
       "retriever": "hybrid_v2",
       "id": "q009",
       "category": "ev_lookup",
-      "ms": 12.17608799993286,
+      "ms": 9.534786999893186,
       "ranked": [
         "ev_grid|GRID_LV31|2021-10-08"
       ],
@@ -4537,7 +4537,7 @@
       "retriever": "hybrid_v2",
       "id": "q010",
       "category": "ev_lookup",
-      "ms": 11.47521500001858,
+      "ms": 9.788062000097852,
       "ranked": [
         "ev_grid|GRID_OTHER|2020-01-21"
       ],
@@ -4551,7 +4551,7 @@
       "retriever": "hybrid_v2",
       "id": "q011",
       "category": "ev_lookup",
-      "ms": 12.292241000068316,
+      "ms": 10.035603999995146,
       "ranked": [
         "ev_grid|GRID_04A|2020-02-17"
       ],
@@ -4565,7 +4565,7 @@
       "retriever": "hybrid_v2",
       "id": "q012",
       "category": "ev_lookup",
-      "ms": 10.465875999898344,
+      "ms": 10.050266000007468,
       "ranked": [
         "ev_grid|GRID_05A|2019-12-06"
       ],
@@ -4579,7 +4579,7 @@
       "retriever": "hybrid_v2",
       "id": "q013",
       "category": "ev_lookup",
-      "ms": 11.630448999994769,
+      "ms": 8.99684699993486,
       "ranked": [
         "ev_grid|GRID_07A|2020-01-29"
       ],
@@ -4593,7 +4593,7 @@
       "retriever": "hybrid_v2",
       "id": "q014",
       "category": "ev_lookup",
-      "ms": 11.262933999887537,
+      "ms": 8.84398199991665,
       "ranked": [
         "ev_grid|GRID_08A|2021-09-22"
       ],
@@ -4607,7 +4607,7 @@
       "retriever": "hybrid_v2",
       "id": "q015",
       "category": "ev_lookup",
-      "ms": 11.091776000057507,
+      "ms": 9.341175999907136,
       "ranked": [
         "ev_grid|GRID_LV11|2021-07-30"
       ],
@@ -4621,7 +4621,7 @@
       "retriever": "hybrid_v2",
       "id": "q016",
       "category": "ev_lookup",
-      "ms": 11.116761000039332,
+      "ms": 10.295683000094868,
       "ranked": [
         "ev_grid|GRID_LV21|2019-11-19"
       ],
@@ -4635,7 +4635,7 @@
       "retriever": "hybrid_v2",
       "id": "q017",
       "category": "ev_lookup",
-      "ms": 11.010740999836344,
+      "ms": 11.175419999972291,
       "ranked": [
         "ev_grid|GRID_LV22|2020-03-16"
       ],
@@ -4649,7 +4649,7 @@
       "retriever": "hybrid_v2",
       "id": "q018",
       "category": "ev_lookup",
-      "ms": 9.898926999994728,
+      "ms": 10.983300000134477,
       "ranked": [
         "ev_grid|GRID_LV23|2019-08-12"
       ],
@@ -4663,7 +4663,7 @@
       "retriever": "hybrid_v2",
       "id": "q019",
       "category": "ev_lookup",
-      "ms": 10.325314999818147,
+      "ms": 10.871482000084143,
       "ranked": [
         "ev_grid|GRID_LV31|2021-04-23"
       ],
@@ -4677,7 +4677,7 @@
       "retriever": "hybrid_v2",
       "id": "q020",
       "category": "ev_lookup",
-      "ms": 11.009009999952468,
+      "ms": 10.105420999934722,
       "ranked": [
         "ev_grid|GRID_OTHER|2019-10-30"
       ],
@@ -4691,7 +4691,7 @@
       "retriever": "hybrid_v2",
       "id": "q021",
       "category": "ev_lookup",
-      "ms": 10.232769999902303,
+      "ms": 9.543650000068737,
       "ranked": [
         "ev_grid|GRID_04A|2019-04-02"
       ],
@@ -4705,7 +4705,7 @@
       "retriever": "hybrid_v2",
       "id": "q022",
       "category": "ev_lookup",
-      "ms": 26.3876540000183,
+      "ms": 10.413962000029642,
       "ranked": [
         "ev_grid|GRID_05A|2019-09-24"
       ],
@@ -4719,7 +4719,7 @@
       "retriever": "hybrid_v2",
       "id": "q023",
       "category": "ev_lookup",
-      "ms": 12.142833000098108,
+      "ms": 10.721711000087453,
       "ranked": [
         "ev_grid|GRID_07A|2019-12-17"
       ],
@@ -4733,7 +4733,7 @@
       "retriever": "hybrid_v2",
       "id": "q024",
       "category": "ev_lookup",
-      "ms": 11.411302000169599,
+      "ms": 10.956779000025563,
       "ranked": [
         "ev_grid|GRID_08A|2019-06-20"
       ],
@@ -4747,7 +4747,7 @@
       "retriever": "hybrid_v2",
       "id": "q025",
       "category": "ev_lookup",
-      "ms": 11.307514999998602,
+      "ms": 11.416879000080371,
       "ranked": [
         "ev_grid|GRID_LV11|2019-10-18"
       ],
@@ -4761,7 +4761,7 @@
       "retriever": "hybrid_v2",
       "id": "q026",
       "category": "ev_lookup",
-      "ms": 11.270147000004727,
+      "ms": 11.007738999978756,
       "ranked": [
         "ev_grid|GRID_LV21|2019-11-15"
       ],
@@ -4775,7 +4775,7 @@
       "retriever": "hybrid_v2",
       "id": "q027",
       "category": "ev_lookup",
-      "ms": 10.998606999919502,
+      "ms": 9.605562999922768,
       "ranked": [
         "ev_grid|GRID_LV22|2021-07-17"
       ],
@@ -4789,7 +4789,7 @@
       "retriever": "hybrid_v2",
       "id": "q028",
       "category": "ev_lookup",
-      "ms": 11.103508000132933,
+      "ms": 10.240423000141163,
       "ranked": [
         "ev_grid|GRID_LV23|2019-08-14"
       ],
@@ -4803,7 +4803,7 @@
       "retriever": "hybrid_v2",
       "id": "q029",
       "category": "ev_lookup",
-      "ms": 11.159662000181925,
+      "ms": 9.318570000004911,
       "ranked": [
         "ev_grid|GRID_LV31|2020-09-02"
       ],
@@ -4817,7 +4817,7 @@
       "retriever": "hybrid_v2",
       "id": "q030",
       "category": "ev_lookup",
-      "ms": 10.905658999945445,
+      "ms": 9.770656999990024,
       "ranked": [
         "ev_grid|GRID_OTHER|2020-02-11"
       ],
@@ -4831,7 +4831,7 @@
       "retriever": "hybrid_v2",
       "id": "q031",
       "category": "ev_peak_hour",
-      "ms": 10.919302000047537,
+      "ms": 12.158263999936025,
       "ranked": [
         "ev_grid|GRID_LV31|2019-09-30"
       ],
@@ -4845,7 +4845,7 @@
       "retriever": "hybrid_v2",
       "id": "q032",
       "category": "ev_peak_hour",
-      "ms": 10.120184000015797,
+      "ms": 10.802814000044236,
       "ranked": [
         "ev_grid|GRID_LV22|2020-10-20"
       ],
@@ -4859,7 +4859,7 @@
       "retriever": "hybrid_v2",
       "id": "q033",
       "category": "ev_peak_hour",
-      "ms": 11.113344000023062,
+      "ms": 8.943660999875647,
       "ranked": [
         "ev_grid|GRID_OTHER|2019-07-18"
       ],
@@ -4873,7 +4873,7 @@
       "retriever": "hybrid_v2",
       "id": "q034",
       "category": "ev_peak_hour",
-      "ms": 11.188081999989663,
+      "ms": 8.7875219999205,
       "ranked": [
         "ev_grid|GRID_OTHER|2019-07-25"
       ],
@@ -4887,7 +4887,7 @@
       "retriever": "hybrid_v2",
       "id": "q035",
       "category": "ev_peak_hour",
-      "ms": 11.021216000017375,
+      "ms": 8.559277999893311,
       "ranked": [
         "ev_grid|GRID_LV21|2019-06-07"
       ],
@@ -4901,7 +4901,7 @@
       "retriever": "hybrid_v2",
       "id": "q036",
       "category": "ev_peak_hour",
-      "ms": 10.785484000052747,
+      "ms": 8.593342000040138,
       "ranked": [
         "ev_grid|GRID_LV23|2019-08-30"
       ],
@@ -4915,7 +4915,7 @@
       "retriever": "hybrid_v2",
       "id": "q037",
       "category": "ev_peak_hour",
-      "ms": 11.550445000011678,
+      "ms": 11.316612000200621,
       "ranked": [
         "ev_grid|GRID_LV22|2020-12-10"
       ],
@@ -4929,7 +4929,7 @@
       "retriever": "hybrid_v2",
       "id": "q038",
       "category": "ev_peak_hour",
-      "ms": 10.987811999939368,
+      "ms": 8.863712999982454,
       "ranked": [
         "ev_grid|GRID_LV11|2020-10-15"
       ],
@@ -4943,7 +4943,7 @@
       "retriever": "hybrid_v2",
       "id": "q039",
       "category": "ev_peak_hour",
-      "ms": 10.788635999915641,
+      "ms": 8.69094000017867,
       "ranked": [
         "ev_grid|GRID_08A|2020-02-20"
       ],
@@ -4957,7 +4957,7 @@
       "retriever": "hybrid_v2",
       "id": "q040",
       "category": "ev_peak_hour",
-      "ms": 13.53553900003135,
+      "ms": 8.749126999873624,
       "ranked": [
         "ev_grid|GRID_LV11|2020-06-03"
       ],
@@ -4971,7 +4971,7 @@
       "retriever": "hybrid_v2",
       "id": "q041",
       "category": "ev_peak_hour",
-      "ms": 10.801581000123406,
+      "ms": 9.39979999998286,
       "ranked": [
         "ev_grid|GRID_LV21|2019-11-05"
       ],
@@ -4985,7 +4985,7 @@
       "retriever": "hybrid_v2",
       "id": "q042",
       "category": "ev_peak_hour",
-      "ms": 11.733213999832515,
+      "ms": 9.007857999904445,
       "ranked": [
         "ev_grid|GRID_LV21|2019-10-08"
       ],
@@ -4999,7 +4999,7 @@
       "retriever": "hybrid_v2",
       "id": "q043",
       "category": "ev_peak_hour",
-      "ms": 11.95475700001225,
+      "ms": 10.678523000024143,
       "ranked": [
         "ev_grid|GRID_LV22|2020-05-27"
       ],
@@ -5013,7 +5013,7 @@
       "retriever": "hybrid_v2",
       "id": "q044",
       "category": "ev_peak_hour",
-      "ms": 12.254102999804672,
+      "ms": 10.428645000047254,
       "ranked": [
         "ev_grid|GRID_LV11|2021-04-14"
       ],
@@ -5027,7 +5027,7 @@
       "retriever": "hybrid_v2",
       "id": "q045",
       "category": "ev_peak_hour",
-      "ms": 10.397824999927252,
+      "ms": 10.228644999870085,
       "ranked": [
         "ev_grid|GRID_LV21|2019-08-30"
       ],
@@ -5041,7 +5041,7 @@
       "retriever": "hybrid_v2",
       "id": "q046",
       "category": "solar_lookup",
-      "ms": 8.382097999856342,
+      "ms": 7.200172000011662,
       "ranked": [
         "solar|2023-02-01"
       ],
@@ -5055,7 +5055,7 @@
       "retriever": "hybrid_v2",
       "id": "q047",
       "category": "solar_lookup",
-      "ms": 8.125715999995009,
+      "ms": 7.479000000103042,
       "ranked": [
         "solar|2023-09-12"
       ],
@@ -5069,7 +5069,7 @@
       "retriever": "hybrid_v2",
       "id": "q048",
       "category": "solar_lookup",
-      "ms": 8.813640000198575,
+      "ms": 8.321315000102913,
       "ranked": [
         "solar|2023-10-30"
       ],
@@ -5083,7 +5083,7 @@
       "retriever": "hybrid_v2",
       "id": "q049",
       "category": "solar_lookup",
-      "ms": 8.361960000002,
+      "ms": 7.112943000038285,
       "ranked": [
         "solar|2023-12-05"
       ],
@@ -5097,7 +5097,7 @@
       "retriever": "hybrid_v2",
       "id": "q050",
       "category": "solar_lookup",
-      "ms": 8.341067000174007,
+      "ms": 6.9904689999020775,
       "ranked": [
         "solar|2023-05-04"
       ],
@@ -5111,7 +5111,7 @@
       "retriever": "hybrid_v2",
       "id": "q051",
       "category": "solar_lookup",
-      "ms": 8.347373000106018,
+      "ms": 6.993268999849533,
       "ranked": [
         "solar|2023-12-02"
       ],
@@ -5125,7 +5125,7 @@
       "retriever": "hybrid_v2",
       "id": "q052",
       "category": "solar_lookup",
-      "ms": 8.018585999934658,
+      "ms": 7.075344999975641,
       "ranked": [
         "solar|2023-06-22"
       ],
@@ -5139,7 +5139,7 @@
       "retriever": "hybrid_v2",
       "id": "q053",
       "category": "solar_lookup",
-      "ms": 7.89169400013634,
+      "ms": 6.486003999953027,
       "ranked": [
         "solar|2023-09-17"
       ],
@@ -5153,7 +5153,7 @@
       "retriever": "hybrid_v2",
       "id": "q054",
       "category": "solar_lookup",
-      "ms": 8.401384999842776,
+      "ms": 7.7663169997777,
       "ranked": [
         "solar|2023-02-06"
       ],
@@ -5167,7 +5167,7 @@
       "retriever": "hybrid_v2",
       "id": "q055",
       "category": "solar_lookup",
-      "ms": 7.952359999990222,
+      "ms": 7.738101000086317,
       "ranked": [
         "solar|2023-04-08"
       ],
@@ -5181,7 +5181,7 @@
       "retriever": "hybrid_v2",
       "id": "q056",
       "category": "solar_lookup",
-      "ms": 8.448448000081044,
+      "ms": 7.859766999899875,
       "ranked": [
         "solar|2023-08-07"
       ],
@@ -5195,7 +5195,7 @@
       "retriever": "hybrid_v2",
       "id": "q057",
       "category": "solar_lookup",
-      "ms": 8.26217100006943,
+      "ms": 7.952422000016668,
       "ranked": [
         "solar|2023-10-24"
       ],
@@ -5209,7 +5209,7 @@
       "retriever": "hybrid_v2",
       "id": "q058",
       "category": "solar_lookup",
-      "ms": 7.974110000077417,
+      "ms": 7.093611999835048,
       "ranked": [
         "solar|2023-12-23"
       ],
@@ -5223,7 +5223,7 @@
       "retriever": "hybrid_v2",
       "id": "q059",
       "category": "solar_lookup",
-      "ms": 8.746625999947355,
+      "ms": 7.205492000139202,
       "ranked": [
         "solar|2023-08-24"
       ],
@@ -5237,7 +5237,7 @@
       "retriever": "hybrid_v2",
       "id": "q060",
       "category": "solar_lookup",
-      "ms": 7.816747999868312,
+      "ms": 10.35444500007543,
       "ranked": [
         "solar|2023-03-30"
       ],
@@ -5251,7 +5251,7 @@
       "retriever": "hybrid_v2",
       "id": "q061",
       "category": "solar_lookup",
-      "ms": 8.028211999999257,
+      "ms": 7.48902000009366,
       "ranked": [
         "solar|2023-01-18"
       ],
@@ -5265,7 +5265,7 @@
       "retriever": "hybrid_v2",
       "id": "q062",
       "category": "solar_lookup",
-      "ms": 8.100196999976106,
+      "ms": 7.696272000202953,
       "ranked": [
         "solar|2023-08-05"
       ],
@@ -5279,7 +5279,7 @@
       "retriever": "hybrid_v2",
       "id": "q063",
       "category": "solar_lookup",
-      "ms": 8.910714999956326,
+      "ms": 9.237165000058667,
       "ranked": [
         "solar|2023-09-14"
       ],
@@ -5293,7 +5293,7 @@
       "retriever": "hybrid_v2",
       "id": "q064",
       "category": "solar_lookup",
-      "ms": 7.44034800004556,
+      "ms": 7.701955000129601,
       "ranked": [
         "solar|2023-09-02"
       ],
@@ -5307,7 +5307,7 @@
       "retriever": "hybrid_v2",
       "id": "q065",
       "category": "solar_lookup",
-      "ms": 7.475554999928136,
+      "ms": 7.0777280000129394,
       "ranked": [
         "solar|2023-12-27"
       ],
@@ -5321,7 +5321,7 @@
       "retriever": "hybrid_v2",
       "id": "q066",
       "category": "solar_lookup",
-      "ms": 7.851326000036352,
+      "ms": 7.551799999873765,
       "ranked": [
         "solar|2023-09-04"
       ],
@@ -5335,7 +5335,7 @@
       "retriever": "hybrid_v2",
       "id": "q067",
       "category": "solar_lookup",
-      "ms": 7.723974999862548,
+      "ms": 6.992218000050343,
       "ranked": [
         "solar|2023-09-07"
       ],
@@ -5349,7 +5349,7 @@
       "retriever": "hybrid_v2",
       "id": "q068",
       "category": "solar_lookup",
-      "ms": 8.049050999943574,
+      "ms": 6.577267000011489,
       "ranked": [
         "solar|2023-09-01"
       ],
@@ -5363,7 +5363,7 @@
       "retriever": "hybrid_v2",
       "id": "q069",
       "category": "solar_lookup",
-      "ms": 7.804411999813965,
+      "ms": 7.042509000029895,
       "ranked": [
         "solar|2023-05-09"
       ],
@@ -5377,7 +5377,7 @@
       "retriever": "hybrid_v2",
       "id": "q070",
       "category": "solar_lookup",
-      "ms": 8.060693000061292,
+      "ms": 6.604057999993529,
       "ranked": [
         "solar|2023-06-18"
       ],
@@ -5391,7 +5391,7 @@
       "retriever": "hybrid_v2",
       "id": "q071",
       "category": "solar_cloud",
-      "ms": 7.926294000071721,
+      "ms": 6.682301999944684,
       "ranked": [
         "solar|2023-02-05"
       ],
@@ -5405,7 +5405,7 @@
       "retriever": "hybrid_v2",
       "id": "q072",
       "category": "solar_cloud",
-      "ms": 7.732744000122693,
+      "ms": 7.333142000106818,
       "ranked": [
         "solar|2023-05-19"
       ],
@@ -5419,7 +5419,7 @@
       "retriever": "hybrid_v2",
       "id": "q073",
       "category": "solar_cloud",
-      "ms": 7.956103999958941,
+      "ms": 6.681532999891715,
       "ranked": [
         "solar|2023-08-30"
       ],
@@ -5433,7 +5433,7 @@
       "retriever": "hybrid_v2",
       "id": "q074",
       "category": "solar_cloud",
-      "ms": 9.580758000083733,
+      "ms": 9.200294000038411,
       "ranked": [
         "solar|2023-11-25"
       ],
@@ -5447,7 +5447,7 @@
       "retriever": "hybrid_v2",
       "id": "q075",
       "category": "solar_cloud",
-      "ms": 13.618395000094097,
+      "ms": 7.940271000052235,
       "ranked": [
         "solar|2023-02-19"
       ],
@@ -5461,7 +5461,7 @@
       "retriever": "hybrid_v2",
       "id": "q076",
       "category": "solar_cloud",
-      "ms": 10.043623999990814,
+      "ms": 8.09200100002272,
       "ranked": [
         "solar|2023-02-02"
       ],
@@ -5475,7 +5475,7 @@
       "retriever": "hybrid_v2",
       "id": "q077",
       "category": "solar_cloud",
-      "ms": 8.678934000045047,
+      "ms": 7.39146000000801,
       "ranked": [
         "solar|2023-08-29"
       ],
@@ -5489,7 +5489,7 @@
       "retriever": "hybrid_v2",
       "id": "q078",
       "category": "solar_cloud",
-      "ms": 7.966735000081826,
+      "ms": 8.093380999980582,
       "ranked": [
         "solar|2023-04-18"
       ],
@@ -5503,7 +5503,7 @@
       "retriever": "hybrid_v2",
       "id": "q079",
       "category": "solar_cloud",
-      "ms": 7.666362999998455,
+      "ms": 7.776953999837133,
       "ranked": [
         "solar|2023-04-20"
       ],
@@ -5517,7 +5517,7 @@
       "retriever": "hybrid_v2",
       "id": "q080",
       "category": "solar_cloud",
-      "ms": 7.933184999956211,
+      "ms": 7.797158999892417,
       "ranked": [
         "solar|2023-07-31"
       ],
@@ -5531,7 +5531,7 @@
       "retriever": "hybrid_v2",
       "id": "q081",
       "category": "nl_date",
-      "ms": 9.145629999920857,
+      "ms": 10.081449999916003,
       "ranked": [
         "ev_grid|GRID_04A|2020-03-02"
       ],
@@ -5545,7 +5545,7 @@
       "retriever": "hybrid_v2",
       "id": "q082",
       "category": "nl_date",
-      "ms": 9.290319000001546,
+      "ms": 9.494797999877846,
       "ranked": [
         "ev_grid|GRID_05A|2020-02-27"
       ],
@@ -5559,7 +5559,7 @@
       "retriever": "hybrid_v2",
       "id": "q083",
       "category": "nl_date",
-      "ms": 9.146151999857466,
+      "ms": 10.009381000145368,
       "ranked": [
         "ev_grid|GRID_07A|2021-07-29"
       ],
@@ -5573,7 +5573,7 @@
       "retriever": "hybrid_v2",
       "id": "q084",
       "category": "nl_date",
-      "ms": 9.000621000041065,
+      "ms": 10.032408999904874,
       "ranked": [
         "ev_grid|GRID_08A|2020-10-08"
       ],
@@ -5587,7 +5587,7 @@
       "retriever": "hybrid_v2",
       "id": "q085",
       "category": "nl_date",
-      "ms": 9.195037999916167,
+      "ms": 10.807897999939087,
       "ranked": [
         "ev_grid|GRID_LV11|2020-03-23"
       ],
@@ -5601,7 +5601,7 @@
       "retriever": "hybrid_v2",
       "id": "q086",
       "category": "nl_date",
-      "ms": 9.378489999789963,
+      "ms": 9.864122999942992,
       "ranked": [
         "ev_grid|GRID_LV21|2020-02-05"
       ],
@@ -5615,7 +5615,7 @@
       "retriever": "hybrid_v2",
       "id": "q087",
       "category": "nl_date",
-      "ms": 11.376122999990912,
+      "ms": 9.883495000167386,
       "ranked": [
         "ev_grid|GRID_LV22|2020-01-08"
       ],
@@ -5629,7 +5629,7 @@
       "retriever": "hybrid_v2",
       "id": "q088",
       "category": "nl_date",
-      "ms": 9.637329999804933,
+      "ms": 9.472870000081457,
       "ranked": [
         "ev_grid|GRID_LV23|2019-09-16"
       ],
@@ -5643,7 +5643,7 @@
       "retriever": "hybrid_v2",
       "id": "q089",
       "category": "nl_date",
-      "ms": 8.37815399995634,
+      "ms": 7.091988999945897,
       "ranked": [
         "solar|2023-12-19"
       ],
@@ -5657,7 +5657,7 @@
       "retriever": "hybrid_v2",
       "id": "q090",
       "category": "nl_date",
-      "ms": 7.761506999941048,
+      "ms": 7.177454000157013,
       "ranked": [
         "solar|2023-06-09"
       ],
@@ -5671,7 +5671,7 @@
       "retriever": "hybrid_v2",
       "id": "q091",
       "category": "nl_date",
-      "ms": 8.276148000049943,
+      "ms": 6.536677999974927,
       "ranked": [
         "solar|2023-11-16"
       ],
@@ -5685,7 +5685,7 @@
       "retriever": "hybrid_v2",
       "id": "q092",
       "category": "nl_date",
-      "ms": 7.8690790001019195,
+      "ms": 6.95549200008827,
       "ranked": [
         "solar|2023-06-27"
       ],
@@ -5699,7 +5699,7 @@
       "retriever": "hybrid_v2",
       "id": "q093",
       "category": "nl_date",
-      "ms": 8.566737999899487,
+      "ms": 6.503211000108422,
       "ranked": [
         "solar|2023-08-26"
       ],
@@ -5713,7 +5713,7 @@
       "retriever": "hybrid_v2",
       "id": "q094",
       "category": "nl_date",
-      "ms": 7.884305999823482,
+      "ms": 6.399140999974406,
       "ranked": [
         "solar|2023-06-14"
       ],
@@ -5727,7 +5727,7 @@
       "retriever": "hybrid_v2",
       "id": "q095",
       "category": "nl_date",
-      "ms": 8.17271900018568,
+      "ms": 6.2844569999924715,
       "ranked": [
         "solar|2023-11-09"
       ],
@@ -5741,7 +5741,7 @@
       "retriever": "hybrid_v2",
       "id": "q096",
       "category": "comparison",
-      "ms": 10.358242999927825,
+      "ms": 9.55409299990606,
       "ranked": [
         "ev_grid|GRID_05A|2019-09-09",
         "ev_grid|GRID_05A|2019-09-17"
@@ -5756,7 +5756,7 @@
       "retriever": "hybrid_v2",
       "id": "q097",
       "category": "comparison",
-      "ms": 10.789862999899924,
+      "ms": 8.839829999942594,
       "ranked": [
         "ev_grid|GRID_07A|2019-04-15",
         "ev_grid|GRID_07A|2020-12-18"
@@ -5771,7 +5771,7 @@
       "retriever": "hybrid_v2",
       "id": "q098",
       "category": "comparison",
-      "ms": 11.160989000018162,
+      "ms": 9.955709999985629,
       "ranked": [
         "ev_grid|GRID_08A|2021-08-23",
         "ev_grid|GRID_08A|2019-05-20"
@@ -5786,7 +5786,7 @@
       "retriever": "hybrid_v2",
       "id": "q099",
       "category": "comparison",
-      "ms": 10.094097999854057,
+      "ms": 10.74979700001677,
       "ranked": [
         "ev_grid|GRID_LV11|2020-01-11",
         "ev_grid|GRID_LV11|2021-09-28"
@@ -5801,7 +5801,7 @@
       "retriever": "hybrid_v2",
       "id": "q100",
       "category": "comparison",
-      "ms": 9.61390899988146,
+      "ms": 10.797644999911427,
       "ranked": [
         "ev_grid|GRID_LV21|2020-01-17",
         "ev_grid|GRID_LV21|2019-08-07"
@@ -5816,7 +5816,7 @@
       "retriever": "hybrid_v2",
       "id": "q101",
       "category": "comparison",
-      "ms": 9.807350999835762,
+      "ms": 10.251810999989175,
       "ranked": [
         "ev_grid|GRID_LV22|2020-01-26",
         "ev_grid|GRID_LV22|2021-03-24"
@@ -5831,7 +5831,7 @@
       "retriever": "hybrid_v2",
       "id": "q102",
       "category": "comparison",
-      "ms": 12.014543000077538,
+      "ms": 9.773508000080255,
       "ranked": [
         "ev_grid|GRID_LV31|2021-09-29",
         "ev_grid|GRID_LV31|2020-11-13"
@@ -5846,7 +5846,7 @@
       "retriever": "hybrid_v2",
       "id": "q103",
       "category": "comparison",
-      "ms": 11.59911100012323,
+      "ms": 10.46065900004578,
       "ranked": [
         "ev_grid|GRID_OTHER|2021-01-04",
         "ev_grid|GRID_OTHER|2019-04-26"
@@ -5861,7 +5861,7 @@
       "retriever": "hybrid_v2",
       "id": "q104",
       "category": "comparison",
-      "ms": 10.533709999890561,
+      "ms": 8.120128999962617,
       "ranked": [
         "solar|2023-05-03",
         "solar|2023-03-14"
@@ -5876,7 +5876,7 @@
       "retriever": "hybrid_v2",
       "id": "q105",
       "category": "comparison",
-      "ms": 8.886492999863549,
+      "ms": 8.575019000090833,
       "ranked": [
         "solar|2023-07-23",
         "solar|2023-12-17"
@@ -5891,7 +5891,7 @@
       "retriever": "hybrid_v2",
       "id": "q106",
       "category": "comparison",
-      "ms": 9.86399400017035,
+      "ms": 9.081605000119453,
       "ranked": [
         "solar|2023-05-05",
         "solar|2023-06-21"
@@ -5906,7 +5906,7 @@
       "retriever": "hybrid_v2",
       "id": "q107",
       "category": "comparison",
-      "ms": 9.824385000001712,
+      "ms": 8.906470000056288,
       "ranked": [
         "solar|2023-03-28",
         "solar|2023-07-29"
@@ -5921,7 +5921,7 @@
       "retriever": "hybrid_v2",
       "id": "q108",
       "category": "comparison",
-      "ms": 11.137429999962478,
+      "ms": 9.059944000000542,
       "ranked": [
         "solar|2023-12-14",
         "solar|2023-05-24"
@@ -5936,7 +5936,7 @@
       "retriever": "hybrid_v2",
       "id": "q109",
       "category": "comparison",
-      "ms": 11.168063000013717,
+      "ms": 8.477300000095056,
       "ranked": [
         "solar|2023-07-04",
         "solar|2023-12-26"
@@ -5951,7 +5951,7 @@
       "retriever": "hybrid_v2",
       "id": "q110",
       "category": "comparison",
-      "ms": 10.627386999885857,
+      "ms": 8.522194000079253,
       "ranked": [
         "solar|2023-11-01",
         "solar|2023-05-27"

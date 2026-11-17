@@ -153,7 +153,7 @@ def main():
                      f"Share of questions whose gold answer reaches the LLM · embeddings: {tag}",
                      cats, {v: [s["by_category"][v][c] for c in cats] for v in s["overall"]}, "Answerability ceiling")
 
-    for name, d in _load("agent_summary_*.json").items():
+    for d in _load("agent_summary_*.json").values():
         if d["provider"] == "scripted":
             continue
         sm = d["summaries"]

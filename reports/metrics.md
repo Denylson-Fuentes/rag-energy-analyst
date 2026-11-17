@@ -4,20 +4,20 @@
 
 | Retriever | Recall@1 | Recall@3 | Recall@5 | Recall@10 | MRR | p50 ms |
 |---|---|---|---|---|---|---|
-| semantic | 0.714 | 0.836 | 0.877 | 0.891 | 0.822 | 5.1 |
-| hybrid_v1 | 0.804 | 0.804 | 0.823 | 0.823 | 0.877 | 11.9 |
-| hybrid_v2 | 0.932 | 1.000 | 1.000 | 1.000 | 1.000 | 10.1 |
+| semantic | 0.700 | 0.818 | 0.859 | 0.873 | 0.803 | 3.9 |
+| hybrid_v1 | 0.804 | 0.804 | 0.823 | 0.823 | 0.877 | 10.3 |
+| hybrid_v2 | 0.932 | 1.000 | 1.000 | 1.000 | 1.000 | 9.1 |
 
 Recall@3 by category:
 
 | Category | semantic | hybrid_v1 | hybrid_v2 |
 |---|---|---|---|
 | EV daily lookup | 1.00 | 1.00 | 1.00 |
-| Solar peak lookup | 0.96 | 1.00 | 1.00 |
+| Solar peak lookup | 0.92 | 1.00 | 1.00 |
 | Solar cloud lookup | 1.00 | 1.00 | 1.00 |
 | EV peak hour | 1.00 | 1.00 | 1.00 |
 | Natural-language dates | 0.07 | 0.07 | 1.00 |
-| Two-day comparison | 0.80 | 0.50 | 1.00 |
+| Two-day comparison | 0.73 | 0.50 | 1.00 |
 
 ## Tool-layer answerability ceiling (embeddings: `hashing`, n=165)
 
