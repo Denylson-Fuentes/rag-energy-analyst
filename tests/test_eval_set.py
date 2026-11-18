@@ -53,3 +53,14 @@ def test_harness_end_to_end_with_scripted_model(questions, vectorstore):
     s = score(sample, recs, "scripted")
     assert s["accuracy"] == 1.0
     assert s["groundedness_claim_level"] == 1.0
+
+
+def test_holdout_set_is_disjoint_and_reproducible(questions):
+    from evals.build_dataset import build_holdout
+    from evals.common import HOLDOUT, load_questions
+
+    holdout = load_questions(HOLDOUT)
+    assert len(holdout) >= 150
+    assert not {q["question"] for q in holdout} & {q["question"] for q in questions}
+    assert sum(q["category"] == "unanswerable" for q in holdout) >= 20
+    assert [q["question"] for q in build_holdout()] == [q["question"] for q in holdout]

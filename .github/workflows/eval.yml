@@ -18,8 +18,12 @@ on:
       variants:
         description: Space-separated variants
         default: rag_only agent_v1 agent_v2
+      question_set:
+        type: choice
+        options: [main, holdout]
+        default: main
       limit:
-        description: Max questions (blank = all 165)
+        description: Max questions (blank = all)
         default: ""
       judge:
         type: boolean
@@ -57,7 +61,7 @@ jobs:
       - name: Run agent eval
         run: |
           set -o pipefail
-          ARGS="--variants ${{ inputs.variants }} --print-failures"
+          ARGS="--variants ${{ inputs.variants }} --question-set ${{ inputs.question_set }} --print-failures"
           if [ -n "${{ inputs.limit }}" ]; then ARGS="$ARGS --limit ${{ inputs.limit }}"; fi
           if [ "${{ inputs.judge }}" = "true" ]; then ARGS="$ARGS --judge"; fi
           python -m evals.run_agent_eval $ARGS | tee -a "$GITHUB_STEP_SUMMARY"
