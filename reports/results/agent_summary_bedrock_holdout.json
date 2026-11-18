@@ -1,0 +1,74 @@
+{
+  "provider": "bedrock",
+  "model": "us.anthropic.claude-haiku-4-5-20251001-v1:0",
+  "embeddings_backend": "minilm",
+  "question_set": "holdout",
+  "source": "GitHub Actions run 44242322213 (raw output: reports/results/ci_agent_eval_bedrock_holdout.txt)",
+  "summaries": {
+    "agent_v1": {
+      "n": 160,
+      "accuracy": 0.8438,
+      "accuracy_answerable": 0.8444,
+      "refusal_accuracy": 0.84,
+      "false_refusal_rate": 0.0963,
+      "groundedness_claim_level": 0.9885,
+      "fully_grounded_rate": 0.9542,
+      "tool_selection_accuracy": 0.8375,
+      "errors": 0,
+      "latency_p50_s": 1.776,
+      "latency_p95_s": 6.221,
+      "mean_llm_calls": 2.1,
+      "mean_input_tokens": 4695,
+      "mean_output_tokens": 223,
+      "cost_per_query_usd": 0.00581,
+      "by_category": {
+        "aggregation": 0.25,
+        "comparison": 0.8667,
+        "ev_lookup": 1.0,
+        "ev_peak_hour": 1.0,
+        "forecast": 1.0,
+        "nl_date": 0.8,
+        "solar_cloud": 0.5,
+        "solar_lookup": 0.9167,
+        "unanswerable": 0.84
+      },
+      "failures": {
+        "wrong_tool": 13,
+        "no_tool_call": 5,
+        "missed_refusal": 4,
+        "retrieval_miss": 3
+      }
+    },
+    "agent_v2": {
+      "n": 160,
+      "accuracy": 0.9938,
+      "accuracy_answerable": 1.0,
+      "refusal_accuracy": 0.96,
+      "false_refusal_rate": 0.0,
+      "groundedness_claim_level": 0.9874,
+      "fully_grounded_rate": 0.9784,
+      "tool_selection_accuracy": 1.0,
+      "errors": 0,
+      "latency_p50_s": 1.512,
+      "latency_p95_s": 2.057,
+      "mean_llm_calls": 1.89,
+      "mean_input_tokens": 5628,
+      "mean_output_tokens": 150,
+      "cost_per_query_usd": 0.00638,
+      "by_category": {
+        "aggregation": 1.0,
+        "comparison": 1.0,
+        "ev_lookup": 1.0,
+        "ev_peak_hour": 1.0,
+        "forecast": 1.0,
+        "nl_date": 1.0,
+        "solar_cloud": 1.0,
+        "solar_lookup": 1.0,
+        "unanswerable": 0.96
+      },
+      "failures": {
+        "missed_refusal": 1
+      }
+    }
+  }
+}
