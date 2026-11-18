@@ -94,7 +94,7 @@ def failure_stack(path, summaries: dict):
         for y, v in zip(ys, vals, strict=True):
             ax.text(v + xmax * 0.02, y, str(v), va="center", fontsize=8, color=INK_2)
         ax.set_xlim(0, xmax * 1.2)
-        ax.set_title(f"{variant}  (n={s['n']}, errors={s['n'] - round(s['accuracy'] * s['n'])})",
+        ax.set_title(f"{variant}  (n={s['n']}, wrong={s['n'] - round(s['accuracy'] * s['n'])})",
                      loc="left", fontsize=9, color=INK)
         ax.set_yticks(ys)
         ax.set_yticklabels([FAILURE_LABELS[k] for k in present], color=INK, fontsize=8)

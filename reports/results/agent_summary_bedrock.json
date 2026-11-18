@@ -1,0 +1,111 @@
+{
+  "provider": "bedrock",
+  "model": "us.anthropic.claude-haiku-4-5-20251001-v1:0",
+  "embeddings_backend": "minilm",
+  "source": "GitHub Actions run 44238173374 (raw output: reports/results/ci_agent_eval_bedrock.txt)",
+  "corrections": "agent_v1 q163 and q164 re-scored as correct refusals after manual review (scorer false negatives, pattern fixed in evals/scoring.py)",
+  "summaries": {
+    "rag_only": {
+      "n": 165,
+      "accuracy": 0.7152,
+      "accuracy_answerable": 0.6933,
+      "refusal_accuracy": 0.9333,
+      "false_refusal_rate": 0.2467,
+      "groundedness_claim_level": 0.9828,
+      "fully_grounded_rate": 0.944,
+      "tool_selection_accuracy": 0.7576,
+      "errors": 0,
+      "latency_p50_s": 1.771,
+      "latency_p95_s": 3.902,
+      "mean_llm_calls": 2.18,
+      "mean_input_tokens": 3400,
+      "mean_output_tokens": 205,
+      "cost_per_query_usd": 0.00443,
+      "by_category": {
+        "aggregation": 0.05,
+        "comparison": 1.0,
+        "ev_lookup": 1.0,
+        "ev_peak_hour": 1.0,
+        "forecast": 0.0667,
+        "inventory": 0.0,
+        "nl_date": 0.4667,
+        "solar_cloud": 1.0,
+        "solar_lookup": 1.0,
+        "unanswerable": 0.9333
+      },
+      "failures": {
+        "wrong_tool": 36,
+        "retrieval_miss": 8,
+        "no_tool_call": 2,
+        "missed_refusal": 1
+      }
+    },
+    "agent_v1": {
+      "n": 165,
+      "accuracy": 0.8303,
+      "accuracy_answerable": 0.82,
+      "refusal_accuracy": 0.9333,
+      "false_refusal_rate": 0.1333,
+      "groundedness_claim_level": 0.9823,
+      "fully_grounded_rate": 0.9485,
+      "tool_selection_accuracy": 0.7939,
+      "errors": 0,
+      "latency_p50_s": 1.76,
+      "latency_p95_s": 5.155,
+      "mean_llm_calls": 2.21,
+      "mean_input_tokens": 5084,
+      "mean_output_tokens": 233,
+      "cost_per_query_usd": 0.00625,
+      "by_category": {
+        "aggregation": 0.2,
+        "comparison": 0.8667,
+        "ev_lookup": 1.0,
+        "ev_peak_hour": 1.0,
+        "forecast": 1.0,
+        "inventory": 1.0,
+        "nl_date": 0.8,
+        "solar_cloud": 0.5,
+        "solar_lookup": 0.96,
+        "unanswerable": 0.9333
+      },
+      "failures": {
+        "wrong_tool": 19,
+        "no_tool_call": 5,
+        "retrieval_miss": 3,
+        "missed_refusal": 1
+      }
+    },
+    "agent_v2": {
+      "n": 165,
+      "accuracy": 0.9879,
+      "accuracy_answerable": 1.0,
+      "refusal_accuracy": 0.8667,
+      "false_refusal_rate": 0.0,
+      "groundedness_claim_level": 0.9773,
+      "fully_grounded_rate": 0.9474,
+      "tool_selection_accuracy": 1.0,
+      "errors": 0,
+      "latency_p50_s": 1.497,
+      "latency_p95_s": 2.144,
+      "mean_llm_calls": 1.95,
+      "mean_input_tokens": 5558,
+      "mean_output_tokens": 153,
+      "cost_per_query_usd": 0.00632,
+      "by_category": {
+        "aggregation": 1.0,
+        "comparison": 1.0,
+        "ev_lookup": 1.0,
+        "ev_peak_hour": 1.0,
+        "forecast": 1.0,
+        "inventory": 1.0,
+        "nl_date": 1.0,
+        "solar_cloud": 1.0,
+        "solar_lookup": 1.0,
+        "unanswerable": 0.8667
+      },
+      "failures": {
+        "missed_refusal": 2
+      }
+    }
+  }
+}
