@@ -6,7 +6,6 @@ blowup if the demo receives unexpected traffic.
 """
 import streamlit as st
 
-
 MAX_QUERIES = 20
 
 

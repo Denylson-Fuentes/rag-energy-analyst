@@ -4,8 +4,8 @@ Streamlit entry point for the Energy Analyst RAG agent.
 Run with:
     streamlit run app.py
 """
-import sys
 import os
+import sys
 
 # Ensure project root is on the path and is the working directory
 PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
@@ -13,6 +13,7 @@ os.chdir(PROJECT_ROOT)
 sys.path.insert(0, PROJECT_ROOT)
 
 from dotenv import load_dotenv
+
 load_dotenv()
 
 import streamlit as st
@@ -26,16 +27,16 @@ st.set_page_config(
 )
 
 # Ensure Chroma DB exists, build it if not
-CHROMA_DIR = os.path.join(PROJECT_ROOT, "data", "chroma_db")
+from src.config import CHROMA_DIR
+
 if not os.path.exists(CHROMA_DIR) or not os.listdir(CHROMA_DIR):
     with st.spinner("First-time setup: building vector store... (~2 min)"):
         from src.ingestion.build_vectorstore import build_vectorstore
         build_vectorstore()
 
+from src.ui.chat import handle_chat_input, init_chat, render_chat_history
 from src.ui.rate_limit import init_rate_limit
 from src.ui.sidebar import render_sidebar
-from src.ui.chat import init_chat, render_chat_history, handle_chat_input
-
 
 # --- Session state init ---
 init_rate_limit()
@@ -62,7 +63,7 @@ if len(st.session_state.get("messages", [])) == 0:
         "Is solar generation higher in summer or winter?",
     ]
 
-    for col, q in zip(sample_cols, samples):
+    for col, q in zip(sample_cols, samples, strict=False):
         with col:
             if st.button(q, use_container_width=True, key=f"sample_{hash(q)}"):
                 st.session_state["messages"].append({"role": "user", "content": q})

@@ -10,7 +10,6 @@ from src.ui.rate_limit import (
     reset_rate_limit,
 )
 
-
 MODE_DESCRIPTIONS = {
     "Operator": "Historical lookups and forecasts grounded in data.",
     "Analyst": "Explanations, comparisons, and trend insights.",

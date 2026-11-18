@@ -1,0 +1,24 @@
+# Verbatim from GitHub Actions CI run #1 (job "Retrieval eval (production MiniLM embeddings) + regression gate")
+# https://github.com/Denylson-Fuentes/rag-energy-analyst/actions/runs/44233104401  · commit 51e7aaf
+
+Retrieval eval (embeddings=minilm, n=110 questions)
+retriever    recall@1  recall@3  recall@5 recall@10       mrr
+semantic        0.000     0.018     0.045     0.100     0.024
+hybrid_v1       0.795     0.795     0.795     0.804     0.865
+hybrid_v2       0.932     1.000     1.000     1.000     1.000
+
+Gate: hybrid_v2 recall@3 = 1.000 (min 0.95) -> PASS
+
+Answerability ceiling (embeddings=minilm, n=165)
+category        rag_only  agent_v1  agent_v2
+aggregation         0.00      0.00      1.00
+comparison          0.20      0.20      1.00
+ev_lookup           1.00      1.00      1.00
+ev_peak_hour        1.00      1.00      1.00
+forecast            0.07      1.00      1.00
+inventory           0.00      1.00      1.00
+nl_date             0.20      0.20      1.00
+solar_cloud         1.00      1.00      1.00
+solar_lookup        1.00      1.00      1.00
+unanswerable        0.00      0.00      0.60
+OVERALL             0.53      0.64      0.96

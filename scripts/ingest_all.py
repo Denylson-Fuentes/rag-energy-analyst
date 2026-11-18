@@ -1,6 +1,6 @@
 """Entry point: build the vector store from scratch."""
-import sys
 import os
+import sys
 
 # Get the absolute path of the project root (parent of scripts/)
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))

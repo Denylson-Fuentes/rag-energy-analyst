@@ -1,14 +1,16 @@
 """
 Retrain the EV grid model from the feature CSV.
 """
-import sys
 import os
+import sys
+
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 os.chdir(PROJECT_ROOT)
 sys.path.insert(0, PROJECT_ROOT)
 
-import pandas as pd
 import pickle
+
+import pandas as pd
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_absolute_error
 

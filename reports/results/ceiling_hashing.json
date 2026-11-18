@@ -1,0 +1,3019 @@
+{
+  "summary": {
+    "overall": {
+      "rag_only": 0.5333,
+      "agent_v1": 0.6485,
+      "agent_v2": 0.9636
+    },
+    "by_category": {
+      "rag_only": {
+        "aggregation": 0.0,
+        "comparison": 0.2,
+        "ev_lookup": 1.0,
+        "ev_peak_hour": 1.0,
+        "forecast": 0.0667,
+        "inventory": 0.0,
+        "nl_date": 0.2667,
+        "solar_cloud": 1.0,
+        "solar_lookup": 1.0,
+        "unanswerable": 0.0
+      },
+      "agent_v1": {
+        "aggregation": 0.0,
+        "comparison": 0.2,
+        "ev_lookup": 1.0,
+        "ev_peak_hour": 1.0,
+        "forecast": 1.0,
+        "inventory": 1.0,
+        "nl_date": 0.2667,
+        "solar_cloud": 1.0,
+        "solar_lookup": 1.0,
+        "unanswerable": 0.0
+      },
+      "agent_v2": {
+        "aggregation": 1.0,
+        "comparison": 1.0,
+        "ev_lookup": 1.0,
+        "ev_peak_hour": 1.0,
+        "forecast": 1.0,
+        "inventory": 1.0,
+        "nl_date": 1.0,
+        "solar_cloud": 1.0,
+        "solar_lookup": 1.0,
+        "unanswerable": 0.6
+      }
+    }
+  },
+  "rows": [
+    {
+      "system": "rag_only",
+      "id": "q001",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q002",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q003",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q004",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q005",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q006",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q007",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q008",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q009",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q010",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q011",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q012",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q013",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q014",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q015",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q016",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q017",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q018",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q019",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q020",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q021",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q022",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q023",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q024",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q025",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q026",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q027",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q028",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q029",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q030",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q031",
+      "category": "ev_peak_hour",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q032",
+      "category": "ev_peak_hour",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q033",
+      "category": "ev_peak_hour",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q034",
+      "category": "ev_peak_hour",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q035",
+      "category": "ev_peak_hour",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q036",
+      "category": "ev_peak_hour",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q037",
+      "category": "ev_peak_hour",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q038",
+      "category": "ev_peak_hour",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q039",
+      "category": "ev_peak_hour",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q040",
+      "category": "ev_peak_hour",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q041",
+      "category": "ev_peak_hour",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q042",
+      "category": "ev_peak_hour",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q043",
+      "category": "ev_peak_hour",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q044",
+      "category": "ev_peak_hour",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q045",
+      "category": "ev_peak_hour",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q046",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q047",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q048",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q049",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q050",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q051",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q052",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q053",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q054",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q055",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q056",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q057",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q058",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q059",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q060",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q061",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q062",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q063",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q064",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q065",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q066",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q067",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q068",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q069",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q070",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q071",
+      "category": "solar_cloud",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q072",
+      "category": "solar_cloud",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q073",
+      "category": "solar_cloud",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q074",
+      "category": "solar_cloud",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q075",
+      "category": "solar_cloud",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q076",
+      "category": "solar_cloud",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q077",
+      "category": "solar_cloud",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q078",
+      "category": "solar_cloud",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q079",
+      "category": "solar_cloud",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q080",
+      "category": "solar_cloud",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q081",
+      "category": "nl_date",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q082",
+      "category": "nl_date",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q083",
+      "category": "nl_date",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q084",
+      "category": "nl_date",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q085",
+      "category": "nl_date",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q086",
+      "category": "nl_date",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q087",
+      "category": "nl_date",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q088",
+      "category": "nl_date",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q089",
+      "category": "nl_date",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q090",
+      "category": "nl_date",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q091",
+      "category": "nl_date",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q092",
+      "category": "nl_date",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q093",
+      "category": "nl_date",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q094",
+      "category": "nl_date",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q095",
+      "category": "nl_date",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q096",
+      "category": "comparison",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q097",
+      "category": "comparison",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q098",
+      "category": "comparison",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q099",
+      "category": "comparison",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q100",
+      "category": "comparison",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q101",
+      "category": "comparison",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q102",
+      "category": "comparison",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q103",
+      "category": "comparison",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q104",
+      "category": "comparison",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q105",
+      "category": "comparison",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q106",
+      "category": "comparison",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q107",
+      "category": "comparison",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q108",
+      "category": "comparison",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q109",
+      "category": "comparison",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q110",
+      "category": "comparison",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q111",
+      "category": "aggregation",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q112",
+      "category": "aggregation",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q113",
+      "category": "aggregation",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q114",
+      "category": "aggregation",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q115",
+      "category": "aggregation",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q116",
+      "category": "aggregation",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q117",
+      "category": "aggregation",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q118",
+      "category": "aggregation",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q119",
+      "category": "aggregation",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q120",
+      "category": "aggregation",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q121",
+      "category": "aggregation",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q122",
+      "category": "aggregation",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q123",
+      "category": "aggregation",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q124",
+      "category": "aggregation",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q125",
+      "category": "aggregation",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q126",
+      "category": "aggregation",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q127",
+      "category": "aggregation",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q128",
+      "category": "aggregation",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q129",
+      "category": "aggregation",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q130",
+      "category": "aggregation",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q131",
+      "category": "forecast",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q132",
+      "category": "forecast",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q133",
+      "category": "forecast",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q134",
+      "category": "forecast",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q135",
+      "category": "forecast",
+      "evidence_ok": true
+    },
+    {
+      "system": "rag_only",
+      "id": "q136",
+      "category": "forecast",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q137",
+      "category": "forecast",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q138",
+      "category": "forecast",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q139",
+      "category": "forecast",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q140",
+      "category": "forecast",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q141",
+      "category": "forecast",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q142",
+      "category": "forecast",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q143",
+      "category": "forecast",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q144",
+      "category": "forecast",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q145",
+      "category": "forecast",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q146",
+      "category": "inventory",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q147",
+      "category": "inventory",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q148",
+      "category": "inventory",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q149",
+      "category": "inventory",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q150",
+      "category": "inventory",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q151",
+      "category": "unanswerable",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q152",
+      "category": "unanswerable",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q153",
+      "category": "unanswerable",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q154",
+      "category": "unanswerable",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q155",
+      "category": "unanswerable",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q156",
+      "category": "unanswerable",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q157",
+      "category": "unanswerable",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q158",
+      "category": "unanswerable",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q159",
+      "category": "unanswerable",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q160",
+      "category": "unanswerable",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q161",
+      "category": "unanswerable",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q162",
+      "category": "unanswerable",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q163",
+      "category": "unanswerable",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q164",
+      "category": "unanswerable",
+      "evidence_ok": false
+    },
+    {
+      "system": "rag_only",
+      "id": "q165",
+      "category": "unanswerable",
+      "evidence_ok": false
+    },
+    {
+      "system": "agent_v1",
+      "id": "q001",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q002",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q003",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q004",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q005",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q006",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q007",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q008",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q009",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q010",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q011",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q012",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q013",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q014",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q015",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q016",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q017",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q018",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q019",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q020",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q021",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q022",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q023",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q024",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q025",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q026",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q027",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q028",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q029",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q030",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q031",
+      "category": "ev_peak_hour",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q032",
+      "category": "ev_peak_hour",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q033",
+      "category": "ev_peak_hour",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q034",
+      "category": "ev_peak_hour",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q035",
+      "category": "ev_peak_hour",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q036",
+      "category": "ev_peak_hour",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q037",
+      "category": "ev_peak_hour",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q038",
+      "category": "ev_peak_hour",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q039",
+      "category": "ev_peak_hour",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q040",
+      "category": "ev_peak_hour",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q041",
+      "category": "ev_peak_hour",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q042",
+      "category": "ev_peak_hour",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q043",
+      "category": "ev_peak_hour",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q044",
+      "category": "ev_peak_hour",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q045",
+      "category": "ev_peak_hour",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q046",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q047",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q048",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q049",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q050",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q051",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q052",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q053",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q054",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q055",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q056",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q057",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q058",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q059",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q060",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q061",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q062",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q063",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q064",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q065",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q066",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q067",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q068",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q069",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q070",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q071",
+      "category": "solar_cloud",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q072",
+      "category": "solar_cloud",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q073",
+      "category": "solar_cloud",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q074",
+      "category": "solar_cloud",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q075",
+      "category": "solar_cloud",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q076",
+      "category": "solar_cloud",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q077",
+      "category": "solar_cloud",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q078",
+      "category": "solar_cloud",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q079",
+      "category": "solar_cloud",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q080",
+      "category": "solar_cloud",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q081",
+      "category": "nl_date",
+      "evidence_ok": false
+    },
+    {
+      "system": "agent_v1",
+      "id": "q082",
+      "category": "nl_date",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q083",
+      "category": "nl_date",
+      "evidence_ok": false
+    },
+    {
+      "system": "agent_v1",
+      "id": "q084",
+      "category": "nl_date",
+      "evidence_ok": false
+    },
+    {
+      "system": "agent_v1",
+      "id": "q085",
+      "category": "nl_date",
+      "evidence_ok": false
+    },
+    {
+      "system": "agent_v1",
+      "id": "q086",
+      "category": "nl_date",
+      "evidence_ok": false
+    },
+    {
+      "system": "agent_v1",
+      "id": "q087",
+      "category": "nl_date",
+      "evidence_ok": false
+    },
+    {
+      "system": "agent_v1",
+      "id": "q088",
+      "category": "nl_date",
+      "evidence_ok": false
+    },
+    {
+      "system": "agent_v1",
+      "id": "q089",
+      "category": "nl_date",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q090",
+      "category": "nl_date",
+      "evidence_ok": false
+    },
+    {
+      "system": "agent_v1",
+      "id": "q091",
+      "category": "nl_date",
+      "evidence_ok": false
+    },
+    {
+      "system": "agent_v1",
+      "id": "q092",
+      "category": "nl_date",
+      "evidence_ok": false
+    },
+    {
+      "system": "agent_v1",
+      "id": "q093",
+      "category": "nl_date",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q094",
+      "category": "nl_date",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q095",
+      "category": "nl_date",
+      "evidence_ok": false
+    },
+    {
+      "system": "agent_v1",
+      "id": "q096",
+      "category": "comparison",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q097",
+      "category": "comparison",
+      "evidence_ok": false
+    },
+    {
+      "system": "agent_v1",
+      "id": "q098",
+      "category": "comparison",
+      "evidence_ok": false
+    },
+    {
+      "system": "agent_v1",
+      "id": "q099",
+      "category": "comparison",
+      "evidence_ok": false
+    },
+    {
+      "system": "agent_v1",
+      "id": "q100",
+      "category": "comparison",
+      "evidence_ok": false
+    },
+    {
+      "system": "agent_v1",
+      "id": "q101",
+      "category": "comparison",
+      "evidence_ok": false
+    },
+    {
+      "system": "agent_v1",
+      "id": "q102",
+      "category": "comparison",
+      "evidence_ok": false
+    },
+    {
+      "system": "agent_v1",
+      "id": "q103",
+      "category": "comparison",
+      "evidence_ok": false
+    },
+    {
+      "system": "agent_v1",
+      "id": "q104",
+      "category": "comparison",
+      "evidence_ok": false
+    },
+    {
+      "system": "agent_v1",
+      "id": "q105",
+      "category": "comparison",
+      "evidence_ok": false
+    },
+    {
+      "system": "agent_v1",
+      "id": "q106",
+      "category": "comparison",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q107",
+      "category": "comparison",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q108",
+      "category": "comparison",
+      "evidence_ok": false
+    },
+    {
+      "system": "agent_v1",
+      "id": "q109",
+      "category": "comparison",
+      "evidence_ok": false
+    },
+    {
+      "system": "agent_v1",
+      "id": "q110",
+      "category": "comparison",
+      "evidence_ok": false
+    },
+    {
+      "system": "agent_v1",
+      "id": "q111",
+      "category": "aggregation",
+      "evidence_ok": false
+    },
+    {
+      "system": "agent_v1",
+      "id": "q112",
+      "category": "aggregation",
+      "evidence_ok": false
+    },
+    {
+      "system": "agent_v1",
+      "id": "q113",
+      "category": "aggregation",
+      "evidence_ok": false
+    },
+    {
+      "system": "agent_v1",
+      "id": "q114",
+      "category": "aggregation",
+      "evidence_ok": false
+    },
+    {
+      "system": "agent_v1",
+      "id": "q115",
+      "category": "aggregation",
+      "evidence_ok": false
+    },
+    {
+      "system": "agent_v1",
+      "id": "q116",
+      "category": "aggregation",
+      "evidence_ok": false
+    },
+    {
+      "system": "agent_v1",
+      "id": "q117",
+      "category": "aggregation",
+      "evidence_ok": false
+    },
+    {
+      "system": "agent_v1",
+      "id": "q118",
+      "category": "aggregation",
+      "evidence_ok": false
+    },
+    {
+      "system": "agent_v1",
+      "id": "q119",
+      "category": "aggregation",
+      "evidence_ok": false
+    },
+    {
+      "system": "agent_v1",
+      "id": "q120",
+      "category": "aggregation",
+      "evidence_ok": false
+    },
+    {
+      "system": "agent_v1",
+      "id": "q121",
+      "category": "aggregation",
+      "evidence_ok": false
+    },
+    {
+      "system": "agent_v1",
+      "id": "q122",
+      "category": "aggregation",
+      "evidence_ok": false
+    },
+    {
+      "system": "agent_v1",
+      "id": "q123",
+      "category": "aggregation",
+      "evidence_ok": false
+    },
+    {
+      "system": "agent_v1",
+      "id": "q124",
+      "category": "aggregation",
+      "evidence_ok": false
+    },
+    {
+      "system": "agent_v1",
+      "id": "q125",
+      "category": "aggregation",
+      "evidence_ok": false
+    },
+    {
+      "system": "agent_v1",
+      "id": "q126",
+      "category": "aggregation",
+      "evidence_ok": false
+    },
+    {
+      "system": "agent_v1",
+      "id": "q127",
+      "category": "aggregation",
+      "evidence_ok": false
+    },
+    {
+      "system": "agent_v1",
+      "id": "q128",
+      "category": "aggregation",
+      "evidence_ok": false
+    },
+    {
+      "system": "agent_v1",
+      "id": "q129",
+      "category": "aggregation",
+      "evidence_ok": false
+    },
+    {
+      "system": "agent_v1",
+      "id": "q130",
+      "category": "aggregation",
+      "evidence_ok": false
+    },
+    {
+      "system": "agent_v1",
+      "id": "q131",
+      "category": "forecast",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q132",
+      "category": "forecast",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q133",
+      "category": "forecast",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q134",
+      "category": "forecast",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q135",
+      "category": "forecast",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q136",
+      "category": "forecast",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q137",
+      "category": "forecast",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q138",
+      "category": "forecast",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q139",
+      "category": "forecast",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q140",
+      "category": "forecast",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q141",
+      "category": "forecast",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q142",
+      "category": "forecast",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q143",
+      "category": "forecast",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q144",
+      "category": "forecast",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q145",
+      "category": "forecast",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q146",
+      "category": "inventory",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q147",
+      "category": "inventory",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q148",
+      "category": "inventory",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q149",
+      "category": "inventory",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q150",
+      "category": "inventory",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v1",
+      "id": "q151",
+      "category": "unanswerable",
+      "evidence_ok": false
+    },
+    {
+      "system": "agent_v1",
+      "id": "q152",
+      "category": "unanswerable",
+      "evidence_ok": false
+    },
+    {
+      "system": "agent_v1",
+      "id": "q153",
+      "category": "unanswerable",
+      "evidence_ok": false
+    },
+    {
+      "system": "agent_v1",
+      "id": "q154",
+      "category": "unanswerable",
+      "evidence_ok": false
+    },
+    {
+      "system": "agent_v1",
+      "id": "q155",
+      "category": "unanswerable",
+      "evidence_ok": false
+    },
+    {
+      "system": "agent_v1",
+      "id": "q156",
+      "category": "unanswerable",
+      "evidence_ok": false
+    },
+    {
+      "system": "agent_v1",
+      "id": "q157",
+      "category": "unanswerable",
+      "evidence_ok": false
+    },
+    {
+      "system": "agent_v1",
+      "id": "q158",
+      "category": "unanswerable",
+      "evidence_ok": false
+    },
+    {
+      "system": "agent_v1",
+      "id": "q159",
+      "category": "unanswerable",
+      "evidence_ok": false
+    },
+    {
+      "system": "agent_v1",
+      "id": "q160",
+      "category": "unanswerable",
+      "evidence_ok": false
+    },
+    {
+      "system": "agent_v1",
+      "id": "q161",
+      "category": "unanswerable",
+      "evidence_ok": false
+    },
+    {
+      "system": "agent_v1",
+      "id": "q162",
+      "category": "unanswerable",
+      "evidence_ok": false
+    },
+    {
+      "system": "agent_v1",
+      "id": "q163",
+      "category": "unanswerable",
+      "evidence_ok": false
+    },
+    {
+      "system": "agent_v1",
+      "id": "q164",
+      "category": "unanswerable",
+      "evidence_ok": false
+    },
+    {
+      "system": "agent_v1",
+      "id": "q165",
+      "category": "unanswerable",
+      "evidence_ok": false
+    },
+    {
+      "system": "agent_v2",
+      "id": "q001",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q002",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q003",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q004",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q005",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q006",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q007",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q008",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q009",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q010",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q011",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q012",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q013",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q014",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q015",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q016",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q017",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q018",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q019",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q020",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q021",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q022",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q023",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q024",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q025",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q026",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q027",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q028",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q029",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q030",
+      "category": "ev_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q031",
+      "category": "ev_peak_hour",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q032",
+      "category": "ev_peak_hour",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q033",
+      "category": "ev_peak_hour",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q034",
+      "category": "ev_peak_hour",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q035",
+      "category": "ev_peak_hour",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q036",
+      "category": "ev_peak_hour",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q037",
+      "category": "ev_peak_hour",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q038",
+      "category": "ev_peak_hour",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q039",
+      "category": "ev_peak_hour",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q040",
+      "category": "ev_peak_hour",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q041",
+      "category": "ev_peak_hour",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q042",
+      "category": "ev_peak_hour",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q043",
+      "category": "ev_peak_hour",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q044",
+      "category": "ev_peak_hour",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q045",
+      "category": "ev_peak_hour",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q046",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q047",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q048",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q049",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q050",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q051",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q052",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q053",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q054",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q055",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q056",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q057",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q058",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q059",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q060",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q061",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q062",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q063",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q064",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q065",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q066",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q067",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q068",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q069",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q070",
+      "category": "solar_lookup",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q071",
+      "category": "solar_cloud",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q072",
+      "category": "solar_cloud",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q073",
+      "category": "solar_cloud",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q074",
+      "category": "solar_cloud",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q075",
+      "category": "solar_cloud",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q076",
+      "category": "solar_cloud",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q077",
+      "category": "solar_cloud",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q078",
+      "category": "solar_cloud",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q079",
+      "category": "solar_cloud",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q080",
+      "category": "solar_cloud",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q081",
+      "category": "nl_date",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q082",
+      "category": "nl_date",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q083",
+      "category": "nl_date",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q084",
+      "category": "nl_date",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q085",
+      "category": "nl_date",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q086",
+      "category": "nl_date",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q087",
+      "category": "nl_date",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q088",
+      "category": "nl_date",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q089",
+      "category": "nl_date",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q090",
+      "category": "nl_date",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q091",
+      "category": "nl_date",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q092",
+      "category": "nl_date",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q093",
+      "category": "nl_date",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q094",
+      "category": "nl_date",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q095",
+      "category": "nl_date",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q096",
+      "category": "comparison",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q097",
+      "category": "comparison",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q098",
+      "category": "comparison",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q099",
+      "category": "comparison",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q100",
+      "category": "comparison",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q101",
+      "category": "comparison",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q102",
+      "category": "comparison",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q103",
+      "category": "comparison",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q104",
+      "category": "comparison",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q105",
+      "category": "comparison",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q106",
+      "category": "comparison",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q107",
+      "category": "comparison",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q108",
+      "category": "comparison",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q109",
+      "category": "comparison",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q110",
+      "category": "comparison",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q111",
+      "category": "aggregation",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q112",
+      "category": "aggregation",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q113",
+      "category": "aggregation",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q114",
+      "category": "aggregation",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q115",
+      "category": "aggregation",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q116",
+      "category": "aggregation",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q117",
+      "category": "aggregation",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q118",
+      "category": "aggregation",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q119",
+      "category": "aggregation",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q120",
+      "category": "aggregation",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q121",
+      "category": "aggregation",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q122",
+      "category": "aggregation",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q123",
+      "category": "aggregation",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q124",
+      "category": "aggregation",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q125",
+      "category": "aggregation",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q126",
+      "category": "aggregation",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q127",
+      "category": "aggregation",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q128",
+      "category": "aggregation",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q129",
+      "category": "aggregation",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q130",
+      "category": "aggregation",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q131",
+      "category": "forecast",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q132",
+      "category": "forecast",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q133",
+      "category": "forecast",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q134",
+      "category": "forecast",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q135",
+      "category": "forecast",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q136",
+      "category": "forecast",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q137",
+      "category": "forecast",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q138",
+      "category": "forecast",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q139",
+      "category": "forecast",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q140",
+      "category": "forecast",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q141",
+      "category": "forecast",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q142",
+      "category": "forecast",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q143",
+      "category": "forecast",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q144",
+      "category": "forecast",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q145",
+      "category": "forecast",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q146",
+      "category": "inventory",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q147",
+      "category": "inventory",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q148",
+      "category": "inventory",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q149",
+      "category": "inventory",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q150",
+      "category": "inventory",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q151",
+      "category": "unanswerable",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q152",
+      "category": "unanswerable",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q153",
+      "category": "unanswerable",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q154",
+      "category": "unanswerable",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q155",
+      "category": "unanswerable",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q156",
+      "category": "unanswerable",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q157",
+      "category": "unanswerable",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q158",
+      "category": "unanswerable",
+      "evidence_ok": false
+    },
+    {
+      "system": "agent_v2",
+      "id": "q159",
+      "category": "unanswerable",
+      "evidence_ok": false
+    },
+    {
+      "system": "agent_v2",
+      "id": "q160",
+      "category": "unanswerable",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q161",
+      "category": "unanswerable",
+      "evidence_ok": false
+    },
+    {
+      "system": "agent_v2",
+      "id": "q162",
+      "category": "unanswerable",
+      "evidence_ok": false
+    },
+    {
+      "system": "agent_v2",
+      "id": "q163",
+      "category": "unanswerable",
+      "evidence_ok": true
+    },
+    {
+      "system": "agent_v2",
+      "id": "q164",
+      "category": "unanswerable",
+      "evidence_ok": false
+    },
+    {
+      "system": "agent_v2",
+      "id": "q165",
+      "category": "unanswerable",
+      "evidence_ok": false
+    }
+  ]
+}

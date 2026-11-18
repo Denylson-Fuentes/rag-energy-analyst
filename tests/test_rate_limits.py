@@ -3,12 +3,6 @@ Unit tests for session-based rate limiting.
 
 Uses a mock session_state so tests can run without Streamlit running.
 """
-import sys
-import os
-
-PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-sys.path.insert(0, PROJECT_ROOT)
-
 
 class SessionStateMock(dict):
     """Minimal dict subclass that mimics st.session_state attribute access."""
@@ -16,7 +10,7 @@ class SessionStateMock(dict):
         try:
             return self[name]
         except KeyError:
-            raise AttributeError(name)
+            raise AttributeError(name) from None
 
     def __setattr__(self, name, value):
         self[name] = value
