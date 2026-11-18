@@ -35,3 +35,43 @@ Recall@3 by category:
 | Out of scope (should refuse) | 0.00 | 0.00 | 0.60 |
 | **Overall** | **0.53** | **0.65** | **0.96** |
 
+## End-to-end agent (bedrock · us.anthropic.claude-haiku-4-5-20251001-v1:0 · embeddings `minilm`)
+
+| Metric | rag_only | agent_v1 | agent_v2 |
+|---|---|---|---|
+| Answer accuracy (all) | 0.7152 | 0.8303 | 0.9879 |
+| Accuracy, answerable | 0.6933 | 0.82 | 1.0 |
+| Correct refusals (out of scope) | 0.9333 | 0.9333 | 0.8667 |
+| False refusals | 0.2467 | 0.1333 | 0.0 |
+| Groundedness (numeric claims) | 0.9828 | 0.9823 | 0.9773 |
+| Answers fully grounded | 0.944 | 0.9485 | 0.9474 |
+| Tool selection | 0.7576 | 0.7939 | 1.0 |
+| Latency p50 (s) | 1.771 | 1.76 | 1.497 |
+| Latency p95 (s) | 3.902 | 5.155 | 2.144 |
+| LLM calls / query | 2.18 | 2.21 | 1.95 |
+| Cost / query (USD) | 0.00443 | 0.00625 | 0.00632 |
+
+Accuracy by category:
+
+| Category | rag_only | agent_v1 | agent_v2 |
+|---|---|---|---|
+| EV daily lookup | 1.00 | 1.00 | 1.00 |
+| Solar peak lookup | 1.00 | 0.96 | 1.00 |
+| Solar cloud lookup | 1.00 | 0.50 | 1.00 |
+| EV peak hour | 1.00 | 1.00 | 1.00 |
+| Natural-language dates | 0.47 | 0.80 | 1.00 |
+| Two-day comparison | 1.00 | 0.87 | 1.00 |
+| Aggregation / ranking | 0.05 | 0.20 | 1.00 |
+| Model forecast | 0.07 | 1.00 | 1.00 |
+| Data inventory | 0.00 | 1.00 | 1.00 |
+| Out of scope (should refuse) | 0.93 | 0.93 | 0.87 |
+
+Failure modes (count of questions):
+
+| Failure mode | rag_only | agent_v1 | agent_v2 |
+|---|---|---|---|
+| Answered an unanswerable question | 1 | 1 | 2 |
+| Answered without calling any tool | 2 | 5 | 0 |
+| Did not call a tool that can answer this | 36 | 19 | 0 |
+| Retriever did not return the gold document(s) | 8 | 3 | 0 |
+

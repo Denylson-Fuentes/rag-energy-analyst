@@ -92,15 +92,22 @@ tables are in [`reports/metrics.md`](reports/metrics.md).
 | Tool layer | answerability ceiling: does the gold answer even reach the LLM? (no LLM needed) | `evals/run_ceiling.py` |
 | End to end | answer accuracy, numeric groundedness, tool selection, refusals, latency, cost, failure modes | `evals/run_agent_eval.py` |
 
-Headline (measured with production MiniLM embeddings in CI): pure vector search finds the right
-record only **2%** of the time, so the metadata filter is what makes the system work. The deployed
-agent's tools can surface the right answer for **64%** of questions, and v2's for **96%**. Retrieval
-recall@3 goes from **0.80 → 1.00**. The fixes target four root
-causes: no aggregation tool, comparisons dropping the second date, natural-language dates ignored,
-and a silent fallback that handed the LLM other dates' data.
+Headline (measured end to end with Claude Haiku 4.5 on Bedrock, 165 questions per variant):
+
+| | Plain RAG | Deployed agent (v1) | **Hardened agent (v2)** |
+|---|---|---|---|
+| Answer accuracy | 71.5% | 83.0% | **98.8%** |
+| Accuracy, answerable questions | 69.3% | 82.0% | **100%** |
+| Correct refusals (out of scope) | 93.3% | 93.3% | 86.7% |
+| Numeric claims traceable to a tool | 98.3% | 98.2% | 97.7% |
+| Latency p50 · cost per query | 1.8 s · $0.004 | 1.8 s · $0.006 | 1.5 s · $0.006 |
+
+Pure vector search finds the right record only **2%** of the time on this data (MiniLM), so the
+metadata filter is what makes the system work. v2 cuts wrong answers from 28 to 2. Most of v1's
+errors came from missing tools, not from the model.
 
 ```bash
-make test           # 77 tests, offline, ~10 s
+make test           # 79 tests, offline, ~10 s
 make eval-offline   # retrieval + ceiling + figures, no LLM / no model download
 make eval-agent     # end-to-end; LLM_PROVIDER=bedrock|anthropic + credentials
 ```

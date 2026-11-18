@@ -73,7 +73,8 @@ _REFUSAL = re.compile(
     r"|no such|not in (?:the|my|our) (?:data|dataset)|outside (?:the|of the|my)"
     r"|(?:does|do)(?: not|n't) (?:exist|appear|include|contain|cover)|cannot (?:find|provide|answer)"
     r"|can't (?:find|provide|answer)|unable to|isn't (?:available|in)|is not (?:available|in|a valid)"
-    r"|not (?:a )?valid date|invalid date|not found|no .{0,30}available)\b",
+    r"|not (?:a )?valid date|invalid date|not found|no .{0,30}available"
+    r"|(?:is|are) invalid|(?:does|do)(?: not|n't) (?:specify|record|track|distinguish))\b",
     re.I,
 )
 

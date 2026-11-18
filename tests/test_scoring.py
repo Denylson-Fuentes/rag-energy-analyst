@@ -23,6 +23,10 @@ def test_extract_numbers_skips_ids_dates_times_citations():
     ("2020-02-30 is not a valid date.", True),
     ("The dataset does not include electricity prices.", True),
     ("Total energy was 97.17 kWh [Source 1].", False),
+    # Found in review of the first Bedrock run (agent_v1 q163, q164): correct refusals the
+    # first version of the pattern missed.
+    ("I notice the date you provided (2023-13-01) is invalid — there is no 13th month.", True),
+    ("1 unique vehicle charged. However, the dataset does not specify vehicle type.", True),
 ])
 def test_is_refusal(text, expected):
     assert is_refusal(text) is expected
