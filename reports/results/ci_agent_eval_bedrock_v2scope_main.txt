@@ -1,0 +1,35 @@
+# Verbatim from GitHub Actions run 44242318269 (Agent eval, bedrock, Claude Haiku 4.5, MiniLM)
+# agent_v2 with scope rules, main question set (165)
+# https://github.com/Denylson-Fuentes/rag-energy-analyst/actions/runs/44242318269 · commit 751c4e4
+
+metric                        agent_v2
+accuracy                        0.9939
+accuracy_answerable                1.0
+refusal_accuracy                0.9333
+groundedness_claim_level        0.9818
+fully_grounded_rate             0.9605
+tool_selection_accuracy            1.0
+latency_p50_s                    1.701
+cost_per_query_usd             0.00656
+
+accuracy by category          agent_v2
+aggregation                        1.0
+comparison                         1.0
+ev_lookup                          1.0
+ev_peak_hour                       1.0
+forecast                           1.0
+inventory                          1.0
+nl_date                            1.0
+solar_cloud                        1.0
+solar_lookup                       1.0
+unanswerable                    0.9333
+
+agent_v2 failures: Answered an unanswerable question=1
+
+=== SUMMARY JSON ===
+{"agent_v2": {"n": 165, "accuracy": 0.9939, "accuracy_answerable": 1.0, "refusal_accuracy": 0.9333, "false_refusal_rate": 0.0, "groundedness_claim_level": 0.9818, "fully_grounded_rate": 0.9605, "tool_selection_accuracy": 1.0, "errors": 0, "latency_p50_s": 1.701, "latency_p95_s": 2.656, "mean_llm_calls": 1.94, "mean_input_tokens": 5790, "mean_output_tokens": 155, "cost_per_query_usd": 0.00656, "by_category": {"aggregation": 1.0, "comparison": 1.0, "ev_lookup": 1.0, "ev_peak_hour": 1.0, "forecast": 1.0, "inventory": 1.0, "nl_date": 1.0, "solar_cloud": 1.0, "solar_lookup": 1.0, "unanswerable": 0.9333}, "failures": {"missed_refusal": 1}}}
+=== FAILURE CASES ===
+agent_v2|q164|unanswerable|missed_refusal|search_energy_data|Based on the data, **1 unique vehicle** charged at GRID_08A on 2019-11-18 [Source 1]. The data records unique vehicles rather than vehicle types, so I cannot determine specifically how many of those were electric buses versus other vehicle 
+
+# Review note: q164 is a scorer false negative ("cannot determine" was not a refusal pattern).
+# Corrected: accuracy 165/165, refusal_accuracy 15/15. Pattern fixed in evals/scoring.py with a test.

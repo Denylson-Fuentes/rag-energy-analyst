@@ -92,22 +92,23 @@ tables are in [`reports/metrics.md`](reports/metrics.md).
 | Tool layer | answerability ceiling: does the gold answer even reach the LLM? (no LLM needed) | `evals/run_ceiling.py` |
 | End to end | answer accuracy, numeric groundedness, tool selection, refusals, latency, cost, failure modes | `evals/run_agent_eval.py` |
 
-Headline (measured end to end with Claude Haiku 4.5 on Bedrock, 165 questions per variant):
+Headline, measured end to end with Claude Haiku 4.5 on Bedrock, on a **held-out set of 160
+questions** never used for tuning:
 
-| | Plain RAG | Deployed agent (v1) | **Hardened agent (v2)** |
-|---|---|---|---|
-| Answer accuracy | 71.5% | 83.0% | **98.8%** |
-| Accuracy, answerable questions | 69.3% | 82.0% | **100%** |
-| Correct refusals (out of scope) | 93.3% | 93.3% | 86.7% |
-| Numeric claims traceable to a tool | 98.3% | 98.2% | 97.7% |
-| Latency p50 · cost per query | 1.8 s · $0.004 | 1.8 s · $0.006 | 1.5 s · $0.006 |
+| | Deployed agent (v1) | **Hardened agent (v2)** |
+|---|---|---|
+| Answer accuracy | 84.4% | **99.4%** |
+| Answerable questions (135) | 84.4% | **100%** (p < 10⁻⁶ vs v1) |
+| Correct refusals, out of scope (25) | 84.0% | **96.0%** (95% CI 80–100%) |
+| Numeric claims traceable to a tool | 98.9% | 98.7% |
+| Latency p50 / p95 · cost per query | 1.8 s / 6.2 s · $0.006 | 1.5 s / 2.1 s · $0.006 |
 
-Pure vector search finds the right record only **2%** of the time on this data (MiniLM), so the
-metadata filter is what makes the system work. v2 cuts wrong answers from 28 to 2. Most of v1's
-errors came from missing tools, not from the model.
+On the development set, plain RAG scores 71.5%, v1 83.0% and v2 100%. Pure vector search finds
+the right record only **2%** of the time on this data (MiniLM), so the metadata filter is what
+makes the system work. Most of v1's errors came from missing tools, not from the model.
 
 ```bash
-make test           # 79 tests, offline, ~10 s
+make test           # 81 tests, offline, ~10 s
 make eval-offline   # retrieval + ceiling + figures, no LLM / no model download
 make eval-agent     # end-to-end; LLM_PROVIDER=bedrock|anthropic + credentials
 ```

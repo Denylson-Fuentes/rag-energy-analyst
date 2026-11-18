@@ -11,7 +11,10 @@
 > Claude Haiku 4.5 on Amazon Bedrock, production MiniLM embeddings, 165 questions × 3 variants,
 > 0 run errors. Retrieval and ceiling results come from
 > [CI run #1](https://github.com/Denylson-Fuentes/rag-energy-analyst/actions/runs/44233104401).
-> Verbatim output is in `reports/results/ci_agent_eval_bedrock.txt` and `ci_minilm_run1.txt`.
+> Scope-rule and held-out results come from runs
+> [#3](https://github.com/Denylson-Fuentes/rag-energy-analyst/actions/runs/44242318269) and
+> [#4](https://github.com/Denylson-Fuentes/rag-energy-analyst/actions/runs/44242322213).
+> Verbatim output for every run is in `reports/results/ci_*.txt`.
 > The per-category retrieval charts were drawn with the offline hashing embedder and are
 > labelled as such.
 
@@ -30,18 +33,22 @@ automated tests, a container, and CI so that regressions are caught before deplo
 
 **Key findings (measured):**
 
-| | Plain RAG | Deployed agent (v1) | **Hardened agent (v2)** |
+| | Plain RAG | Deployed agent (v1) | **Hardened agent (v2, final)** |
 |---|---|---|---|
-| Answer accuracy, 165 questions | 71.5% | 83.0% | **98.8%** |
-| Accuracy on answerable questions (150) | 69.3% | 82.0% | **100%** |
-| Correct refusals, out of scope (15) | 93.3% | 93.3% | 86.7% |
-| Numeric claims traceable to a tool | 98.3% | 98.2% | 97.7% |
-| Latency p50 / p95 | 1.8 s / 3.9 s | 1.8 s / 5.2 s | **1.5 s / 2.1 s** |
-| Cost per query | $0.0044 | $0.0063 | $0.0063 |
+| **Held-out set**, 160 questions never used for tuning | – | 84.4% | **99.4%** |
+| · answerable (135) | – | 84.4% | **100%** |
+| · correct refusals, out of scope (25) | – | 84.0% | **96.0%** |
+| Development set, 165 questions | 71.5% | 83.0% | 100%‡ |
+| Numeric claims traceable to a tool (held-out) | – | 98.9% | 98.7% |
+| Latency p50 / p95 (held-out) | – | 1.8 s / 6.2 s | **1.5 s / 2.1 s** |
+| Cost per query | $0.0044 | $0.0058–0.0063 | $0.0064–0.0066 |
 
-1. **v2 cuts wrong answers from 28 to 2 (−93%) at the same cost per query, and is faster.**
-   It answers every answerable question correctly, including all 20 month- and year-level
-   aggregation questions. The deployed agent got 4 of 20 of those right, and plain RAG got 1.
+‡ 99.4% raw; one answer the scorer missed was a correct refusal (see 4.5).
+
+1. **On questions it was never tuned on, v2 answers every answerable question correctly:**
+   135 of 135, against 114 of 135 for the deployed agent (Fisher's exact p < 10⁻⁶). Wrong
+   answers fall from 25 to 1. Cost per query is about the same, and p95 latency drops from
+   6.2 s to 2.1 s. On month- and year-level aggregations, v2 scores 100% against 20–25%.
 2. **Most of the deployed agent's errors came from its toolset, not the model's reasoning.**
    19 of its 28 wrong answers came from not having or not choosing the right tool: 16
    aggregations, plus 3 historical questions sent to the forecast model. Another 5 were
@@ -53,21 +60,24 @@ automated tests, a container, and CI so that regressions are caught before deplo
 4. **Retrieval defects caused confident "no data" answers when the data existed.** Plain RAG
    told users "I don't have data for June 9, 2023" for 8 of 15 natural-language-date questions,
    because the date filter ignored the date. These are false refusals that look trustworthy.
-5. **The remaining risk is scope judgment, and it needs a claim-level check.** v2's two errors
-   are out-of-scope questions. Asked how many *electric buses* charged, it answered "1 electric
-   bus" (the data has no vehicle types). Asked about "next Tuesday", it asked which Tuesday instead
-   of saying the data ends in 2021. Separately, plain RAG labelled actual values as model
-   predictions in 5 answers. Every number in those answers traces to a tool, so the numeric
-   groundedness check passes them. Catching this class of error needs the claim-level LLM judge.
+5. **Scope rules fixed the targeted failures and held up on new ones. The remaining risk is
+   questions that sound like the data.** With the added rules (no vehicle types, no prices, no
+   out-of-range forecasts, and end dates stated for relative dates), v2 refused 24 of 25 new
+   out-of-scope questions it had never seen. The one miss: asked how loaded a *transformer*
+   was, it reported EV charging energy as if that answered the question. The refusal gain over
+   v1 (24/25 vs 21/25) is **not statistically significant** at this sample size (p = 0.35).
+   Plain RAG labelled actual values as model predictions in 5 answers, and the numeric
+   groundedness check passes such answers. The claim-level LLM judge is the control for both.
 6. **We also found and fixed a production concurrency bug.** Under concurrent use, model and
    vector-store loading raced and crashed requests (5 of the first 165 harness calls failed).
    This would have surfaced as intermittent errors in the multi-user Streamlit app.
 
-**Recommendation.** Deploy v2. It uses the same UI, the same model, and the same cost per
-query. Gate releases on three numbers: retrieval recall@3 ≥ 0.95 (CI already enforces this),
-answerable accuracy ≥ 95%, and correct refusals ≥ 90%. v2 does not yet meet the refusal target
-(86.7%), so tighten the scope instructions and re-run before widening access. Confirm the gains
-on a held-out question set (Section 6).
+**Recommendation.** Deploy v2. It uses the same UI, model and cost per query, and on held-out
+questions it removes 24 of the deployed agent's 25 wrong answers. Gate releases on three
+numbers: retrieval recall@3 ≥ 0.95 (CI already enforces this), answerable accuracy ≥ 95%
+(v2: 100%), and correct refusals ≥ 90% (v2: 96%, but on only 25 questions). Before relying on
+the refusal rate, grow the out-of-scope set to at least 100 questions, focused on quantities
+that sound like the data (transformer load, voltage, demand charges).
 
 ---
 
@@ -253,7 +263,7 @@ added for both (`tests/test_scoring.py`). Raw scorer output: 81.8% and 80.0%.
   confirms numbers weren't invented. It does not catch a real number given the wrong label, as
   in the RAG-only forecast answers below.
 
-### 4.4 Failure-mode breakdown
+### 4.4 Failure-mode breakdown (development set)
 
 Root causes found so far (tool layer, measured), with the fix applied in v2:
 
@@ -290,17 +300,92 @@ Two patterns deserve attention because simple metrics miss them:
   by interpolating coverage dates. That is a fabricated statistic built from real inputs.
   v2 answers it exactly with the analytics tool.
 
+### 4.5 Scope rules and held-out validation
+
+**What changed.** Two rules were added to v2's prompt after the development run:
+
+- The data has no vehicle types, no prices or costs, and no forecasts beyond the data range.
+  Say so instead of answering a nearby question.
+- For relative dates ("yesterday", "next Tuesday"), state the data's end dates
+  (EV: 2021-10-11, solar: 2023-12-31) rather than asking which date was meant.
+
+These rules were written in response to v2's two development-set failures, so re-scoring the
+development set alone would overstate their effect. A **held-out set** was built to measure
+generalisation:
+
+- **135 answerable questions**, regenerated with a different random seed. They share no
+  question with the development set. They use the same templates, so they test new dates and
+  nodes, not new phrasings.
+- **25 out-of-scope questions**, written after the rules on topics the development set never
+  asks about: vehicle make (Teslas, plug-in hybrids), cost, tariffs, revenue, "yesterday",
+  "this weekend", "tomorrow", forecasts for 2022–2024, voltage, transformer loading, CO₂,
+  driver identity, charger brand, other cities, unknown nodes, and an impossible date.
+
+**Development set, v2 before and after the rules** ([run #3](https://github.com/Denylson-Fuentes/rag-energy-analyst/actions/runs/44242318269)):
+
+| | v2 before rules | v2 with rules |
+|---|---|---|
+| Accuracy (165) | 98.8% | 100%‡ |
+| Answerable (150) | 100% | 100% |
+| Correct refusals (15) | 86.7% | 100%‡ |
+| Fully grounded answers | 94.7% | 96.1% |
+| Latency p50 · cost per query | 1.50 s · $0.0063 | 1.70 s · $0.0066 |
+
+‡ The scorer marked one answer wrong: *"The data records unique vehicles rather than vehicle
+types, so I cannot determine how many of those were electric buses."* That is a correct
+answer. The refusal pattern was extended to cover it, with a test. Raw: 99.4% and 93.3%. No
+answerable question regressed.
+
+**Held-out set, v1 vs v2** ([run #4](https://github.com/Denylson-Fuentes/rag-energy-analyst/actions/runs/44242322213)):
+
+| | agent_v1 | **agent_v2** | 95% CI (v2) |
+|---|---|---|---|
+| Accuracy (160) | 84.4% | **99.4%** | 96.6–100% |
+| Answerable (135) | 84.4% | **100%** | 97.3–100% |
+| Correct refusals (25) | 84.0% | **96.0%** | 79.6–99.9% |
+| False refusals on answerable questions | 9.6% | **0%** | |
+| Tool-selection accuracy | 83.8% | **100%** | |
+| Groundedness, numeric claims | 98.9% | 98.7% | |
+| Answers fully grounded | 95.4% | 97.8% | |
+| Latency p50 / p95 | 1.78 s / 6.22 s | **1.51 s / 2.06 s** | |
+| Cost per query | $0.0058 | $0.0064 | |
+
+![Held-out accuracy by question type](figures/agent_accuracy_bedrock_holdout.png)
+
+All 26 held-out failure cases were reviewed by hand. No scorer errors were found.
+
+- **v1's failures reproduce the development-set pattern on new data.** It has no tool for
+  aggregations (9 of 12 wrong), declines cloud-cover questions (5 of 10), sends historical
+  solar questions to the forecast tool (4), misses written-out dates (3), and asks the user for
+  today's date on relative-date questions (3). These are structural, so they recur.
+- **v2's one held-out failure is a new failure type.** *"How loaded was the transformer at
+  GRID_LV21 on 2020-06-02?"* drew *"the transformer … was lightly loaded. It delivered 6.54 kWh
+  of energy…"*. The model substituted a related quantity it does have (EV energy) for one it
+  doesn't (transformer load). The rules list specific missing fields, and this one wasn't
+  listed. Listing more fields only moves the boundary. The general fix is a rule like "if the
+  question names a quantity that is not one of the dataset's fields, say so", plus a larger
+  out-of-scope set to measure it.
+
+**How much to trust these numbers.**
+
+- The **answerable** result is strong. Going from 114/135 to 135/135 is significant
+  (Fisher's exact p < 10⁻⁶), and the lower bound of v2's 95% interval is 97%.
+- The **refusal** result is directionally good but under-powered. 24/25 vs 21/25 has p = 0.35,
+  and v2's interval spans 80–100%. Treat 96% as "probably above 80%", not as a measured rate.
+- Each variant ran once. Temperature is 0, but Bedrock outputs are not guaranteed identical
+  across runs.
+
 ---
 
 ## 5. Engineering deliverables
 
 | Deliverable | Where | What it guarantees |
 |---|---|---|
-| Evaluation set (165) + generator | `evals/data/questions.jsonl`, `evals/build_dataset.py` | Reproducible; a test asserts the file regenerates identically |
+| Evaluation sets + generator | `evals/data/questions.jsonl` (165, development), `questions_holdout.jsonl` (160, held-out), `evals/build_dataset.py` | Reproducible; tests assert both regenerate identically and share no question |
 | Scorers + taxonomy | `evals/scoring.py` | Deterministic, unit-tested |
 | Runners | `evals/run_retrieval_eval.py`, `run_ceiling.py`, `run_agent_eval.py` | Layered diagnosis; traces stored for re-scoring |
 | Report generator | `evals/report.py` → `reports/metrics.md`, `reports/figures/` | Numbers in this report regenerate from results files |
-| Test suite (79 tests) | `tests/` | Runs offline in ~10 s, including an end-to-end agent-loop test with a scripted model |
+| Test suite (81 tests) | `tests/` | Runs offline in ~10 s, including an end-to-end agent-loop test with a scripted model |
 | Container | `Dockerfile` | Index baked in; `--target test` fails the build if lint or tests fail; health check |
 | CI | `.github/workflows/ci.yml` | Lint + tests → MiniLM retrieval eval with **recall@3 ≥ 0.95 gate** → Docker build and health check. All green on [run #1](https://github.com/Denylson-Fuentes/rag-energy-analyst/actions/runs/44233104401) |
 | Paid eval on demand | `.github/workflows/eval.yml` | One-click LLM evaluation with uploaded artifacts |
@@ -309,9 +394,12 @@ Two patterns deserve attention because simple metrics miss them:
 
 ## 6. Limitations and risks
 
-- **v2 was tuned on this evaluation set.** The defects were found on these 165 questions, so
-  v2's gains are optimistic. Before quoting v2 figures externally, generate a held-out set
-  with a different seed (`SEED` in `build_dataset.py`) and report on that.
+- **The held-out set shares templates with the development set.** It tests new dates, nodes
+  and out-of-scope topics, not new phrasings of answerable questions. Real operator wording
+  (typos, follow-ups, mixed questions) is still untested.
+- **Out-of-scope coverage is thin.** 40 questions in total across both sets. The confidence
+  interval on refusals is wide, and the one held-out miss shows a whole category
+  (plausible-sounding quantities not in the data) that needs dedicated coverage.
 - **Templated questions.** Phrasings are varied but synthetic. Real operator questions will
   be messier (typos, relative dates such as "last Tuesday", follow-ups). Sample 50 real
   queries from logs and add them as a second set.
@@ -336,13 +424,14 @@ Two patterns deserve attention because simple metrics miss them:
 
 ## 7. Recommended next steps
 
-1. **Ship v2**, then close the refusal gap. Add explicit scope rules, for example: "the data has
-   no vehicle types, prices, or forecasts beyond the data range; for relative dates, state the
-   data's end date". Re-run the 15 out-of-scope questions plus 30 new ones, and target ≥ 90%.
-2. **Turn on the claim-level judge** (`--judge`, needs an `ANTHROPIC_API_KEY` secret) to catch
+1. **Ship v2.** The held-out run supports it on every measured dimension.
+2. **Add a general "unknown quantity" rule and grow the out-of-scope set** to 100+ questions,
+   weighted towards quantities that sound like the data (transformer load, voltage, demand
+   charges, state of charge). Re-run and report refusals with confidence intervals.
+3. **Turn on the claim-level judge** (`--judge`, needs an `ANTHROPIC_API_KEY` secret) to catch
    grounded-but-mislabelled answers that the numeric check passes.
-3. **Build a held-out and a real-query set**, as in Section 6.
-4. **Add observability.** Log tool calls and the groundedness score per production answer,
+4. **Build a real-query set** from production logs (50+ questions), as in Section 6.
+5. **Add observability.** Log tool calls and the groundedness score per production answer,
    and alert on a falling grounded rate.
 
 ---
@@ -351,7 +440,7 @@ Two patterns deserve attention because simple metrics miss them:
 
 ```bash
 make install            # CPU torch + dev requirements
-make test               # 79 tests, offline (~10 s)
+make test               # 81 tests, offline (~10 s)
 make eval-offline       # retrieval + ceiling + figures, no LLM, no model download
 make eval-agent         # end-to-end, needs LLM_PROVIDER + credentials
 make docker-test        # builds the image and runs the suite inside it

@@ -6,8 +6,8 @@
 data/chroma_db*/
 
 # Scripted-model harness runs are smoke tests, not results
-reports/results/agent_*_scripted.jsonl
-reports/results/agent_summary_scripted.json
+reports/results/agent_*_scripted*.jsonl
+reports/results/agent_summary_scripted*.json
 
 # Downloaded AWS installer (not needed in repo)
 aws/

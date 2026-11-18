@@ -27,6 +27,8 @@ def test_extract_numbers_skips_ids_dates_times_citations():
     # first version of the pattern missed.
     ("I notice the date you provided (2023-13-01) is invalid — there is no 13th month.", True),
     ("1 unique vehicle charged. However, the dataset does not specify vehicle type.", True),
+    # agent_v2 q164 after the scope rules (run 44242318269):
+    ("The data records unique vehicles rather than vehicle types, so I cannot determine how many were buses.", True),
 ])
 def test_is_refusal(text, expected):
     assert is_refusal(text) is expected

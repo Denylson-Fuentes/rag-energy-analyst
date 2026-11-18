@@ -20,7 +20,9 @@ import pandas as pd
 from src import config
 
 OUT = os.path.join(os.path.dirname(__file__), "data", "questions.jsonl")
+HOLDOUT_OUT = os.path.join(os.path.dirname(__file__), "data", "questions_holdout.jsonl")
 SEED = 7
+HOLDOUT_SEED = 2026
 
 MONTH_NAMES = ["January", "February", "March", "April", "May", "June", "July",
                "August", "September", "October", "November", "December"]
@@ -82,8 +84,8 @@ def stats_call(**args):
 
 
 # --------------------------------------------------------------------------- builders
-def build():
-    rng = random.Random(SEED)
+def build(seed: int = SEED):
+    rng = random.Random(seed)
     ev, solar = _ev(), _solar()
 
     ev_day = ev.groupby(["grid_node", "date"]).agg(
@@ -343,15 +345,62 @@ def build():
     return items
 
 
-def main():
-    items = build()
-    os.makedirs(os.path.dirname(OUT), exist_ok=True)
-    with open(OUT, "w") as f:
+# Held-out out-of-scope questions. Written after the v2 scope rules were added, in
+# wordings and topics that do not appear in the main set, to test whether the rules
+# generalise rather than just fix the two main-set failures they were written for.
+HOLDOUT_UNANSWERABLE = [
+    ("What share of the vehicles charging at GRID_LV21 on 2020-03-10 were Teslas?", "vehicle make"),
+    ("Were the cars at GRID_LV22 on 2020-08-11 mostly plug-in hybrids or full EVs?", "vehicle type"),
+    ("How much did EV charging at GRID_LV22 cost on 2020-08-11?", "price"),
+    ("What electricity tariff applied to GRID_08A on 2019-11-18?", "price"),
+    ("What was the revenue from the chargers on GRID_LV11 in March 2020?", "price"),
+    ("How much energy did GRID_08A use yesterday?", "relative date"),
+    ("What was the peak GHI in Palm Springs last week?", "relative date"),
+    ("Predict tomorrow's solar output for Palm Springs.", "relative date"),
+    ("What will EV charging at GRID_LV22 look like this weekend?", "relative date"),
+    ("Forecast the EV load for GRID_LV22 on 2022-03-01.", "forecast beyond data range"),
+    ("What is the solar forecast for Palm Springs on 2024-06-01?", "forecast beyond data range"),
+    ("Predict EV charging at GRID_LV11 for 2023-01-15.", "forecast beyond data range"),
+    ("What was the voltage at GRID_LV11 on 2020-01-15?", "metric not in data"),
+    ("How loaded was the transformer at GRID_LV21 on 2020-06-02?", "metric not in data"),
+    ("How many tonnes of CO2 did EV charging at GRID_LV22 avoid in 2020?", "metric not in data"),
+    ("Which driver charged the most at GRID_LV22 in 2020?", "driver identity not in data"),
+    ("What charger brand is installed at GRID_04A?", "equipment not in data"),
+    ("What was the solar irradiance in Los Angeles on 2023-06-01?", "location not in data"),
+    ("How much EV charging energy was used in New York on 2020-08-11?", "location not in data"),
+    ("What was the total charging energy at GRID_LV21 on 2018-12-25?", "date before EV data"),
+    ("What was the peak GHI in Palm Springs on 2021-07-04?", "solar data is 2023 only"),
+    ("What was the charging energy at GRID_09B on 2020-05-05?", "node does not exist"),
+    ("How much energy did GRID_LV40 use on 2021-02-02?", "node does not exist"),
+    ("What was the EV charging energy at GRID_LV11 on 2021-04-31?", "invalid date"),
+    ("How many solar panels are installed in Palm Springs?", "not in data"),
+]
+
+
+def build_holdout() -> list[dict]:
+    """Fresh answerable questions (different seed) + new out-of-scope questions."""
+    seen = {q["question"] for q in build()}
+    items = [it for it in build(HOLDOUT_SEED)
+             if it["category"] != "unanswerable" and it["question"] not in seen]
+    items += [item("unanswerable", q, "refusal", None, note=why) for q, why in HOLDOUT_UNANSWERABLE]
+    for i, it in enumerate(items, 1):
+        it["id"] = f"h{i:03d}"
+    return items
+
+
+def _write(items, path):
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    with open(path, "w") as f:
         for it in items:
             f.write(json.dumps({"id": it.pop("id"), **it}) + "\n")
-    counts = pd.Series([json.loads(line)["category"] for line in open(OUT)]).value_counts()
+    counts = pd.Series([json.loads(line)["category"] for line in open(path)]).value_counts()
     print(counts.to_string())
-    print(f"Total: {counts.sum()} questions -> {OUT}")
+    print(f"Total: {counts.sum()} questions -> {path}\n")
+
+
+def main():
+    _write(build(), OUT)
+    _write(build_holdout(), HOLDOUT_OUT)
 
 
 if __name__ == "__main__":

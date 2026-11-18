@@ -3,6 +3,7 @@ import os
 
 EVAL_DIR = os.path.dirname(os.path.abspath(__file__))
 QUESTIONS = os.path.join(EVAL_DIR, "data", "questions.jsonl")
+HOLDOUT = os.path.join(EVAL_DIR, "data", "questions_holdout.jsonl")
 RESULTS_DIR = os.getenv("EVAL_RESULTS_DIR", os.path.join(EVAL_DIR, "..", "reports", "results"))
 
 

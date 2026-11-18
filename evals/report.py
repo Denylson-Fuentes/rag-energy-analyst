@@ -157,7 +157,9 @@ def main():
         if d["provider"] == "scripted":
             continue
         sm = d["summaries"]
-        md += [f"## End-to-end agent ({d['provider']} · {d['model']} · embeddings `{d['embeddings_backend']}`)", ""]
+        qset = d.get("question_set", "main")
+        tag = d["provider"] + ("" if qset == "main" else f"_{qset}")
+        md += [f"## End-to-end agent, {qset} set ({d['provider']} · {d['model']} · embeddings `{d['embeddings_backend']}`)", ""]
         keys = [("accuracy", "Answer accuracy (all)"), ("accuracy_answerable", "Accuracy, answerable"),
                 ("refusal_accuracy", "Correct refusals (out of scope)"), ("false_refusal_rate", "False refusals"),
                 ("groundedness_claim_level", "Groundedness (numeric claims)"),
@@ -180,10 +182,10 @@ def main():
         md.append(_table(["Failure mode"] + list(sm),
                          [[FAILURE_LABELS[k]] + [s["failures"].get(k, 0) for s in sm.values()] for k in fl]))
         md.append("")
-        grouped_hbar(os.path.join(FIG_DIR, f"agent_accuracy_{d['provider']}.png"),
-                     "End-to-end answer accuracy by question type", f"{d['model']} · 165 questions",
+        grouped_hbar(os.path.join(FIG_DIR, f"agent_accuracy_{tag}.png"),
+                     "End-to-end answer accuracy by question type", f"{d['model']} · {qset} set · {next(iter(sm.values()))['n']} questions",
                      cats, {v: [s["by_category"][c] for c in cats] for v, s in sm.items()}, "Answer accuracy")
-        failure_stack(os.path.join(FIG_DIR, f"failure_modes_{d['provider']}.png"), sm)
+        failure_stack(os.path.join(FIG_DIR, f"failure_modes_{tag}.png"), sm)
 
     with open(os.path.join(REPORT_DIR, "metrics.md"), "w") as f:
         f.write("\n".join(md) + "\n")

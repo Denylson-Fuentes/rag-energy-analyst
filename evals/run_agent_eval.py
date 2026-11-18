@@ -25,7 +25,7 @@ from concurrent.futures import ThreadPoolExecutor
 
 from langchain_core.messages import AIMessage, ToolMessage
 
-from evals.common import load_questions, read_jsonl, results_path, write_json, write_jsonl
+from evals.common import HOLDOUT, QUESTIONS, load_questions, read_jsonl, results_path, write_json, write_jsonl
 from evals.scoring import FAILURE_LABELS, answer_correct, classify, groundedness, is_refusal
 from src import config
 from src.agent.executor import VARIANTS, build_executor
@@ -164,6 +164,8 @@ def main():
     ap.add_argument("--variants", nargs="+", default=list(VARIANTS), choices=VARIANTS)
     ap.add_argument("--provider", default=config.LLM_PROVIDER, choices=["bedrock", "anthropic", "scripted"])
     ap.add_argument("--limit", type=int, default=None)
+    ap.add_argument("--question-set", default="main", choices=["main", "holdout"],
+                    help="main = evals/data/questions.jsonl; holdout = questions_holdout.jsonl")
     ap.add_argument("--categories", nargs="*", default=None)
     ap.add_argument("--workers", type=int, default=int(os.getenv("EVAL_WORKERS", "4")))
     ap.add_argument("--score-only", action="store_true")
@@ -171,7 +173,8 @@ def main():
     ap.add_argument("--judge", action="store_true", help="also run the LLM groundedness judge (evals/judge.py)")
     args = ap.parse_args()
 
-    qs = load_questions()
+    qs = load_questions(HOLDOUT if args.question_set == "holdout" else QUESTIONS)
+    suffix = "" if args.question_set == "main" else f"_{args.question_set}"
     if args.categories:
         qs = [q for q in qs if q["category"] in args.categories]
     if args.limit:
@@ -179,7 +182,7 @@ def main():
 
     summaries = {}
     for v in args.variants:
-        trace_name = f"agent_{v}_{args.provider}.jsonl"
+        trace_name = f"agent_{v}_{args.provider}{suffix}.jsonl"
         if args.score_only:
             recs = read_jsonl(results_path(trace_name))
         else:
@@ -191,7 +194,8 @@ def main():
         summaries[v] = score(qs, recs, args.provider)
         write_jsonl(trace_name, recs)
 
-    out = write_json(f"agent_summary_{args.provider}.json", {
+    out = write_json(f"agent_summary_{args.provider}{suffix}.json", {
+        "question_set": args.question_set,
         "provider": args.provider,
         "model": config.BEDROCK_MODEL_ID if args.provider == "bedrock" else config.ANTHROPIC_MODEL_ID,
         "embeddings_backend": config.EMBEDDINGS_BACKEND,
@@ -217,7 +221,7 @@ def main():
         print(json.dumps(summaries, default=str))
         print("=== FAILURE CASES ===")
         for v in summaries:
-            for r in read_jsonl(results_path(f"agent_{v}_{args.provider}.jsonl")):
+            for r in read_jsonl(results_path(f"agent_{v}_{args.provider}{suffix}.jsonl")):
                 if r.get("failure") not in (None, "ok"):
                     calls = ",".join(c["name"] for c in r.get("tool_calls", []))
                     ans = " ".join((r.get("answer") or r.get("error") or "").split())[:240]

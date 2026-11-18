@@ -1,0 +1,61 @@
+# Verbatim from GitHub Actions run 44242322213 (Agent eval, bedrock, Claude Haiku 4.5, MiniLM)
+# agent_v1 vs agent_v2 (with scope rules), held-out question set (160)
+# https://github.com/Denylson-Fuentes/rag-energy-analyst/actions/runs/44242322213 · commit 751c4e4
+
+metric                        agent_v1    agent_v2
+accuracy                        0.8438      0.9938
+accuracy_answerable             0.8444         1.0
+refusal_accuracy                  0.84        0.96
+groundedness_claim_level        0.9885      0.9874
+fully_grounded_rate             0.9542      0.9784
+tool_selection_accuracy         0.8375         1.0
+latency_p50_s                    1.776       1.512
+cost_per_query_usd             0.00581     0.00638
+
+accuracy by category          agent_v1    agent_v2
+aggregation                       0.25         1.0
+comparison                      0.8667         1.0
+ev_lookup                          1.0         1.0
+ev_peak_hour                       1.0         1.0
+forecast                           1.0         1.0
+nl_date                            0.8         1.0
+solar_cloud                        0.5         1.0
+solar_lookup                    0.9167         1.0
+unanswerable                      0.84        0.96
+
+agent_v1 failures: Did not call a tool that can answer this=13, Answered without calling any tool=5, Answered an unanswerable question=4, Retriever did not return the gold document(s)=3
+
+agent_v2 failures: Answered an unanswerable question=1
+
+=== SUMMARY JSON ===
+{"agent_v1": {"n": 160, "accuracy": 0.8438, "accuracy_answerable": 0.8444, "refusal_accuracy": 0.84, "false_refusal_rate": 0.0963, "groundedness_claim_level": 0.9885, "fully_grounded_rate": 0.9542, "tool_selection_accuracy": 0.8375, "errors": 0, "latency_p50_s": 1.776, "latency_p95_s": 6.221, "mean_llm_calls": 2.1, "mean_input_tokens": 4695, "mean_output_tokens": 223, "cost_per_query_usd": 0.00581, "by_category": {"aggregation": 0.25, "comparison": 0.8667, "ev_lookup": 1.0, "ev_peak_hour": 1.0, "forecast": 1.0, "nl_date": 0.8, "solar_cloud": 0.5, "solar_lookup": 0.9167, "unanswerable": 0.84}, "failures": {"wrong_tool": 13, "no_tool_call": 5, "missed_refusal": 4, "retrieval_miss": 3}}, "agent_v2": {"n": 160, "accuracy": 0.9938, "accuracy_answerable": 1.0, "refusal_accuracy": 0.96, "false_refusal_rate": 0.0, "groundedness_claim_level": 0.9874, "fully_grounded_rate": 0.9784, "tool_selection_accuracy": 1.0, "errors": 0, "latency_p50_s": 1.512, "latency_p95_s": 2.057, "mean_llm_calls": 1.89, "mean_input_tokens": 5628, "mean_output_tokens": 150, "cost_per_query_usd": 0.00638, "by_category": {"aggregation": 1.0, "comparison": 1.0, "ev_lookup": 1.0, "ev_peak_hour": 1.0, "forecast": 1.0, "nl_date": 1.0, "solar_cloud": 1.0, "solar_lookup": 1.0, "unanswerable": 0.96}, "failures": {"missed_refusal": 1}}}
+=== FAILURE CASES ===
+agent_v1|h051|solar_lookup|wrong_tool|forecast_solar|**Peak GHI on 2023-11-27: 445 W/m² (predicted) / 429 W/m² (actual)** [Source 1] The forecast was issued at 00:00 and predicted conditions 6 hours ahead. The peak occurred at 00:00 UTC. Note that most of the day showed zero or very low irrad
+agent_v1|h062|solar_lookup|wrong_tool|forecast_solar|**Peak GHI on 2023-02-06 (Palm Springs): 644 W/m²** [Source 1] The model predicted 643 W/m², which was very close to the actual peak of 644 W/m² (MAE: 2.2 W/m²). The peak occurred at 00:00 (midnight), which indicates the forecast was issued
+agent_v1|h069|solar_cloud|no_tool_call||I don't have a tool available to retrieve cloud cover data directly. My available tools focus on: 1. **Solar irradiance (GHI)** — historical and forecasted 2. **EV charging loads** — historical and predicted 3. **Grid node availability** — 
+agent_v1|h071|solar_cloud|no_tool_call||I don't have a tool available to retrieve cloud cover data directly. My available tools are: 1. **search_energy_data** — searches historical EV charging loads and solar irradiance 2. **forecast_solar** — forecasts solar irradiance (GHI) 6 h
+agent_v1|h073|solar_cloud|no_tool_call||I don't have a tool available to retrieve cloud cover data. My available tools are: 1. **search_energy_data** — searches historical EV charging loads and solar irradiance 2. **forecast_solar** — forecasts solar irradiance (GHI) 6 hours ahea
+agent_v1|h075|solar_cloud|no_tool_call||I don't have a tool available to retrieve cloud cover data directly. My available tools focus on: 1. **Solar irradiance (GHI)** — historical and forecasted 2. **EV charging loads** — historical and predicted 3. **Grid node availability** — 
+agent_v1|h077|solar_cloud|no_tool_call||I don't have a tool available to retrieve cloud cover data directly. My available tools are: 1. **search_energy_data** — searches historical EV charging loads and solar irradiance 2. **forecast_solar** — forecasts solar irradiance (GHI) 6 h
+agent_v1|h088|nl_date|retrieval_miss|search_energy_data|I don't have data for June 21, 2023 in the search results. The historical data returned covers January 21, January 31, and October 4, 2023, but not June 21. To get the peak solar irradiance for that specific date, I would need access to arc
+agent_v1|h090|nl_date|retrieval_miss|search_energy_data|I don't have data for June 10, 2023 in the search results. The historical data returned covers January 21, January 31, and October 4, 2023, but not June 10. To get the peak solar irradiance for June 10, 2023, I would need that specific date
+agent_v1|h092|nl_date|retrieval_miss|search_energy_data|I don't have data for December 30, 2023 in the search results. The historical data returned covers October 15, 2023 and January 21-24, 2023, but not the specific date you requested. Do you want me to: 1. **Forecast** solar irradiance for a 
+agent_v1|h102|comparison|wrong_tool|forecast_solar,forecast_solar|**Peak GHI comparison:** - **2023-07-24**: 958 W/m² (actual peak) - **2023-02-26**: 799 W/m² (actual peak) **2023-07-24 had the higher peak GHI** — about 159 W/m² higher. This makes sense: July is summer in Palm Springs with longer daylight
+agent_v1|h106|comparison|wrong_tool|forecast_solar,forecast_solar|**Peak GHI comparison:** - **2023-07-21**: 1008 W/m² (actual) [Source 1] - **2023-12-22**: 186 W/m² (actual) [Source 2] **2023-07-21 was significantly higher** — about 5.4× the peak GHI of the winter solstice date. This is expected: July 21
+agent_v1|h110|aggregation|wrong_tool|search_energy_data,list_available_grid_nodes,search_energy_data,search_energy_data,search_energy_data,search_energy_data,search_energy_data,search_energy_data|Unfortunately, the search tool is returning individual daily records rather than monthly aggregates. Based on the available grid node metadata from the system, I can see that **GRID_LV22** has the most extensive data coverage (662 days tota
+agent_v1|h113|aggregation|wrong_tool|list_available_grid_nodes,search_energy_data,search_energy_data|Unfortunately, the search tool is returning only individual day samples rather than aggregated monthly totals. Based on the grid node metadata I retrieved, I can see that **not all grid nodes have data covering October 2019**: - **GRID_04A*
+agent_v1|h114|aggregation|wrong_tool|list_available_grid_nodes,search_energy_data,search_energy_data,search_energy_data|Unfortunately, the search is not returning March 2021 data. Based on the grid node coverage information I retrieved earlier, I can see that several nodes have data extending into 2021, but the search tool is not returning specific March 202
+agent_v1|h115|aggregation|wrong_tool|list_available_grid_nodes,search_energy_data,search_energy_data|I'm getting individual day snapshots, but not a complete monthly aggregate. The search tool returns specific dates rather than monthly summaries. Based on the available grid nodes and their date ranges, I can see that several nodes have dat
+agent_v1|h116|aggregation|wrong_tool|list_available_grid_nodes,search_energy_data,search_energy_data|I found one November 2019 data point (GRID_LV21 on 2019-11-22 with 89.54 kWh), but the search is not returning comprehensive November 2019 data across all grid nodes. **The issue:** Based on the grid node metadata, not all nodes have data c
+agent_v1|h117|aggregation|wrong_tool|search_energy_data|Based on the search results, **November 20, 2023** had the highest peak GHI in Palm Springs during November 2023, with a peak of **650.0 W/m² at 11:30** [Source 1]. That day had favorable conditions with a mean cloud cover of only 9.7%, all
+agent_v1|h118|aggregation|wrong_tool|search_energy_data,search_energy_data|I don't have December 2023 data in the system. The search returned data from October and November 2023, but no records for December 2023. **The available data for Palm Springs does not include December 2023.** The most recent data I found i
+agent_v1|h119|aggregation|wrong_tool|search_energy_data,search_energy_data|I found one September 2023 data point in my first search. Based on the available data, I can only provide limited information: **September 2023 Palm Springs GHI Data:** From the historical data available, I found only **one day in September
+agent_v1|h120|aggregation|wrong_tool|search_energy_data,search_energy_data|I'm unable to find data for January 2023 in the system. The search results are returning data from September, October, and November 2023, but not from January 2023. **The data for Palm Springs in January 2023 is not available in the current
+agent_v1|h142|unanswerable|missed_refusal||I need to search for historical solar irradiance data from Palm Springs for last week. However, I need to know the specific dates you're referring to. Could you please provide: 1. **Today's date** (so I can determine what "last week" means)
+agent_v1|h143|unanswerable|missed_refusal||I'd be happy to forecast tomorrow's solar output for Palm Springs. However, I need to know today's date to determine what "tomorrow" is. Could you please provide today's date in YYYY-MM-DD format (e.g., 2024-01-15)? Then I can generate the 
+agent_v1|h144|unanswerable|missed_refusal||I'd be happy to help forecast EV charging for GRID_LV22 this weekend. However, I need to know the specific dates. Could you please provide: - **Today's date** (so I can determine which dates are "this weekend") Or alternatively, provide the
+agent_v1|h149|unanswerable|missed_refusal|search_energy_data|On **2020-06-02**, GRID_LV21 had **minimal loading**: - **Total energy**: 6.54 kWh - **Charging hours**: 1 (only at 08:00) - **Active chargers**: 1 - **Unique vehicles**: 1 The transformer was lightly loaded that day, with just a single veh
+agent_v2|h149|unanswerable|missed_refusal|search_energy_data|On **2020-06-02**, the transformer at GRID_LV21 was lightly loaded. It delivered **6.54 kWh** of energy across just **1 charging hour** (at 08:00), with only **1 active charger** serving **1 unique vehicle** [Source 1].
+
+# Review note: all 26 failure cases checked; no scorer false negatives or false positives found.
+# h149 (transformer loading) is a genuine failure for both variants: EV energy substituted for transformer load.
