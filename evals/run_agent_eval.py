@@ -16,6 +16,7 @@ step so scorers can be improved without paying for another LLM run:
     python -m evals.run_agent_eval --provider scripted --variants agent_v2
 """
 import argparse
+import json
 import os
 import statistics
 import time
@@ -166,6 +167,7 @@ def main():
     ap.add_argument("--categories", nargs="*", default=None)
     ap.add_argument("--workers", type=int, default=int(os.getenv("EVAL_WORKERS", "4")))
     ap.add_argument("--score-only", action="store_true")
+    ap.add_argument("--print-failures", action="store_true", help="print summary JSON and every failure case")
     ap.add_argument("--judge", action="store_true", help="also run the LLM groundedness judge (evals/judge.py)")
     args = ap.parse_args()
 
@@ -197,11 +199,29 @@ def main():
     })
     keys = ["accuracy", "accuracy_answerable", "refusal_accuracy", "groundedness_claim_level",
             "fully_grounded_rate", "tool_selection_accuracy", "latency_p50_s", "cost_per_query_usd"]
+    def cell(x):
+        return f"{'n/a' if x is None else x:>12}"
+
     print(f"\n{'metric':<26}" + "".join(f"{v:>12}" for v in summaries))
     for k in keys:
-        print(f"{k:<26}" + "".join(f"{summaries[v][k]:>12}" for v in summaries))
+        print(f"{k:<26}" + "".join(cell(summaries[v].get(k)) for v in summaries))
+    print(f"\n{'accuracy by category':<26}" + "".join(f"{v:>12}" for v in summaries))
+    for c in next(iter(summaries.values()))["by_category"]:
+        print(f"{c:<26}" + "".join(cell(summaries[v]["by_category"].get(c)) for v in summaries))
     for v, s in summaries.items():
         print(f"\n{v} failures: " + ", ".join(f"{FAILURE_LABELS[k]}={n}" for k, n in s["failures"].items()))
+
+    if args.print_failures:
+        # Printed so results can be read from CI logs without downloading the artifact.
+        print("\n=== SUMMARY JSON ===")
+        print(json.dumps(summaries, default=str))
+        print("=== FAILURE CASES ===")
+        for v in summaries:
+            for r in read_jsonl(results_path(f"agent_{v}_{args.provider}.jsonl")):
+                if r.get("failure") not in (None, "ok"):
+                    calls = ",".join(c["name"] for c in r.get("tool_calls", []))
+                    ans = " ".join((r.get("answer") or r.get("error") or "").split())[:240]
+                    print(f"{v}|{r['id']}|{r['category']}|{r['failure']}|{calls}|{ans}")
     print(f"\nWrote {out}")
 
 

@@ -56,7 +56,8 @@ jobs:
         run: python scripts/ingest_all.py
       - name: Run agent eval
         run: |
-          ARGS="--variants ${{ inputs.variants }}"
+          set -o pipefail
+          ARGS="--variants ${{ inputs.variants }} --print-failures"
           if [ -n "${{ inputs.limit }}" ]; then ARGS="$ARGS --limit ${{ inputs.limit }}"; fi
           if [ "${{ inputs.judge }}" = "true" ]; then ARGS="$ARGS --judge"; fi
           python -m evals.run_agent_eval $ARGS | tee -a "$GITHUB_STEP_SUMMARY"
