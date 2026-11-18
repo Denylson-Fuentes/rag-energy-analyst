@@ -92,8 +92,10 @@ tables are in [`reports/metrics.md`](reports/metrics.md).
 | Tool layer | answerability ceiling: does the gold answer even reach the LLM? (no LLM needed) | `evals/run_ceiling.py` |
 | End to end | answer accuracy, numeric groundedness, tool selection, refusals, latency, cost, failure modes | `evals/run_agent_eval.py` |
 
-Headline (measured): the deployed agent's tools can surface the right answer for **65%** of questions,
-and v2's for **96%**. Retrieval recall@3 goes from **0.80 → 1.00**. The fixes target four root
+Headline (measured with production MiniLM embeddings in CI): pure vector search finds the right
+record only **2%** of the time, so the metadata filter is what makes the system work. The deployed
+agent's tools can surface the right answer for **64%** of questions, and v2's for **96%**. Retrieval
+recall@3 goes from **0.80 → 1.00**. The fixes target four root
 causes: no aggregation tool, comparisons dropping the second date, natural-language dates ignored,
 and a silent fallback that handed the LLM other dates' data.
 

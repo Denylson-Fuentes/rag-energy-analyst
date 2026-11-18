@@ -7,10 +7,11 @@
 
 > **What is measured and what is pending.**
 > Measured: retrieval quality and the tool-layer answerability ceiling, over the full
-> 165-question set. Both are reproducible offline with `make eval-offline`.
-> The retrieval figures in this version were produced with the **offline hashing embedder**
-> (the container used for this work could not download MiniLM). The CI job `retrieval-eval`
-> re-runs them with production MiniLM embeddings on every push.
+> 165-question set, with the **production MiniLM embeddings** in
+> [CI run #1](https://github.com/Denylson-Fuentes/rag-energy-analyst/actions/runs/44233104401)
+> (verbatim output: `reports/results/ci_minilm_run1.txt`). CI re-runs these on every push.
+> The per-category charts were produced locally with the offline hashing embedder, which
+> needs no model download (`make eval-offline`). Charts are labelled with their embedder.
 > Pending: end-to-end LLM answer accuracy and groundedness (Section 4.3). These need cloud
 > LLM credentials, and running them is one command (`make eval-agent`) or the manual GitHub
 > workflow *Agent eval (LLM, manual)*. `reports/metrics.md` regenerates with the results.
@@ -31,23 +32,27 @@ automated tests, a container, and CI so that regressions are caught before deplo
 **Key findings (measured):**
 
 1. **The deployed system cannot answer about a third of realistic questions, whatever the
-   LLM does.** For only **65%** of questions does the deployed agent's tool layer return the
+   LLM does.** For only **64%** of questions does the deployed agent's tool layer return the
    correct answer to the model (53% for plain RAG). The model cannot report what it never sees.
-2. **Four specific defects explain most of the gap:**
+2. **Pure vector search does not work on this data.** With the production MiniLM embeddings,
+   semantic search alone finds the right record in the top 3 for **1.8%** of lookup questions.
+   Dates and node IDs carry the meaning, and small embedding models don't encode them. The
+   metadata filter is what makes the system work, so it must be tested as carefully as the model.
+3. **Four specific defects explain most of the gap:**
    - *Month and year questions* ("which node used the most energy in August 2020?") are
      impossible with a top-3 retriever: **0 of 20** answerable.
    - *Comparisons* retrieve only the first date mentioned: **3 of 15** answerable.
-   - *Natural-language dates* ("August 11, 2020") are ignored by the date filter, giving
-     recall@3 of **7%** against **100%** for ISO dates.
+   - *Natural-language dates* ("August 11, 2020") are ignored by the date filter, so only
+     **3 of 15** such questions can be answered, against **100%** for ISO dates.
    - *Silent fallback.* When a request is out of range (for example, a date before the data
      starts), the retriever quietly returns **other dates' records**. This happened for
      **15 of 15** out-of-scope questions. It is the single largest hallucination risk,
      because the model receives real-looking numbers for the wrong day.
-3. **After the v2 changes, the tool-layer ceiling rises from 65% to 96%.** Retrieval recall@3
-   rises from 0.80 to 1.00 on the same index. The remaining 4% (6 of 165) are out-of-scope
+4. **After the v2 changes, the tool-layer ceiling rises from 64% to 96%.** Retrieval recall@3
+   rises from 0.80 to 1.00 on the same production index. The remaining 4% (6 of 165) are out-of-scope
    requests, such as electricity prices or another city on a valid date. Only the model's own
    judgment can catch these, and the v2 prompt now states the data's scope explicitly.
-4. **We also found and fixed a production concurrency bug.** Under concurrent use, model and
+5. **We also found and fixed a production concurrency bug.** Under concurrent use, model and
    vector-store loading raced and crashed requests (5 of the first 165 harness calls failed).
    This would have surfaced as intermittent errors in the multi-user Streamlit app.
 
@@ -127,14 +132,26 @@ the agent, so the agent never grades itself.
 
 ### 4.1 Retrieval
 
-*110 questions with gold documents. Same Chroma index for all three retrievers. Offline
-hashing embedder; MiniLM figures come from CI.*
+*110 questions with gold documents. Same Chroma index for all three retrievers.*
 
-| Retriever | Recall@1 | **Recall@3** | Recall@10 | MRR |
-|---|---|---|---|---|
-| Pure semantic | 0.70 | 0.82 | 0.87 | 0.80 |
-| Hybrid v1 (deployed) | 0.80 | **0.80** | 0.82 | 0.88 |
-| **Hybrid v2** | 0.93 | **1.00** | 1.00 | 1.00 |
+**Production embeddings (MiniLM, CI run #1):**
+
+| Retriever | Recall@1 | **Recall@3** | Recall@5 | Recall@10 | MRR |
+|---|---|---|---|---|---|
+| Pure semantic | 0.00 | **0.02** | 0.05 | 0.10 | 0.02 |
+| Hybrid v1 (deployed) | 0.80 | **0.80** | 0.80 | 0.80 | 0.87 |
+| **Hybrid v2** | 0.93 | **1.00** | 1.00 | 1.00 | 1.00 |
+
+**Pure semantic search fails almost completely with MiniLM.** Every daily document looks the
+same to a sentence embedder ("Grid Node … Date … Total Energy …"), and the model does not
+distinguish 2020-08-11 from 2020-11-08. The metadata filter does the real work. Using
+a bigger embedding model would not fix this; the fix is to treat identifiers as structured data.
+
+For comparison, a lexical (hashing) embedder that matches date strings character by character
+reaches 0.82 recall@3 on its own. The two hybrid retrievers score the same with either embedder,
+because the filter decides the result.
+
+Per-category view (offline hashing embedder; the hybrid columns match production):
 
 ![Retrieval recall@3 by question type](figures/retrieval_recall3_hashing.png)
 
@@ -144,31 +161,37 @@ Reading the chart:
   well for the questions it was demoed on.
 - **Natural-language dates** fail almost completely for v1 (7%). The date regex only
   recognises `YYYY-MM-DD`, so the date filter is never applied.
-- **On comparisons, v1 does worse than plain semantic search (50% vs 73%).** v1 applies a
-  filter for the *first* date only, which excludes the second day by construction. A
-  metadata filter that is right for single lookups is actively harmful here.
+- **On comparisons, v1 retrieves at most half the evidence (50%).** v1 applies a filter for
+  the *first* date only, which excludes the second day by construction. With a lexical
+  embedder, unfiltered search actually beats v1 here (73%).
 - Recall@1 for v2 is 0.93 rather than 1.00 only because comparisons have two gold documents.
 - Pure-semantic figures move by about ±0.02 between index rebuilds, because Chroma's HNSW index
   is approximate and not bit-for-bit reproducible. The filtered (hybrid) figures are stable.
 
 ### 4.2 Tool-layer answerability ceiling (no LLM)
 
-![Answerability ceiling](figures/ceiling_hashing.png)
+*Production MiniLM embeddings, CI run #1:*
 
 | | rag_only | agent_v1 | **agent_v2** |
 |---|---|---|---|
-| Overall ceiling | 53% | 65% | **96%** |
+| **Overall ceiling** | 53% | 64% | **96%** |
+| Lookups: EV, solar peak, cloud, peak hour (80) | 100% | 100% | 100% |
 | Aggregation / ranking (20) | 0% | 0% | 100% |
 | Two-day comparison (15) | 20% | 20% | 100% |
-| Natural-language dates (15) | 27%* | 27%* | 100% |
+| Natural-language dates (15) | 20%* | 20%* | 100% |
+| Model forecast (15) | 7% | 100% | 100% |
+| Data inventory (5) | 0% | 100% | 100% |
 | Out of scope, "no data" signalled (15) | 0% | 0% | 60% |
+
+![Answerability ceiling](figures/ceiling_hashing.png)
+*(Chart from the offline embedder: identical except natural-language dates for v1, 27%.)*
 
 \* Slightly above retrieval recall because, by coincidence, a gold value sometimes appears
 in a wrong day's document. The ceiling is therefore an *upper* bound for v1.
 
 **Interpretation.** For a third of realistic questions, the deployed agent's failure is
 decided before the LLM runs. More prompt engineering or a bigger model cannot fix that. The
-analytics tool and the retriever fixes move the ceiling to 96%.
+analytics tool and the retriever fixes move the ceiling from 64% to 96%.
 
 ### 4.3 End-to-end agent accuracy and groundedness (pending LLM run)
 
@@ -187,7 +210,7 @@ with AWS secrets. Expected spend is roughly $1–3 per variant on Haiku 4.5. The
 full traces in `reports/results/`: every tool call, tool output, token count and latency. All
 scoring can be re-run on stored traces at no cost (`--score-only`).
 
-**What to expect, and how to read it.** The ceiling bounds accuracy: about 0.53 / 0.65 / 0.96.
+**What to expect, and how to read it.** The ceiling bounds accuracy: about 0.53 / 0.64 / 0.96.
 The interesting quantity is the **gap between ceiling and accuracy**. That gap is the model's
 own error: misreading evidence, choosing the wrong tool, or failing to refuse. The failure
 taxonomy below splits it into actionable causes.
@@ -201,7 +224,7 @@ Root causes found so far (tool layer, measured), with the fix applied in v2:
 | **Silent fallback to wrong records** | 15 / 15 out-of-scope | A filter matching nothing fell back to unfiltered search | Explicit "no documents match", and the prompt forbids substitution | 9 / 15 caught by tools; 6 rely on the LLM |
 | **Aggregation impossible** | 20 / 20 | Top-3 retrieval cannot sum or rank 30–900 days | `query_energy_stats` analytics tool | 20 / 20 |
 | **Second entity dropped** | 12 / 15 comparisons | Constraint parser kept the first date/node only | `$in` filters over every date/node; k widened | 15 / 15 |
-| **Natural-language dates ignored** | 11 / 15 | Regex recognised ISO dates only | Date parser for 5 formats | 15 / 15 |
+| **Natural-language dates ignored** | 12 / 15 | Regex recognised ISO dates only | Date parser for 5 formats | 15 / 15 |
 | **Wrong source filter** | latent | Substring match: "ev" in "every", "level", "seven" | Word-boundary keyword match | (unit-tested) |
 | **Impossible dates** | 2 / 2 | 2020-02-30 silently dropped, so other days were returned | Flagged as invalid | 2 / 2 |
 | **Concurrency crash** | 5 / 165 harness calls | Unlocked lazy init of Chroma client and model globals | Locks | 0 / 165 |
@@ -223,7 +246,7 @@ question*.
 | Report generator | `evals/report.py` → `reports/metrics.md`, `reports/figures/` | Numbers in this report regenerate from results files |
 | Test suite (77 tests) | `tests/` | Runs offline in ~10 s, including an end-to-end agent-loop test with a scripted model |
 | Container | `Dockerfile` | Index baked in; `--target test` fails the build if lint or tests fail; health check |
-| CI | `.github/workflows/ci.yml` | Lint + tests → MiniLM retrieval eval with **recall@3 ≥ 0.95 gate** → Docker build and health check |
+| CI | `.github/workflows/ci.yml` | Lint + tests → MiniLM retrieval eval with **recall@3 ≥ 0.95 gate** → Docker build and health check. All green on [run #1](https://github.com/Denylson-Fuentes/rag-energy-analyst/actions/runs/44233104401) |
 | Paid eval on demand | `.github/workflows/eval.yml` | One-click LLM evaluation with uploaded artifacts |
 
 ---
@@ -240,9 +263,10 @@ question*.
   model's own output. Forecast accuracy belongs to the model-training pipeline.
 - **The answer matcher is lenient.** "Any number in the answer within tolerance" can credit an
   answer that lists many numbers. Groundedness and the per-question traces guard against this.
-- **The embedding gap.** Recall here uses the offline hashing embedder. Because v2's lookups
-  are filter-driven, its recall should hold with MiniLM. Pure-semantic and v1 figures may
-  differ. The CI job reports MiniLM figures on every push.
+- **Unfiltered questions depend on a weak embedder.** MiniLM gives 2% recall without filters.
+  Any question that carries no date or node ID, such as "show me a cloudy day", is served
+  poorly. That category isn't in this set yet, and a better embedder or BM25 hybrid search
+  should be evaluated if it matters to users.
 - **The ML models are pickles from an older scikit-learn.** They load with version warnings.
   Retrain under the pinned version (`scripts/retrain_*.py`) before the next release.
 

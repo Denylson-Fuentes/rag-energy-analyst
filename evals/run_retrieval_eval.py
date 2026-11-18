@@ -91,6 +91,11 @@ def main():
     for ret, agg in summary["overall"].items():
         print(f"{ret:<11} " + " ".join(f"{agg[m]:>9.3f}" for m in ["recall@1", "recall@3", "recall@5", "recall@10", "mrr"]))
 
+    cats = sorted(summary["by_category"]["hybrid_v2"])
+    print(f"\nrecall@3 by category\n{'category':<14}" + "".join(f"{r:>11}" for r in summary["by_category"]))
+    for c in cats:
+        print(f"{c:<14}" + "".join(f"{summary['by_category'][r][c]['recall@3']:>11.2f}" for r in summary["by_category"]))
+
     if args.gate:
         val = summary["overall"][GATE["retriever"]][GATE["metric"]]
         ok = val >= GATE["min"]
